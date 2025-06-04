@@ -16,3 +16,6 @@ texture = ExtResource("1_ly3pf")
 shape = SubResource("RectangleShape2D_0a5x8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.996948, 0.990783)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
