@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ullaw7ojc681"]
+
+[ext_resource type="PackedScene" uid="uid://b3iejitxon3ks" path="res://Escenas/piso.tscn" id="1_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://b8luqybclkp04" path="res://Escenas/personaje.tscn" id="2_otwa2"]
+[ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="3_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://s344qxt8ci67" path="res://Escenas/arma.tscn" id="4_aou4a"]
+[ext_resource type="PackedScene" uid="uid://cywd45tc337tm" path="res://Escenas/enemigo.tscn" id="4_otwa2"]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Reparo-ejeY" type="Node" parent="."]
+
+[node name="Escenario" type="Node" parent="Reparo-ejeY"]
+
+[node name="Piso" parent="Reparo-ejeY/Escenario" instance=ExtResource("1_fw4w5")]
+position = Vector2(29, -47)
+scale = Vector2(6.53296, 5.81519)
+
+[node name="Pared2" parent="Reparo-ejeY/Escenario" instance=ExtResource("3_fw4w5")]
+position = Vector2(1371, -43)
+scale = Vector2(3.60264, 5.97552)
+
+[node name="Pared" parent="Reparo-ejeY/Escenario" instance=ExtResource("3_fw4w5")]
+position = Vector2(-1359, -753)
+scale = Vector2(2.37764, 2.84486)
+
+[node name="Pared3" parent="Reparo-ejeY/Escenario" instance=ExtResource("3_fw4w5")]
+position = Vector2(-301, -114)
+
+[node name="Personaje" parent="Reparo-ejeY" instance=ExtResource("2_otwa2")]
+position = Vector2(518, -9)
+
+[node name="Arma" parent="Reparo-ejeY/Personaje" instance=ExtResource("4_aou4a")]
+position = Vector2(79, 11)
+scale = Vector2(0.244753, 0.150435)
+
+[node name="Enemigo" parent="Reparo-ejeY" instance=ExtResource("4_otwa2")]
+position = Vector2(-605, -145)
