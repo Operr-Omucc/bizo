@@ -15,4 +15,4 @@ func fire():
 	bullet.dir=rotation
 	bullet.pos=$Node2D.global_position
 	bullet.rota=global_rotation
-	get_parent().add_child(bullet)
+	get_parent().get_parent().add_child(bullet)

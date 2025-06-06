@@ -11,6 +11,8 @@ size = Vector2(20, 19.0911)
 
 [node name="Enemigo" type="CharacterBody2D"]
 scale = Vector2(0.233266, 0.282042)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_24lda")
 
 [node name="Enemigo" type="Sprite2D" parent="."]
@@ -23,6 +25,8 @@ scale = Vector2(26.3106, 38.8744)
 shape = SubResource("RectangleShape2D_jc0jm")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1.49998)
