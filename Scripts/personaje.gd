@@ -3,10 +3,11 @@ extends CharacterBody2D
 @onready var personaje = %Personaje
 var speed = 500
 var cooldown:bool = true
-
+var money:int
 
 #Movimiento basico
 func _physics_process(_delta):
+	personaje.add_to_group("personaje")
 	var direccion = Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
 	velocity = direccion * speed
 	if Input.is_action_just_pressed("Dash") && cooldown:

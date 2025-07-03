@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://s344qxt8ci67"]
 
-[ext_resource type="Script" uid="uid://cul31yd00pbl8" path="res://arma.gd" id="1_go1l7"]
+[ext_resource type="Script" uid="uid://cul31yd00pbl8" path="res://Scripts/arma.gd" id="1_go1l7"]
 [ext_resource type="Texture2D" uid="uid://b30jd6r0h1uy7" path="res://Sprites/Arma.png" id="2_00gnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yua7b"]

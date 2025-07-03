@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b47o0srcpivqu"]
+
+[ext_resource type="Texture2D" uid="uid://u2h1aq6t35l7" path="res://Sprites/moneda.png" id="1_k7ceu"]
+[ext_resource type="Script" uid="uid://bjmt0ym25uaf2" path="res://Escenas/moneda.gd" id="1_n1bbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1bbm"]
+radius = 44.1022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypqmy"]
+radius = 44.0
+
+[node name="Moneda" type="StaticBody2D"]
+script = ExtResource("1_n1bbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n1bbm")
+
+[node name="Moneda" type="Sprite2D" parent="."]
+position = Vector2(-6.10352e-05, -1.52588e-05)
+scale = Vector2(0.134109, 0.146067)
+texture = ExtResource("1_k7ceu")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.20729, 1.09541)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ypqmy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

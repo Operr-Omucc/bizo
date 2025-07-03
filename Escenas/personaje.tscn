@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d18t00yxsu617" path="res://Sprites/personaje.png" id="1_ly3pf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0a5x8"]
-size = Vector2(108, 228)
+size = Vector2(99.1894, 212.332)
 
 [node name="Personaje" type="CharacterBody2D"]
 script = ExtResource("1_0a5x8")
@@ -13,6 +13,8 @@ script = ExtResource("1_0a5x8")
 texture = ExtResource("1_ly3pf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.500003)
+scale = Vector2(1.02396, 1.04627)
 shape = SubResource("RectangleShape2D_0a5x8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
