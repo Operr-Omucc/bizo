@@ -16,7 +16,7 @@ func wait_for_physics():
 #Funcion para eliminar personaje + deteccion de colision con bala
 func _on_area_2d_body_entered(body):
 	if body.name=="Personaje":
-		body.queue_free()
+		get_tree().call_deferred("change_scene_to_file","res://Escenas/main_menu.tscn")
 	elif body.is_in_group("bala"):
 		var coin_instance = coin.instantiate()
 		coin_instance.add_to_group("coins")

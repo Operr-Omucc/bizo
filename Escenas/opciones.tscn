@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://1t4dloi2y4mm"]
+
+[ext_resource type="Script" uid="uid://c2by2iaqx2ng0" path="res://Scripts/opciones.gd" id="1_idus3"]
+
+[node name="Opciones" type="Node2D"]
+script = ExtResource("1_idus3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 248.0
+offset_right = 1073.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 90
+text = "Opciones en desarrollo"
+
+[node name="Button" type="Button" parent="."]
+offset_right = 594.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 50
+text = "Volver al menu principal"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
