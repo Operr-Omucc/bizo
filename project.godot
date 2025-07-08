@@ -14,6 +14,10 @@ config/name="BIZO"
 run/main_scene="uid://celd3efat3o76"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+gamedata="*res://Scripts/gamedata.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

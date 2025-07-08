@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ullaw7ojc681"]
+[gd_scene load_steps=5 format=3 uid="uid://ullaw7ojc681"]
 
+[ext_resource type="Script" uid="uid://yhgaf5svr6nw" path="res://Scripts/GameMaster.gd" id="1_f4s1m"]
 [ext_resource type="PackedScene" uid="uid://b3iejitxon3ks" path="res://Escenas/piso.tscn" id="1_fw4w5"]
-[ext_resource type="PackedScene" uid="uid://b8luqybclkp04" path="res://Escenas/personaje.tscn" id="2_otwa2"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="3_fw4w5"]
-[ext_resource type="PackedScene" uid="uid://s344qxt8ci67" path="res://Escenas/arma.tscn" id="4_aou4a"]
-[ext_resource type="PackedScene" uid="uid://cywd45tc337tm" path="res://Escenas/enemigo.tscn" id="4_otwa2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_aou4a"]
 vertices = PackedVector2Array(-238.922, 816.852, 1025.95, 1315.2, -1572.01, 1315.99, -363.078, 816.852, -1573.52, -67.8203, -1127.88, -67.8203, -363.078, -1035.8, -1127.88, -1409.13, 1025.95, -1409.79, -238.922, -1035.8)
@@ -12,35 +10,23 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1585, -1419, 1674, -1420, 1674, 1325, -1582, 1326)])
 
 [node name="Mundo" type="Node2D"]
+script = ExtResource("1_f4s1m")
 
-[node name="Reparo-ejeY" type="Node" parent="."]
-
-[node name="Piso" parent="Reparo-ejeY" instance=ExtResource("1_fw4w5")]
+[node name="Piso" parent="." instance=ExtResource("1_fw4w5")]
 position = Vector2(29, -47)
 scale = Vector2(6.53296, 5.81519)
 
-[node name="Navegacion+paredes" type="NavigationRegion2D" parent="Reparo-ejeY"]
+[node name="Navegacion+paredes" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_aou4a")
 
-[node name="Pared2" parent="Reparo-ejeY/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared2" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(1371, -43)
 scale = Vector2(3.60264, 5.97552)
 
-[node name="Pared" parent="Reparo-ejeY/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(-1359, -753)
 scale = Vector2(2.37764, 2.84486)
 
-[node name="Pared3" parent="Reparo-ejeY/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared3" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(-301, -114)
 scale = Vector2(0.56, 3.88)
-
-[node name="Personaje" parent="Reparo-ejeY" instance=ExtResource("2_otwa2")]
-unique_name_in_owner = true
-position = Vector2(518, -9)
-
-[node name="Arma" parent="Reparo-ejeY/Personaje" instance=ExtResource("4_aou4a")]
-position = Vector2(90, 6)
-scale = Vector2(0.244753, 0.150435)
-
-[node name="Enemigo" parent="Reparo-ejeY" instance=ExtResource("4_otwa2")]
-position = Vector2(-856, -95)

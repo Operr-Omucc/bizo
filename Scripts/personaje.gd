@@ -1,17 +1,18 @@
 extends CharacterBody2D
 
-@onready var personaje = %Personaje
-var speed = 500
+var speed
 var cooldown:bool = true
 var money:int
 
+func _ready():
+	speed = 500
+	self.add_to_group("personaje")
+
 #Movimiento basico
 func _physics_process(_delta):
-	personaje.add_to_group("personaje")
 	var direccion = Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
 	velocity = direccion * speed
-	if Input.is_action_just_pressed("Dash") && cooldown:
-		start_dash()
+	
 	#is_mouse_left()
 	move_and_slide()
 	
@@ -32,7 +33,7 @@ func is_mouse_left():
 	var onLeftSide = 0<get_global_mouse_position().x
 	
 	if onLeftSide:
-		personaje.scale.x = -1
+		self.scale.x = -1
 	else:
-		personaje.scale.x = 1
+		self.scale.x = 1
 	
