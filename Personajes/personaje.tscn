@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8luqybclkp04"]
+[gd_scene load_steps=7 format=3 uid="uid://b8luqybclkp04"]
 
 [ext_resource type="Script" uid="uid://fj3nuxhxq6x3" path="res://Scripts/personaje.gd" id="1_0a5x8"]
 [ext_resource type="Texture2D" uid="uid://d18t00yxsu617" path="res://Sprites/personaje.png" id="1_ly3pf"]
+[ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_0o1n1"]
+[ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_i3p7x"]
+[ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_y2j6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0a5x8"]
 size = Vector2(99.1894, 212.332)
@@ -19,5 +22,14 @@ shape = SubResource("RectangleShape2D_0a5x8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.996948, 0.990783)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+zoom = Vector2(0.5, 0.5)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D"]
+offset_left = -1156.0
+offset_top = -654.0
+offset_right = -1028.0
+offset_bottom = -603.0
+value = 100.0
+texture_under = ExtResource("3_0o1n1")
+texture_over = ExtResource("4_i3p7x")
+texture_progress = ExtResource("5_y2j6e")
