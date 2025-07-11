@@ -18,5 +18,5 @@ func fire():
 	bullet.rota=global_rotation
 	get_parent().get_parent().add_child(bullet)
 	cooldown = false
-	await get_tree().create_timer(1.00).timeout
+	await get_tree().create_timer(0.70).timeout
 	cooldown = true

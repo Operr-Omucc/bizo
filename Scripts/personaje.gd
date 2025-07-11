@@ -7,6 +7,7 @@ var health: int
 var maxHealth: int
 @onready var healthBar: TextureProgressBar = $Camera2D/TextureProgressBar
 
+
 func _ready():
 	maxHealth = 100
 	health = 100
@@ -21,6 +22,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("Dash") && cooldown:
 		start_dash()
 	healthBar.value = health
+	healthBar.max_value = maxHealth
 	#is_mouse_left()
 	move_and_slide()
 	
