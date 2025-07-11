@@ -20,6 +20,7 @@ func _physics_process(_delta):
 	velocity = direccion * speed
 	if Input.is_action_just_pressed("Dash") && cooldown:
 		start_dash()
+	healthBar.value = health
 	#is_mouse_left()
 	move_and_slide()
 	

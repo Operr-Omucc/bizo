@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var target = get_tree().get_nodes_in_group("personaje")
 @onready var coin=preload("res://Escenas/moneda.tscn")
 
+var cooldown=true
 var speed=150
 
 func _ready() -> void:
@@ -18,11 +19,14 @@ func wait_for_physics():
 #Funcion para eliminar personaje + deteccion de colision con bala
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("personaje"):
-		if body.health > 0:
+		if body.health > 0 && cooldown:
 			var currentWave = 100
-			var maxPercentage = currentWave * 0.9
-			body.health = maxPercentage - body.health
-		elif body.health < 0:
+			var maxPercentage = currentWave * 0.1
+			body.health =  body.health - maxPercentage
+			cooldown = false
+			await get_tree().create_timer(1.00).timeout #tiempo de invulnerabilidad del jugador
+			cooldown = true
+		elif body.health < 1:
 			get_tree().call_deferred("change_scene_to_file","res://Escenas/main_menu.tscn")
 	elif body.is_in_group("bala"):
 		var coin_instance = coin.instantiate()
