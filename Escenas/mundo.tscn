@@ -30,3 +30,10 @@ scale = Vector2(2.37764, 2.84486)
 [node name="Pared3" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(-301, -114)
 scale = Vector2(0.56, 3.88)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
