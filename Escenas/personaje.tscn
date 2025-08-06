@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8luqybclkp04"]
+
+[ext_resource type="Script" uid="uid://fj3nuxhxq6x3" path="res://Scripts/personaje.gd" id="1_0a5x8"]
+[ext_resource type="Texture2D" uid="uid://d18t00yxsu617" path="res://Sprites/personaje.png" id="1_ly3pf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a5x8"]
+size = Vector2(99.1894, 212.332)
+
+[node name="Personaje" type="CharacterBody2D"]
+script = ExtResource("1_0a5x8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ly3pf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.500003)
+scale = Vector2(1.02396, 1.04627)
+shape = SubResource("RectangleShape2D_0a5x8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.996948, 0.990783)
+zoom = Vector2(0.5, 0.5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0

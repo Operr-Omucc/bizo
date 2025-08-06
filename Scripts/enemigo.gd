@@ -7,6 +7,9 @@ var cooldown=true
 var speed=150
 var damage = gamedata.enemy_damage()
 
+var knockback: Vector2=Vector2.ZERO
+var knockback_timer: float=0.0
+
 func _ready() -> void:
 	self.add_to_group("enemigo")
 	health = 40
@@ -35,7 +38,7 @@ func _on_area_2d_body_entered(body):
 		elif body.health < 1:
 			get_tree().call_deferred("change_scene_to_file","res://Escenas/main_menu.tscn")
 			
-	elif body.is_in_group("bala"):
+	elif body.is_in_group("bala") || body.is_in_group("brazo"):
 		if health > 0:
 			health = health - body.damage
 			body.call_deferred("queue_free") #call deferred añade/quita  de forma "segura"
@@ -48,8 +51,18 @@ func _on_area_2d_body_entered(body):
 			call_deferred("queue_free")  
 			body.call_deferred("queue_free")
 		
-#funcion que se ejecuta cada segundo, funciona tambien para detectar la posicion del jugador y perseguirlo
 func _physics_process(_delta):
+	if knockback_timer > 0.0:
+			velocity = knockback * 5
+			knockback_timer -= _delta
+			if knockback_timer <= 0.0:
+				knockback = Vector2.ZERO
+	else:
+		_navegacion(_delta)
+	move_and_slide()
+	
+#funcion que se ejecuta cada segundo, funciona tambien para detectar la posicion del jugador y perseguirlo
+func _navegacion(_delta):
 	if target and target.is_inside_tree():
 		if navigation_agent.is_navigation_finished():
 			var distancia = target.global_position.distance_to(navigation_agent.target_position)
@@ -63,3 +76,22 @@ func _physics_process(_delta):
 		else:
 			velocity = Vector2.ZERO  # Sin dirección válida
 		move_and_slide()
+		
+func apply_knockback(knockback_direction: Vector2, knockback_force: float, knockback_duration: float) -> void:
+	knockback = knockback_direction * knockback_force
+	knockback_timer = knockback_duration
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	var body=self
+	if area.is_in_group("brazo"):
+		if health > 0:
+			health = health - area.damage
+			
+		if health <= 1:
+			var coin_instance = coin.instantiate()
+			coin_instance.add_to_group("coins")
+			coin_instance.position = global_position
+			get_parent().call_deferred("add_child", coin_instance)  
+			call_deferred("queue_free")  
+			body.call_deferred("queue_free")

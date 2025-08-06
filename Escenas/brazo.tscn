@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://con1n6au8d6sr"]
+
+[ext_resource type="Script" uid="uid://cu6bpd7fpf8fx" path="res://Scripts/hombro.gd" id="1_lqmo8"]
+[ext_resource type="Script" uid="uid://dq2io2uw2yb07" path="res://Scripts/brazo.gd" id="1_s7n4n"]
+[ext_resource type="Texture2D" uid="uid://c0dwwu1oeusus" path="res://Sprites/Pared.png" id="2_s7n4n"]
+[ext_resource type="Script" uid="uid://6k7u78yldc2" path="res://Scripts/puño.gd" id="4_svb8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svb8t"]
+size = Vector2(182.491, 463.614)
+
+[sub_resource type="Animation" id="Animation_lqmo8"]
+resource_name = "Golpe"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-156.24, 779.246), Vector2(241.8, 690.471), Vector2(360.84, 0), Vector2(316.2, -522.785)]
+}
+
+[sub_resource type="Animation" id="Animation_s7n4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-156.24, 779.246)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svb8t"]
+_data = {
+&"Golpe": SubResource("Animation_lqmo8"),
+&"RESET": SubResource("Animation_s7n4n")
+}
+
+[node name="Brazo" type="Node2D"]
+script = ExtResource("1_s7n4n")
+
+[node name="Hombro" type="Node2D" parent="."]
+script = ExtResource("1_lqmo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hombro"]
+scale = Vector2(0.268817, 0.10138)
+texture = ExtResource("2_s7n4n")
+
+[node name="Puño" type="Area2D" parent="Hombro/Sprite2D"]
+position = Vector2(-156.24, 779.246)
+scale = Vector2(1.06, 1.08508)
+collision_mask = 3
+script = ExtResource("4_svb8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hombro/Sprite2D/Puño"]
+texture = ExtResource("2_s7n4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hombro/Sprite2D/Puño"]
+position = Vector2(0, 4.54523)
+shape = SubResource("RectangleShape2D_svb8t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hombro/Sprite2D/Puño"]
+libraries = {
+&"": SubResource("AnimationLibrary_svb8t")
+}
+
+[connection signal="body_entered" from="Hombro/Sprite2D/Puño" to="Hombro/Sprite2D/Puño" method="_on_body_entered"]
+[connection signal="animation_finished" from="Hombro/Sprite2D/Puño/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
