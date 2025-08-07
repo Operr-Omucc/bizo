@@ -10,8 +10,8 @@ var maxHealth: int
 
 func _ready():
 	money = 0
-	maxHealth = 100
-	health = 100
+	maxHealth = gamedata.maxHealth
+	health = gamedata.health
 	speed = 500
 	maxHealth += gamedata.maxHealth
 	health += gamedata.health

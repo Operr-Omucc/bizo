@@ -15,6 +15,7 @@ func _ready() -> void:
 	health = 40
 	await get_tree().process_frame
 	set_physics_process(false)
+	await get_tree().create_timer(1.00).timeout
 	call_deferred("wait_for_physics")
 	
 func wait_for_physics():
@@ -83,7 +84,6 @@ func apply_knockback(knockback_direction: Vector2, knockback_force: float, knock
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	var body=self
 	if area.is_in_group("brazo"):
 		if health > 0:
 			health = health - area.damage
@@ -93,5 +93,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			coin_instance.add_to_group("coins")
 			coin_instance.position = global_position
 			get_parent().call_deferred("add_child", coin_instance)  
-			call_deferred("queue_free")  
-			body.call_deferred("queue_free")
+			call_deferred("queue_free") 

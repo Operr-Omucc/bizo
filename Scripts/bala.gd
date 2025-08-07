@@ -7,7 +7,6 @@ var damage: int
 
 #funcion que consigue la posicion y rotacion global + destruye bala si existio por 3 segundos
 func _ready():
-	damage = 20
 	global_position=pos
 	global_rotation=rota
 	await get_tree().create_timer(0.7).timeout

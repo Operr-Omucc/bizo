@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7j5glt2okrxa"]
+
+[ext_resource type="Script" uid="uid://cf6bois0mjggm" path="res://Scripts/jefe.gd" id="1_oogxl"]
+[ext_resource type="Texture2D" uid="uid://koixclvl6o3o" path="res://Sprites/Enemigo.png" id="2_sbirq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc0jm"]
+size = Vector2(18.7757, 19.7045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24lda"]
+size = Vector2(20, 19.8566)
+
+[node name="Jefe" type="CharacterBody2D"]
+scale = Vector2(0.428803, 0.45934)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_oogxl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Enemigo" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = ExtResource("2_sbirq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(26.3106, 38.8744)
+shape = SubResource("RectangleShape2D_jc0jm")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.77278)
+scale = Vector2(26.7602, 40.1758)
+shape = SubResource("RectangleShape2D_24lda")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
