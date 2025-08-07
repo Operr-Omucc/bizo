@@ -13,6 +13,7 @@ offset_right = 776.0
 offset_bottom = 484.0
 theme_override_font_sizes/font_size = 90
 text = "Start"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 448.0
@@ -21,6 +22,7 @@ offset_right = 799.0
 offset_bottom = 644.0
 theme_override_font_sizes/font_size = 90
 text = "Options"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 64.0
@@ -29,6 +31,7 @@ offset_right = 384.0
 offset_bottom = 580.0
 theme_override_font_sizes/font_size = 90
 text = "Exit"
+metadata/_edit_use_anchors_ = true
 
 [node name="Mm" type="Sprite2D" parent="."]
 position = Vector2(592, 176)

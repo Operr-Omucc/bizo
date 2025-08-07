@@ -1,8 +1,7 @@
 extends Area2D
 
 @onready var brazo = get_parent().get_parent().get_parent()
-
-@export var damage:int = 20
+@onready var damage: int
 
 func _ready():
 	self.add_to_group("brazo")

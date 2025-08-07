@@ -6,6 +6,7 @@ var money_amount : int
 var maxHealth: int = 0
 var health: int = 0
 var currentWave: int = 1
+var dif: int
 
 func enemy_damage():
 	var base_damage = 5
