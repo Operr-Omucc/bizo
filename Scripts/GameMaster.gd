@@ -7,7 +7,6 @@ var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
 func _ready():
-	
 	#Spawnea todo adentro del mundo
 	
 	add_child(personaje)
@@ -29,6 +28,7 @@ func _ready():
 			enemigo.global_position = Vector2(randi_range(608, 2560), randi_range(16, 2704))
 			enemigo.target = personaje
 			await get_tree().create_timer(1).timeout
+			
 	if gamedata.currentWave==20:
 			var jefe = preload("res://Escenas/jefe.tscn").instantiate()
 			add_child(jefe)
