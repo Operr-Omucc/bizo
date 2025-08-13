@@ -1,6 +1,10 @@
 extends Node2D
 var personaje = preload("res://Personajes/personaje.tscn")
 var mundo = preload("res://Escenas/mundo.tscn")
+var reroll:int = 0
+var mejora = mejora_path
+var cooldown: bool = false
+@onready var mejora_path= preload("res://Escenas/mejora.tscn")
 
 func _on_button_pressed() -> void:
 	if gamedata.money_amount >= 9:
@@ -16,4 +20,29 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 
+	mejora.queue_free()
 	get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
+
+func enfriamiento():
+	while cooldown==false:
+		_on_palanca_pressed()
+
+func _on_palanca_pressed() -> void:
+	var mejoras = get_tree().get_nodes_in_group("mejora")
+	for m in mejoras:
+		m.queue_free()
+	
+	reroll *= gamedata.currentWave
+	if gamedata.money_amount >= reroll && cooldown==false:
+		cooldown=true
+		for n in (3):
+			mejora= mejora_path.instantiate()
+			mejora.tipo_mejora = randi_range(1,2)
+			get_parent().add_child(mejora)
+			mejora.global_position= Vector2(230, 230)
+			await get_tree().create_timer(1).timeout
+		
+	while cooldown==true:
+		await get_tree().create_timer(4).timeout
+		cooldown=false
+	gamedata.money_amount -= reroll

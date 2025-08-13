@@ -8,6 +8,7 @@ var game_money : int # Dinero recolectado por el jugador, se mantiene entre part
 var money_amount : int # Dinero recolectado por el jugador, solo existe dentro de la partida USADO SOLO PARA COMPRAR MEJORAS DENTRO DE LA PARTIDA
 var maxHealth: int = 0
 var health: int = 0
+var damage: int = 20
 @export var currentWave: int
 var dif: int
 

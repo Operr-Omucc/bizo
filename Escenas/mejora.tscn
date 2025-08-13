@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://3qppmudgw3gt"]
+
+[ext_resource type="Script" uid="uid://c4khlg0jhslyy" path="res://Scripts/mejora.gd" id="1_c4cyj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4cyj"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_c4cyj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2984, 0.306564)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.205, 3.36016)
+shape = SubResource("CircleShape2D_c4cyj")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -32.0
+offset_top = -33.0
+offset_right = 46.0
+offset_bottom = -2.0
+scale = Vector2(0.82732, 2.1607)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

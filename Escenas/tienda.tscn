@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2linwnrs53hq"]
+[gd_scene load_steps=6 format=3 uid="uid://2linwnrs53hq"]
 
 [ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
-[ext_resource type="Texture2D" uid="uid://dmc1js4vqmsjo" path="res://Sprites/vida.png" id="2_50q1o"]
-[ext_resource type="Texture2D" uid="uid://cijdnbs60h7r" path="res://Sprites/Escudo.png" id="3_7flnv"]
+[ext_resource type="Texture2D" uid="uid://btoenq27aqipt" path="res://Sprites/dispenser.png" id="4_7flnv"]
+[ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
+[ext_resource type="Texture2D" uid="uid://wh7ggjpoyose" path="res://Sprites/palanca.png" id="5_a2w3w"]
 
 [node name="Tienda" type="Node2D"]
 script = ExtResource("1_50q1o")
@@ -13,45 +14,6 @@ position = Vector2(576, 320)
 scale = Vector2(1.7866, 1.22759)
 texture = ExtResource("1_4xubq")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 24.0
-offset_top = 344.0
-offset_right = 677.0
-offset_bottom = 886.0
-scale = Vector2(0.208317, 0.242029)
-icon = ExtResource("2_50q1o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 0
-offset_top = 528.862
-offset_right = 1344.0
-offset_bottom = 1123.86
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 99
-text = "9 de oro
--aumenta tu vida maxima"
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 328.0
-offset_top = 344.0
-offset_right = 981.0
-offset_bottom = 886.0
-scale = Vector2(0.207663, 0.240909)
-icon = ExtResource("3_7flnv")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Button2"]
-layout_mode = 0
-offset_top = 531.0
-offset_right = 1271.0
-offset_bottom = 1029.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 99
-text = "5 de oro
--añade vida temporal"
-
 [node name="Button3" type="Button" parent="."]
 offset_left = 968.0
 offset_top = 584.0
@@ -60,6 +22,31 @@ offset_bottom = 592.0
 scale = Vector2(1.37316, 1.60099)
 text = "Volver al juego"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[node name="Pared" parent="." instance=ExtResource("5_7flnv")]
+position = Vector2(404, 620)
+rotation = -1.56429
+scale = Vector2(0.195258, 1.70631)
+
+[node name="Pared2" parent="." instance=ExtResource("5_7flnv")]
+position = Vector2(21, 464)
+rotation = 0.00443184
+scale = Vector2(0.170616, 0.71297)
+
+[node name="Pared3" parent="." instance=ExtResource("5_7flnv")]
+position = Vector2(792, 471)
+rotation = 0.00443184
+scale = Vector2(0.170616, 0.71297)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(236, 111)
+texture = ExtResource("4_7flnv")
+
+[node name="Palanca" type="Button" parent="."]
+offset_left = 484.0
+offset_top = -16.0
+offset_right = 590.0
+offset_bottom = 207.0
+icon = ExtResource("5_a2w3w")
+
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Palanca" to="." method="_on_palanca_pressed"]
