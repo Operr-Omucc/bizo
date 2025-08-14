@@ -21,20 +21,20 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_h3eb4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.00012207, -6.10352e-05)
 scale = Vector2(0.996948, 0.990783)
 zoom = Vector2(0.5, 0.5)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D"]
-offset_left = -1156.0
-offset_top = -654.0
-offset_right = -1028.0
-offset_bottom = -603.0
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+layer = 128
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer"]
+offset_left = -1.52588e-05
+offset_top = 2.28882e-05
+offset_right = 532.0
+offset_bottom = 145.0
+scale = Vector2(0.604939, 0.467399)
 texture_under = ExtResource("3_ommdq")
 texture_over = ExtResource("4_l4b42")
 texture_progress = ExtResource("5_m28bc")
+metadata/_edit_use_anchors_ = true

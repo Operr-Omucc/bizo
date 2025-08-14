@@ -4,7 +4,7 @@ func _ready():
 	health = 1000
 	speed = 90
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	check_death()
 
 func check_death():

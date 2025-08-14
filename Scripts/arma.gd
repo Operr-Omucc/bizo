@@ -8,9 +8,11 @@ var fire_rate: float
 func _ready() -> void:
 	fire_rate = 0.70
 	bullet_damage = 20
+	gamedata.damage = bullet_damage
 
 #funcion para que el arma mire a la posicion del mouse + revisa si el jugador disparo
 func _physics_process(_delta):
+	bullet_damage = gamedata.damage
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("Disparo") && cooldown:
 		fire()

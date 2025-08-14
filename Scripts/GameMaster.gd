@@ -6,6 +6,12 @@ var brazo = safe_instance(gamedata.arm_scene)
 var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
+func _physics_process(_delta: float) -> void:
+	if gamedata.rep == wave_dif*dif: #revisa si todos los enemigos estan muertos
+		gamedata.rep=0
+		await get_tree().create_timer(5).timeout
+		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
+		
 func _ready():
 	#Spawnea todo adentro del mundo
 	
@@ -34,6 +40,7 @@ func _ready():
 			add_child(jefe)
 			jefe.global_position = Vector2(randi_range(608, 2560), randi_range(16, 2704))
 			jefe.target = personaje
+			await get_tree().create_timer(1).timeout
 
 func _on_timer_timeout() -> void:
 	if gamedata.currentWave<20:

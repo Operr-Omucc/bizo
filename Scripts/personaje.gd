@@ -5,7 +5,7 @@ var cooldown:bool = true
 var money: int
 var health: int
 var maxHealth: int
-@onready var healthBar: TextureProgressBar = $Camera2D/TextureProgressBar
+@onready var healthBar: TextureProgressBar = $Camera2D/CanvasLayer/TextureProgressBar
 
 
 func _ready():

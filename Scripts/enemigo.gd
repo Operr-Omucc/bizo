@@ -43,6 +43,7 @@ func _on_area_2d_body_entered(body):
 		if health > 0:
 			health = health - body.damage
 			body.call_deferred("queue_free") #call deferred añade/quita  de forma "segura"
+			gamedata.rep += 1
 			
 		if health <= 1:
 			var coin_instance = coin.instantiate()

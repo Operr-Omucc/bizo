@@ -20,7 +20,12 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 
+<<<<<<< Updated upstream
 	mejora.queue_free()
+=======
+	if mejora!=null:
+		mejora.queue_free()
+>>>>>>> Stashed changes
 	get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
 
 func enfriamiento():
@@ -34,6 +39,10 @@ func _on_palanca_pressed() -> void:
 	
 	reroll *= gamedata.currentWave
 	if gamedata.money_amount >= reroll && cooldown==false:
+<<<<<<< Updated upstream
+=======
+		gamedata.money_amount -= reroll
+>>>>>>> Stashed changes
 		cooldown=true
 		for n in (3):
 			mejora= mejora_path.instantiate()
@@ -41,8 +50,19 @@ func _on_palanca_pressed() -> void:
 			get_parent().add_child(mejora)
 			mejora.global_position= Vector2(230, 230)
 			await get_tree().create_timer(1).timeout
+<<<<<<< Updated upstream
+=======
+	elif gamedata.money_amount<reroll:
+		$Label.text = "No tenes dinero pa jaja salu2"
+		await get_tree().create_timer(5).timeout
+		$Label.text = ""
+>>>>>>> Stashed changes
 		
 	while cooldown==true:
 		await get_tree().create_timer(4).timeout
 		cooldown=false
+<<<<<<< Updated upstream
 	gamedata.money_amount -= reroll
+=======
+	
+>>>>>>> Stashed changes
