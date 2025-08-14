@@ -21,7 +21,12 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	mejora.queue_free()
+=======
+	if mejora!=null:
+		mejora.queue_free()
+>>>>>>> Stashed changes
 =======
 	if mejora!=null:
 		mejora.queue_free()
@@ -40,6 +45,10 @@ func _on_palanca_pressed() -> void:
 	reroll *= gamedata.currentWave
 	if gamedata.money_amount >= reroll && cooldown==false:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		gamedata.money_amount -= reroll
+>>>>>>> Stashed changes
 =======
 		gamedata.money_amount -= reroll
 >>>>>>> Stashed changes
@@ -51,18 +60,28 @@ func _on_palanca_pressed() -> void:
 			mejora.global_position= Vector2(230, 230)
 			await get_tree().create_timer(1).timeout
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 	elif gamedata.money_amount<reroll:
 		$Label.text = "No tenes dinero pa jaja salu2"
 		await get_tree().create_timer(5).timeout
 		$Label.text = ""
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		
 	while cooldown==true:
 		await get_tree().create_timer(4).timeout
 		cooldown=false
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	gamedata.money_amount -= reroll
+=======
+	
+>>>>>>> Stashed changes
 =======
 	
 >>>>>>> Stashed changes

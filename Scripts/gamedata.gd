@@ -9,7 +9,11 @@ var money_amount : int # Dinero recolectado por el jugador, solo existe dentro d
 var maxHealth: int = 0
 var health: int = 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 var damage: int = 20
+=======
+var damage: int
+>>>>>>> Stashed changes
 =======
 var damage: int
 >>>>>>> Stashed changes
