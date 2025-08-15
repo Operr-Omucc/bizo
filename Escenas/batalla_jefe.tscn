@@ -1,0 +1,186 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpsp4tnuyb841"]
+
+[ext_resource type="Texture2D" uid="uid://dssvcacfwivo5" path="res://Sprites/piso.png" id="1_lm0so"]
+[ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="2_lan6c"]
+[ext_resource type="PackedScene" uid="uid://b8luqybclkp04" path="res://Personajes/personaje.tscn" id="3_lan6c"]
+
+[node name="Batalla Jefe" type="Node2D"]
+
+[node name="Piso" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(1947, -209)
+scale = Vector2(37.5695, -14.5071)
+texture = ExtResource("1_lm0so")
+polygon = PackedVector2Array(-247, -236, -247, 236, 247, 236, 247, -236)
+uv = PackedVector2Array(-4213.64, -4025.99, -4213.64, 4497.99, 4707.64, 4497.99, 4707.64, -4025.99)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+
+[node name="Personaje" parent="." instance=ExtResource("3_lan6c")]
+position = Vector2(-5810, 93)
+
+[node name="Pared" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-7166, -319)
+scale = Vector2(4.03253, -13.7783)
+
+[node name="Pared5" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(10788, 55)
+scale = Vector2(4.03253, -13.7783)
+
+[node name="Pared2" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(2075, -3061)
+rotation = 3.14159
+scale = Vector2(98.4934, 2.46498)
+
+[node name="Pared3" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(6679.42, 776.702)
+scale = Vector2(2.9649, -11.2886)
+
+[node name="Pared4" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(1783, 3093)
+rotation = 3.14159
+scale = Vector2(101.084, 1.27667)
+
+[node name="Pared6" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-687.883, -1587.99)
+rotation = 3.14159
+scale = Vector2(22.3245, 1.30081)
+
+[node name="Pared7" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-699.087, 255.989)
+scale = Vector2(3.23972, -7.96926)
+
+[node name="Pared8" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-3930.12, 684.103)
+scale = Vector2(26.6069, -1.32585)
+
+[node name="Pared10" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-5265.56, 2163.04)
+scale = Vector2(3.14071, -2.6132)
+
+[node name="Pared9" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-5706.97, 1824.85)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared11" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-5694.65, -487.507)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared12" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-2284.36, 1842.29)
+rotation = 3.14159
+scale = Vector2(14.4654, -1.17842)
+
+[node name="Pared13" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-4782.7, -1602.75)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared14" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-2970, -474.086)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared15" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(1158.42, 677.392)
+rotation = 3.14159
+scale = Vector2(12.2794, -1.05097)
+
+[node name="Pared16" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(3896.51, 1857.05)
+rotation = 3.14159
+scale = Vector2(21.9832, -1.23429)
+
+[node name="Pared17" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(3447.26, -471.401)
+rotation = 3.14159
+scale = Vector2(17.0564, -1.17842)
+
+[node name="Pared18" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(5238.67, 665.314)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared19" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-6123.73, -1558.46)
+rotation = 3.14159
+scale = Vector2(2.90712, -4.27871)
+
+[node name="Pared20" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-4324.48, 372.748)
+rotation = 3.14159
+scale = Vector2(2.58354, -7.41375)
+
+[node name="Pared21" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-5248.75, 128.493)
+rotation = 3.14159
+scale = Vector2(2.65565, -1.51665)
+
+[node name="Pared22" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-3410.29, -1745.01)
+rotation = 3.14159
+scale = Vector2(2.35068, -4.46145)
+
+[node name="Pared23" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-2505.06, -1059.22)
+rotation = 3.14159
+scale = Vector2(2.28789, -2.33463)
+
+[node name="Pared24" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(-1572.95, 115.073)
+scale = Vector2(2.72685, 3.75993)
+
+[node name="Pared25" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(234.149, 1135.03)
+rotation = 3.14159
+scale = Vector2(2.53171, -8.03362)
+
+[node name="Pared26" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(2079.34, -721.024)
+rotation = 3.14159
+scale = Vector2(2.5501, -5.15506)
+
+[node name="Pared27" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(3445.02, -1613.49)
+rotation = 3.14159
+scale = Vector2(7.44053, -1.17842)
+
+[node name="Pared28" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(5742.82, -1212.21)
+scale = Vector2(2.31895, -9.4754)
+
+[node name="Pared29" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(1161.78, 1455.78)
+rotation = 3.14159
+scale = Vector2(2.92495, -2.86169)
+
+[node name="Pared30" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(1155.06, -1025.67)
+rotation = 3.14159
+scale = Vector2(2.79693, -3.89)
+
+[node name="Pared31" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(3002.49, -2252.3)
+rotation = 3.14159
+scale = Vector2(2.54393, -1.70582)
+
+[node name="Pared32" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(2993.53, 1237.03)
+rotation = 3.14159
+scale = Vector2(2.81169, 3.56395)
+
+[node name="Pared33" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(3889.79, 162.045)
+rotation = 3.14159
+scale = Vector2(2.84467, -3.57553)
+
+[node name="Pared34" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(4811.82, 1254.47)
+rotation = 3.14159
+scale = Vector2(2.58101, 1.9265)
+
+[node name="Pared35" parent="." instance=ExtResource("2_lan6c")]
+position = Vector2(4824.15, -1056.54)
+rotation = 3.14159
+scale = Vector2(2.74109, -3.70186)

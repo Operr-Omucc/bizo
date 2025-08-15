@@ -7,6 +7,9 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	check_death()
 
+func disparar_mortadela():
+	
+
 func check_death():
 	if health<=0:
 		get_tree().change_scene_to_file("res://Escenas/main_menu.tscn")

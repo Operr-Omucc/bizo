@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7j5glt2okrxa"]
+[gd_scene load_steps=8 format=3 uid="uid://b7j5glt2okrxa"]
 
 [ext_resource type="Script" uid="uid://cf6bois0mjggm" path="res://Scripts/jefe.gd" id="1_oogxl"]
 [ext_resource type="Texture2D" uid="uid://koixclvl6o3o" path="res://Sprites/Enemigo.png" id="2_sbirq"]
+[ext_resource type="Script" uid="uid://du3lqfbfukkyj" path="res://Scripts/gaster_mortadela.gd" id="3_c2t32"]
+[ext_resource type="Texture2D" uid="uid://df6iqnekxwnpp" path="res://Sprites/gaster_mortadela.png" id="3_sbirq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc0jm"]
 size = Vector2(18.7757, 19.7045)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24lda"]
 size = Vector2(20, 19.8566)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2t32"]
+size = Vector2(326.49, 234.677)
 
 [node name="Jefe" type="CharacterBody2D"]
 scale = Vector2(0.428803, 0.45934)
@@ -35,6 +40,20 @@ collision_mask = 3
 position = Vector2(0, 1.77278)
 scale = Vector2(26.7602, 40.1758)
 shape = SubResource("RectangleShape2D_24lda")
+
+[node name="Gaster_Mortadela" type="StaticBody2D" parent="."]
+position = Vector2(-592.347, -583.446)
+script = ExtResource("3_c2t32")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gaster_Mortadela"]
+position = Vector2(590.014, -141.507)
+scale = Vector2(1, 1)
+texture = ExtResource("3_sbirq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gaster_Mortadela"]
+position = Vector2(590.014, -141.286)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_c2t32")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

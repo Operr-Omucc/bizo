@@ -8,22 +8,14 @@ var game_money : int # Dinero recolectado por el jugador, se mantiene entre part
 var money_amount : int # Dinero recolectado por el jugador, solo existe dentro de la partida USADO SOLO PARA COMPRAR MEJORAS DENTRO DE LA PARTIDA
 var maxHealth: int = 0
 var health: int = 0
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-var damage: int = 20
-=======
 var damage: int
->>>>>>> Stashed changes
-=======
-var damage: int
->>>>>>> Stashed changes
+
 @export var currentWave: int
 var rep: int
 var dif: int
 
 func _ready():
 	currentWave = 1
-	rep = 0
 	
 func enemy_damage():
 	var base_damage = 5
