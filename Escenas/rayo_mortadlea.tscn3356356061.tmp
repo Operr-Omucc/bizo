@@ -2,9 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://cwn5lgv3neo5e" path="res://Sprites/advertencia_rm.png" id="1_2pwo1"]
 [ext_resource type="Texture2D" uid="uid://dje603yahuiiy" path="res://Sprites/rayo_mortadela.png" id="1_qnjrp"]
-[ext_resource type="Script" uid="uid://ixvk7hi7shxf" path="res://Scripts/rayo_mortadela.gd" id="2_2pwo1"]
+[ext_resource type="Script" uid="uid://ixvk7hi7shxf" path="res://Escenas/rayo_mortadela.gd" id="2_2pwo1"]
 
 [sub_resource type="GDScript" id="GDScript_ujp40"]
+script/source = "extends Node2D
+
+
+@onready var target = get_tree().get_nodes_in_group(\"personaje\")
+
+var damage = 20
+
+func _ready() -> void:
+	self.add_to_group(\"rayo\")
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group(target):
+		
+		if body.health > 0:
+			body.health -= damage
+			await get_tree().create_timer(2.00).timeout #tiempo de invulnerabilidad del jugador
+			
+			
+		elif body.health < 1:
+			get_tree().call_deferred(\"change_scene_to_file\",\"res://Escenas/main_menu.tscn\")
+	
+	
+"
 
 [sub_resource type="Animation" id="Animation_d2y62"]
 resource_name = "advertir"
@@ -57,7 +80,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(27, 0), Vector2(27, 3.4)]
+"values": [Vector2(8.948, 1e-05), Vector2(8.948, 2.4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rbytw"]
@@ -70,8 +93,8 @@ _data = {
 script = SubResource("GDScript_ujp40")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-9549, 0)
-scale = Vector2(27, 3.4)
+position = Vector2(-8497, 0)
+scale = Vector2(24, 2.4)
 texture = ExtResource("1_2pwo1")
 
 [node name="Play_Advertir" type="AnimationPlayer" parent="Sprite2D2"]
@@ -81,7 +104,7 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-9547, 0)
+position = Vector2(-7755, 0)
 scale = Vector2(8.948, 2.4)
 script = ExtResource("2_2pwo1")
 

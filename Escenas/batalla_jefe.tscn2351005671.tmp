@@ -17,7 +17,7 @@ uv = PackedVector2Array(-4213.64, -4025.99, -4213.64, 4497.99, 4707.64, 4497.99,
 polygons = [PackedInt32Array(0, 1, 2, 3)]
 
 [node name="Personaje" parent="." instance=ExtResource("3_lan6c")]
-position = Vector2(-6626, -132)
+position = Vector2(8691, -308)
 
 [node name="Pared" parent="." instance=ExtResource("2_lan6c")]
 position = Vector2(-7166, -319)

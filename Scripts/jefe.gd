@@ -7,7 +7,7 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	check_death()
 
-func disparar_mortadela():
+#func disparar_mortadela():
 	
 
 func check_death():

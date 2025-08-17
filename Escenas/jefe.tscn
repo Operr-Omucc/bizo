@@ -42,17 +42,16 @@ scale = Vector2(26.7602, 40.1758)
 shape = SubResource("RectangleShape2D_24lda")
 
 [node name="Gaster_Mortadela" type="StaticBody2D" parent="."]
-position = Vector2(-592.347, -583.446)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -690.121)
 script = ExtResource("3_c2t32")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gaster_Mortadela"]
-position = Vector2(590.014, -141.507)
-scale = Vector2(1, 1)
 texture = ExtResource("3_sbirq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gaster_Mortadela"]
-position = Vector2(590.014, -141.286)
-scale = Vector2(1, 1)
+position = Vector2(0.000427246, 0.000213623)
 shape = SubResource("RectangleShape2D_c2t32")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

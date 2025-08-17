@@ -9,9 +9,8 @@ func _ready():
 		$Sprite2D.texture=ResourceLoader.load("res://Sprites/Mejora.png")
 	elif tipo_mejora==2:
 		$Sprite2D.texture=ResourceLoader.load("res://Sprites/mejora_daño.png")
-		
 
-	#decision
+
 func _on_button_pressed() -> void:
 		if (tipo_mejora==1):
 			gamedata.maxHealth += 10

@@ -6,6 +6,7 @@ var money: int
 var health: int
 var maxHealth: int
 @onready var healthBar: TextureProgressBar = $Camera2D/CanvasLayer/TextureProgressBar
+@onready var jefe: CharacterBody2D = $"."
 
 
 func _ready():
@@ -22,7 +23,7 @@ func _physics_process(_delta):
 	
 	var direccion = Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
 	velocity = direccion * speed
-	if Input.is_action_just_pressed("Dash") && cooldown:
+	if Input.is_action_just_pressed("Dash") && cooldown && jefe == null:
 		start_dash()
 	healthBar.value = health
 	healthBar.max_value = maxHealth
