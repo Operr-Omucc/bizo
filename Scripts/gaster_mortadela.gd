@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-@onready var target = get_tree().get_nodes_in_group("personaje")[0]
 @onready var r_m_path = preload("res://Escenas/rayo_mortadlea.tscn")
 var lugar : Vector2
 var rotar : bool
@@ -11,6 +10,8 @@ func _ready() -> void:
 	rotar = true
 
 func _physics_process(_delta: float) -> void:
+	await get_tree().create_timer(3).timeout
+	var target = get_tree().get_nodes_in_group("personaje")[0]
 	if target and target.is_inside_tree():
 		if rotar == true:
 			look_at(target.global_position)
@@ -21,6 +22,7 @@ func start_shooting() -> void:
 	disparo()
 
 func disparo():
+	var target = get_tree().get_nodes_in_group("personaje")[0]
 	while target != null:
 		var rayo_m = r_m_path.instantiate()
 		rayo_m.add_to_group("rayo")

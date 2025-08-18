@@ -4,11 +4,11 @@ var shots_fired = 0
 func _ready():
 	fire_rate = 0.3
 	bullet_damage = 40
-	gamedata.damage = bullet_damage
+	if gamedata.damage <1:
+		gamedata.damage += bullet_damage
 	cooldown = true
 	
 func _physics_process(_delta: float) -> void:
-	bullet_damage = gamedata.damage
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("Disparo") and cooldown==true:
 		shoot_count()

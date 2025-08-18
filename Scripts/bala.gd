@@ -3,10 +3,11 @@ var pos:Vector2
 var rota:float
 var dir:float
 var speed=2000
-var damage: int
+var damage: int = gamedata.damage
 
 #funcion que consigue la posicion y rotacion global + destruye bala si existio por 3 segundos
 func _ready():
+	damage = gamedata.damage
 	global_position=pos
 	global_rotation=rota
 	await get_tree().create_timer(0.7).timeout

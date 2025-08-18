@@ -35,13 +35,6 @@ func _ready():
 			enemigo.target = personaje
 			await get_tree().create_timer(1).timeout
 			
-	if gamedata.currentWave==20:
-			var jefe = preload("res://Escenas/jefe.tscn").instantiate()
-			add_child(jefe)
-			jefe.global_position = Vector2(randi_range(608, 2560), randi_range(16, 2704))
-			jefe.target = personaje
-			await get_tree().create_timer(1).timeout
-
 func _on_timer_timeout() -> void:
 	if gamedata.currentWave<20:
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")

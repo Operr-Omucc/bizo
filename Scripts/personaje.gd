@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	
 	var direccion = Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
 	velocity = direccion * speed
-	if Input.is_action_just_pressed("Dash") && cooldown && jefe == null:
+	if Input.is_action_just_pressed("Dash") && cooldown:
 		start_dash()
 	healthBar.value = health
 	healthBar.max_value = maxHealth

@@ -8,10 +8,12 @@ var mejora = mejora_path
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 
 	gamedata.rep = 0
-	mejora.queue_free()
 	if mejora!=null:
 		mejora.queue_free()
-	get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
+	if gamedata.currentWave == 20:
+		get_tree().change_scene_to_file("res://Escenas/batalla_jefe.tscn")
+	elif gamedata.currentWave < 20:
+		get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
 
 func _on_palanca_pressed() -> void:
 	$Palanca.disabled = true

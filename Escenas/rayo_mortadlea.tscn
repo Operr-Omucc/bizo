@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm6rlm5t7dgk8"]
+[gd_scene load_steps=10 format=3 uid="uid://dm6rlm5t7dgk8"]
 
 [ext_resource type="Texture2D" uid="uid://cwn5lgv3neo5e" path="res://Sprites/advertencia_rm.png" id="1_2pwo1"]
 [ext_resource type="Texture2D" uid="uid://dje603yahuiiy" path="res://Sprites/rayo_mortadela.png" id="1_qnjrp"]
 [ext_resource type="Script" uid="uid://ixvk7hi7shxf" path="res://Scripts/rayo_mortadela.gd" id="2_2pwo1"]
-
-[sub_resource type="GDScript" id="GDScript_ujp40"]
 
 [sub_resource type="Animation" id="Animation_d2y62"]
 resource_name = "advertir"
@@ -67,7 +65,6 @@ _data = {
 }
 
 [node name="RayoMortadela" type="Node2D"]
-script = SubResource("GDScript_ujp40")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-9549, 0)
@@ -96,3 +93,6 @@ shape = SubResource("RectangleShape2D_ujp40")
 libraries = {
 &"": SubResource("AnimationLibrary_rbytw")
 }
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
