@@ -18,7 +18,6 @@ func _ready():
 		arma.position = Vector2(120.0, 30.0)
 	if brazo!=null:
 		personaje.add_child(brazo)
-		arma.position = Vector2(120.0, 30.0)
 
 func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer escenas que son nulas
 	if scene != null:

@@ -24,7 +24,6 @@ func _ready():
 		arma.position = Vector2(120.0, 30.0)
 	if brazo!=null:
 		personaje.add_child(brazo)
-		arma.position = Vector2(120.0, 30.0)
 
 	# Añade enemigo
 	if gamedata.currentWave<20:
