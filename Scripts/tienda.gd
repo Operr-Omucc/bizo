@@ -26,7 +26,7 @@ func _on_palanca_pressed() -> void:
 		gamedata.money_amount -= reroll
 		for n in (3):
 			mejora= mejora_path.instantiate()
-			mejora.tipo_mejora = randi_range(1,2)
+			mejora.tipo_mejora = randi_range(1,3)
 			get_parent().add_child(mejora)
 			mejora.global_position= Vector2(230, 230)
 			await get_tree().create_timer(1).timeout

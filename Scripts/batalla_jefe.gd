@@ -7,11 +7,13 @@ var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
 func _ready():
+	
+	
+	
 	#Spawnea todo adentro del mundo
 	
 	add_child(personaje)
 	personaje.global_position = Vector2(-6592,-384)
-
 	# Añade arma al personaje
 	if arma!=null:
 		personaje.add_child(arma)

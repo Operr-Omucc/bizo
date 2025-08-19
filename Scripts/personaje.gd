@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var speed
 var cooldown:bool = true
-var money: int
 var health: int
 var maxHealth: int
 @onready var healthBar: TextureProgressBar = $Camera2D/CanvasLayer/TextureProgressBar
@@ -10,12 +9,9 @@ var maxHealth: int
 
 
 func _ready():
-	money = 0
 	maxHealth = gamedata.maxHealth
 	health = gamedata.health
-	speed = 500
-	maxHealth += gamedata.maxHealth
-	health += gamedata.health
+	speed = gamedata.speed+500
 	self.add_to_group("personaje")
 	
 #Movimiento basico
@@ -27,7 +23,6 @@ func _physics_process(_delta):
 		start_dash()
 	healthBar.value = health
 	healthBar.max_value = maxHealth
-	gamedata.money_amount += money
 	move_and_slide()
 	
 	

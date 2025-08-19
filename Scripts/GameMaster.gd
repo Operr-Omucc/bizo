@@ -1,8 +1,12 @@
 extends Node2D
 
-var personaje = gamedata.chara_Scene.instantiate()
-var arma =safe_instance(gamedata.gun_scene)
-var brazo = safe_instance(gamedata.arm_scene)
+const ENEMIGOS = {
+	1: preload("res://Escenas/enemigo.tscn"),
+	2: preload("res://Escenas/tanque.tscn"),
+	3: preload("res://Escenas/petizo.tscn")
+}
+
+var personaje
 var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
@@ -13,27 +17,11 @@ func _physics_process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
 		
 func _ready():
-	#Spawnea todo adentro del mundo
-	
-	add_child(personaje)
-	personaje.global_position = Vector2(896, 704)
-
-	# Añade arma al personaje
-	if arma!=null:
-		personaje.add_child(arma)
-		arma.position = Vector2(120.0, 30.0)
-	if brazo!=null:
-		personaje.add_child(brazo)
-
-	# Añade enemigo
-	if gamedata.currentWave<20:
-		for n in (wave_dif * dif):
-			var enemigo = preload("res://Escenas/enemigo.tscn").instantiate()
-			add_child(enemigo)
-			enemigo.global_position = Vector2(randi_range(608, 2560), randi_range(16, 2704))
-			enemigo.target = personaje
-			await get_tree().create_timer(1).timeout
-			
+	#Spawnea personaje y enemigos adentro del mundo
+	spawn_char()
+	spawn_wave()
+	#FIN DE READY
+				
 func _on_timer_timeout() -> void:
 	if gamedata.currentWave<20:
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
@@ -44,3 +32,34 @@ func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer es
 	if scene != null:
 		return scene.instantiate()
 	return null
+
+
+func spawn_wave():
+	if gamedata.currentWave < 20:
+		for n in wave_dif * dif:
+			var r = randi_range(1, ENEMIGOS.size())
+			var enemigo = ENEMIGOS[r].instantiate()
+			
+			add_child(enemigo)
+			enemigo.global_position = Vector2(
+				randi_range(-600, 3712), # pos X
+				randi_range(-1832, 3648) # pos Y
+			)
+			enemigo.target = personaje
+			
+			await get_tree().create_timer(1).timeout
+
+func spawn_char():
+	personaje = gamedata.chara_Scene.instantiate()
+	var arma =safe_instance(gamedata.gun_scene)
+	var brazo = safe_instance(gamedata.arm_scene)
+	
+	add_child(personaje)
+	
+	personaje.global_position = Vector2(896, 704)
+	
+	if arma!=null:
+		personaje.add_child(arma)
+		arma.position = Vector2(120.0, 30.0)
+	if brazo!=null:
+		personaje.add_child(brazo)

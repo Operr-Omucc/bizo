@@ -1,18 +1,19 @@
 extends CharacterBody2D
+
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var target = get_tree().get_nodes_in_group("personaje")
 @onready var coin=preload("res://Escenas/moneda.tscn")
 var health: int
 var cooldown=true
-var speed=150
-var damage = gamedata.enemy_damage()
+var speed=90
+var damage = gamedata.enemy_damage()*2
 
 var knockback: Vector2=Vector2.ZERO
 var knockback_timer: float=0.0
 
 func _ready() -> void:
 	self.add_to_group("enemigo")
-	health = 40
+	health = 100
 	await get_tree().process_frame
 	set_physics_process(false)
 	await get_tree().create_timer(1.00).timeout

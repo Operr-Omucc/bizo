@@ -5,32 +5,39 @@
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="3_fw4w5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_aou4a"]
-vertices = PackedVector2Array(-238.922, 816.852, 1025.95, 1315.2, -1572.01, 1315.99, -363.078, 816.852, -1573.52, -67.8203, -1127.88, -67.8203, -363.078, -1035.8, -1127.88, -1409.13, 1025.95, -1409.79, -238.922, -1035.8)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 3, 5, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(8, 1, 0, 9)])
+vertices = PackedVector2Array(1025.95, 993.203, -1017.78, 993.203, -1017.78, -1404.56, 1025.95, -1404.56)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1585, -1419, 1674, -1420, 1674, 1325, -1582, 1326)])
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_f4s1m")
+metadata/_edit_horizontal_guides_ = [9632.0]
 
 [node name="Piso" parent="." instance=ExtResource("1_fw4w5")]
-position = Vector2(1610, 1364)
-scale = Vector2(6.53296, 5.81519)
+position = Vector2(-96, -1840)
+scale = Vector2(14.2133, 13.5956)
+offset = Vector2(120.028, 235.664)
 
 [node name="Navegacion+paredes" type="NavigationRegion2D" parent="."]
 position = Vector2(1581, 1411)
+scale = Vector2(2.17563, 2.33795)
 navigation_polygon = SubResource("NavigationPolygon_aou4a")
 
 [node name="Pared2" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(1371, -43)
 scale = Vector2(3.60264, 5.97552)
 
-[node name="Pared" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(-1359, -753)
-scale = Vector2(2.37764, 2.84486)
-
 [node name="Pared3" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(-301, -114)
-scale = Vector2(0.56, 3.88)
+position = Vector2(30.7956, -1599.26)
+scale = Vector2(24.9701, 0.778225)
+
+[node name="Pared4" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+position = Vector2(19.7644, 1186.08)
+scale = Vector2(24.9701, 0.778225)
+
+[node name="Pared5" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+position = Vector2(-1362.82, -107.359)
+scale = Vector2(3.60264, 5.97552)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

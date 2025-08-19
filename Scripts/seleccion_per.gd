@@ -73,8 +73,8 @@ func _on_x_pressed() -> void:
 			child.visible = false
 
 func _on_bloq_pj_1_pressed() -> void:
-	if gamedata.money_amount >= 20:
-		gamedata.money_amount -= 20
+	if gamedata.game_money >= 20:
+		gamedata.game_money -= 20
 		$bloq_pj/bloq_pj1.visible = false
 
 func try_unlock(character_name: String) -> void:
@@ -97,13 +97,13 @@ func try_unlock(character_name: String) -> void:
 	else:
 		print("No tienes suficiente dinero")
 
-func update_character_ui(name: String):
-	$bloq_pj.get_node("bloq_" + name).visible = false #ACTUALIZA UI PARA DESBLOQUEAR PERSONAJE
+func update_character_ui(namen: String):
+	$bloq_pj.get_node("bloq_" + namen).visible = false #ACTUALIZA UI PARA DESBLOQUEAR PERSONAJE
 	
 func check_condition(cond: String) -> bool:
 	match cond: #REVISA CONDICIONES PARA DESBLOQUEO DE PERSONAJES
-		"pj1_unlocked":
-			return characters["pj1"]["unlocked"]
+		"pj4_unlocked":
+			return characters[4]["unlocked"]
 		"win_with_all":
 			return gamedata.all_characters_won
 		_:
