@@ -35,9 +35,6 @@ func _on_area_2d_body_entered(body):
 			await get_tree().create_timer(1.00).timeout #tiempo de invulnerabilidad del jugador
 			cooldown = true
 			
-			if body.health < 1:
-				gamedata.currentWave = 1
-				get_tree().call_deferred("change_scene_to_file","res://Escenas/main_menu.tscn")
 			
 	elif body.is_in_group("bala") || body.is_in_group("brazo"):
 		if health > 0:

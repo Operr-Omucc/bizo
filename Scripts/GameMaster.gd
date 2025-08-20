@@ -3,7 +3,8 @@ extends Node2D
 const ENEMIGOS = {
 	1: preload("res://Escenas/enemigo.tscn"),
 	2: preload("res://Escenas/tanque.tscn"),
-	3: preload("res://Escenas/petizo.tscn")
+	3: preload("res://Escenas/petizo.tscn"),
+	4: preload("res://Escenas/tirador.tscn")
 }
 
 var personaje

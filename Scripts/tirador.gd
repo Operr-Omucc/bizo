@@ -1,19 +1,19 @@
 extends CharacterBody2D
-
+@onready var torreta = $torreta
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var target = get_tree().get_nodes_in_group("personaje")
 @onready var coin=preload("res://Escenas/moneda.tscn")
 var health: int
 var cooldown=true
-var speed=90
-var damage = gamedata.enemy_damage()*2
+var speed=150
+var damage = gamedata.enemy_damage()
 
 var knockback: Vector2=Vector2.ZERO
 var knockback_timer: float=0.0
 
 func _ready() -> void:
 	self.add_to_group("enemigo")
-	health = 100
+	health = 20
 	await get_tree().process_frame
 	set_physics_process(false)
 	await get_tree().create_timer(1.00).timeout
@@ -57,25 +57,28 @@ func _physics_process(_delta):
 			knockback_timer -= _delta
 			if knockback_timer <= 0.0:
 				knockback = Vector2.ZERO
-	else:
-		_navegacion(_delta)
+	navegacion(_delta)
 	move_and_slide()
 	
 #funcion que se ejecuta cada segundo, funciona tambien para detectar la posicion del jugador y perseguirlo
-func _navegacion(_delta):
+func navegacion(_delta):
 	if target and target.is_inside_tree():
-		if navigation_agent.is_navigation_finished():
-			var distancia = target.global_position.distance_to(navigation_agent.target_position)
-			if distancia < 4:
-				return  # Ya llegó o no necesita recalcular
 		navigation_agent.target_position = target.global_position
+
+		var distancia = global_position.distance_to(target.global_position)
+
+		if distancia < 800:  # Puedes ajustar esta distancia
+			speed = 0
+			torreta.disparo()
+		else:
+			speed = 150  # Velocidad normal
 
 		var siguiente = navigation_agent.get_next_path_position()
 		if siguiente != Vector2.ZERO:
 			velocity = global_position.direction_to(siguiente) * speed
 		else:
-			velocity = Vector2.ZERO  # Sin dirección válida
-		move_and_slide()
+			velocity = Vector2.ZERO
+
 		
 func apply_knockback(knockback_direction: Vector2, knockback_force: float, knockback_duration: float) -> void:
 	knockback = knockback_direction * knockback_force
