@@ -10,8 +10,7 @@ var maxHealth: int = 0
 var health: int = 0
 var damage: int
 var speed: int
-#var fire_rate: int = gun_scene.fire_rate
-
+var fire_rate: int = 1
 
 @export var currentWave: int
 var rep: int

@@ -6,7 +6,7 @@ var fire_rate: float
 @export var bullet_damage: int
 
 func _ready() -> void:
-	fire_rate = 0.70
+	fire_rate =  gamedata.fire_rate - 0.3
 	bullet_damage = 20
 	if gamedata.damage <1:
 		gamedata.damage += bullet_damage

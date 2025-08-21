@@ -341,6 +341,16 @@ theme_override_font_sizes/font_size = 77
 text = "X20"
 icon = ExtResource("11_ug5up")
 
+[node name="bloq_pj2" type="Button" parent="bloq_pj"]
+offset_left = 362.0
+offset_top = 190.0
+offset_right = 1155.0
+offset_bottom = 732.0
+scale = Vector2(0.0874586, 0.113335)
+theme_override_font_sizes/font_size = 77
+text = "X128"
+icon = ExtResource("11_ug5up")
+
 [connection signal="pressed" from="popup/Personaje1/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
 [connection signal="pressed" from="popup/Personaje1/X" to="." method="_on_x_pressed"]
 [connection signal="pressed" from="popup/Personaje2/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
@@ -354,3 +364,4 @@ icon = ExtResource("11_ug5up")
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="bloq_pj/bloq_pj1" to="." method="_on_bloq_pj_1_pressed"]
+[connection signal="pressed" from="bloq_pj/bloq_pj2" to="." method="_on_bloq_pj_2_pressed"]

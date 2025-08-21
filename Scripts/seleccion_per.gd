@@ -2,23 +2,27 @@ extends Node2D
 var chosen_Character
 var characters = {
 	1: {
+		"character_name": "Bob",
 		"maxHealth": 100,
 		"scene": preload("res://Personajes/personaje.tscn"),
 		"arm": preload("res://Escenas/brazo.tscn"),
 		"gun": preload("res://Escenas/arma.tscn"),
 	},
 	2: {
+		"character_name": "Bob Enojado",
 		"maxHealth": 200,
 		"scene": preload("res://Personajes/personaje_enojado.tscn"),
 		"arm": preload("res://Escenas/brazo.tscn"),
 		"gun": preload("res://Escenas/arma.tscn"),
 	},
 	3: {
+		"character_name": "John Cowboy",
 		"maxHealth": 90,
 		"scene": preload("res://Personajes/john_cowboy.tscn"),
 		"gun": preload("res://Escenas/revolver.tscn"),
 	},
 	4: {
+		"character_name": "Bob Puñolimpio",
 		"maxHealth": 150,
 		"scene": preload("res://Personajes/bob_puñolimpio.tscn"),
 		"gun": preload("res://Escenas/brazo.tscn"),
@@ -76,35 +80,39 @@ func _on_bloq_pj_1_pressed() -> void:
 	if gamedata.game_money >= 20:
 		gamedata.game_money -= 20
 		$bloq_pj/bloq_pj1.visible = false
+func _on_bloq_pj_2_pressed() -> void:
+	if gamedata.game_money >= 128:
+		gamedata.game_money -= 128
+		$bloq_pj/bloq_pj2.visible = false
 
-func try_unlock(character_name: String) -> void:
-	var char_data = characters[character_name]
-	if char_data["unlocked"]:
-		return # ya desbloqueado
-		
-	 # chequear condiciones especiales
-	for cond in char_data["conditions"]:
-		if not check_condition(cond):
-			print("No puedes desbloquear aún:", cond)
-			return
-
-		# chequear dinero
-	if gamedata.money_amount >= char_data["cost"]:
-		gamedata.money_amount -= char_data["cost"]
-		char_data["unlocked"] = true
-		update_character_ui(character_name)
-		print(character_name, "desbloqueado!")
-	else:
-		print("No tienes suficiente dinero")
-
-func update_character_ui(namen: String):
-	$bloq_pj.get_node("bloq_" + namen).visible = false #ACTUALIZA UI PARA DESBLOQUEAR PERSONAJE
-	
-func check_condition(cond: String) -> bool:
-	match cond: #REVISA CONDICIONES PARA DESBLOQUEO DE PERSONAJES
-		"pj4_unlocked":
-			return characters[4]["unlocked"]
-		"win_with_all":
-			return gamedata.all_characters_won
-		_:
-			return false
+#func try_unlock(character_name: String) -> void:
+	#var char_data = characters[character_name]
+	#if char_data["unlocked"]:
+		#return # ya desbloqueado
+		#
+	 ## chequear condiciones especiales
+	#for cond in char_data["conditions"]:
+		#if not check_condition(cond):
+			#print("No puedes desbloquear aún:", cond)
+			#return
+#
+		## chequear dinero
+	#if gamedata.money_amount >= char_data["cost"]:
+		#gamedata.money_amount -= char_data["cost"]
+		#char_data["unlocked"] = true
+		#update_character_ui(character_name)
+		#print(character_name, "desbloqueado!")
+	#else:
+		#print("No tienes suficiente dinero")
+#
+#func update_character_ui(namen: String):
+	#$bloq_pj.get_node("bloq_" + namen).visible = false #ACTUALIZA UI PARA DESBLOQUEAR PERSONAJE
+	#
+#func check_condition(cond: String) -> bool:
+	#match cond: #REVISA CONDICIONES PARA DESBLOQUEO DE PERSONAJES
+		#"pj4_unlocked":
+			#return characters[4]["unlocked"]
+		#"win_with_all":
+			#return gamedata.all_characters_won
+		#_:
+			#return false

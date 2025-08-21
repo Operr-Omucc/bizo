@@ -1,8 +1,9 @@
 extends 'res://Scripts/arma.gd'
 var shots_fired = 0
 
+
 func _ready():
-	fire_rate = 0.3
+	fire_rate = gamedata.fire_rate - 0.7
 	bullet_damage = 40
 	if gamedata.damage <1:
 		gamedata.damage += bullet_damage
