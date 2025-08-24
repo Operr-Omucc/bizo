@@ -20,6 +20,7 @@ func _physics_process(_delta):
 		
 #funcion de disparo :P
 func fire():
+	AudioManager.play_disparo()
 	var bullet=bullet_path.instantiate()
 	bullet.add_to_group("bala")
 	bullet.dir=rotation
