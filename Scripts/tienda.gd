@@ -35,7 +35,6 @@ func _on_palanca_pressed() -> void:
 		await get_tree().create_timer(5).timeout
 		$Label.text = ""
 		
-	await get_tree().create_timer(3).timeout
 	$Palanca.disabled = false
 	
 	gamedata.money_amount -= reroll

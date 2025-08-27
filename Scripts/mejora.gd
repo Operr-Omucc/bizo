@@ -2,7 +2,7 @@ extends RigidBody2D
 var speed = 200
 var tipo_mejora:int
 var textura_mejora: String
-
+@onready var button: Button = $Button
 
 func _ready():
 	self.add_to_group("mejora")
@@ -12,9 +12,10 @@ func _ready():
 		$Sprite2D.texture=ResourceLoader.load("res://Sprites/mejora_daño.png")
 	elif (tipo_mejora >60 && tipo_mejora<=90):
 		$Sprite2D.texture=ResourceLoader.load("res://Sprites/mejora_velocidad.png")
-	elif (tipo_mejora>90):
+	elif (tipo_mejora>90 && tipo_mejora<=95):
 		$Sprite2D.texture=ResourceLoader.load("res://Sprites/mejora_fire_rate.png")
-
+	elif (tipo_mejora>95 && tipo_mejora<=100):
+		$Sprite2D.texture=ResourceLoader.load("res://Sprites/mejora_armadura.png")
 
 func _on_button_pressed() -> void:
 		if (tipo_mejora >=1 && tipo_mejora<=30):
@@ -27,6 +28,9 @@ func _on_button_pressed() -> void:
 		elif (tipo_mejora >60 && tipo_mejora<=90):
 			gamedata.speed += 10
 			self.queue_free()
-		elif (tipo_mejora>90):
+		elif (tipo_mejora>90 && tipo_mejora<=95):
 			gamedata.fire_rate /= 1.2
+			self.queue_free()
+		elif (tipo_mejora>95 && tipo_mejora<=100):
+			gamedata.armor += 10
 			self.queue_free()

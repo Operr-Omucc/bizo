@@ -34,21 +34,31 @@ func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer es
 		return scene.instantiate()
 	return null
 
-
 func spawn_wave():
 	if gamedata.currentWave < 20:
 		for n in wave_dif * dif:
 			var r = randi_range(1, ENEMIGOS.size())
 			var enemigo = ENEMIGOS[r].instantiate()
-			
 			add_child(enemigo)
-			enemigo.global_position = Vector2(
-				randi_range(-600, 3712), # pos X
-				randi_range(-1832, 3648) # pos Y
-			)
+
+			var intentos = 0
+			var spawn_pos : Vector2
+
+			while intentos < 20:
+				spawn_pos = Vector2(
+					randi_range(-600, 3712), # pos X
+					randi_range(-1832, 3648) # pos Y
+				)
+				var dist = spawn_pos.distance_to(personaje.global_position)
+				if dist >= 500:
+					break
+				intentos += 1
+
+			enemigo.global_position = spawn_pos
 			enemigo.target = personaje
-			
+
 			await get_tree().create_timer(1).timeout
+
 
 func spawn_char():
 	personaje = gamedata.chara_Scene.instantiate()

@@ -11,6 +11,7 @@ var health: int = 0
 var damage: int
 var speed: int
 var fire_rate: int = 1
+var armor : int
 
 @export var currentWave: int
 var rep: int
@@ -22,4 +23,6 @@ func _ready():
 func enemy_damage():
 	var base_damage = 5
 	var scaling_factor = 1.15
-	return base_damage * pow(scaling_factor, currentWave) * dif
+	return base_damage * pow(scaling_factor, currentWave) * dif - armor
+	if base_damage < 0:
+		base_damage = 2
