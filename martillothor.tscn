@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://mia8l6mixeib"]
+
+[ext_resource type="Texture2D" uid="uid://dw1np1vfdm8hh" path="res://Sprites/Martillothor.png" id="1_scme6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1scq"]
+size = Vector2(181, 143)
+
+[sub_resource type="Animation" id="Animation_lqmo8"]
+resource_name = "Golpe"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-156.24, 779.246), Vector2(241.8, 690.471), Vector2(360.84, 0), Vector2(316.2, -522.785)]
+}
+
+[sub_resource type="Animation" id="Animation_s7n4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-156.24, 779.246)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svb8t"]
+_data = {
+&"Golpe": SubResource("Animation_lqmo8"),
+&"RESET": SubResource("Animation_s7n4n")
+}
+
+[sub_resource type="Animation" id="Animation_scme6"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.502376, 0.834055, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.0525561),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 1), Vector2(49, -7), Vector2(17, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.305311, 0.54956, 0.74385, 0.884015, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.619437, 1.44626, 0.677566, 0.26966, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1scq"]
+_data = {
+&"Golpe": SubResource("Animation_scme6")
+}
+
+[node name="martillothor" type="CharacterBody2D"]
+position = Vector2(-156.24, 779.246)
+
+[node name="Arma" type="Sprite2D" parent="."]
+scale = Vector2(0.223396, 0.284931)
+texture = ExtResource("1_scme6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.98023e-08, 5.96046e-08)
+scale = Vector2(0.223396, 0.284931)
+shape = SubResource("RectangleShape2D_w1scq")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(8, -5)
+scale = Vector2(0.0806709, 0.0905525)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_svb8t"),
+&"martillo": SubResource("AnimationLibrary_w1scq")
+}

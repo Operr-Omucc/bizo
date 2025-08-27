@@ -30,6 +30,15 @@ var characters = {
 		"cost": 20, 
 		"unlocked": false,
 		"conditions": []
+	},
+	5: {
+		"character_name": "thor knockoff",
+		"maxHealth": 350,
+		"scene": preload("res://Personajes/thor_knockoff.tscn"),
+		"gun": preload(),
+		"cost": 0,
+		"unlocked": false,
+		"conditions": ["wingame"]
 	}
 }
 

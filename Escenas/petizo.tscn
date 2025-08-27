@@ -20,14 +20,16 @@ path_postprocessing = 1
 
 [node name="Enemigo" type="Sprite2D" parent="."]
 position = Vector2(2, 1)
+scale = Vector2(0.861977, 0.553862)
 texture = ExtResource("2_wqs1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 1)
-scale = Vector2(26.3106, 38.8744)
+scale = Vector2(22.6791, 21.5311)
 shape = SubResource("RectangleShape2D_jc0jm")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.861977, 0.553862)
 collision_layer = 3
 collision_mask = 3
 
