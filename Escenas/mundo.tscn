@@ -1,47 +1,89 @@
-[gd_scene load_steps=5 format=3 uid="uid://ullaw7ojc681"]
+[gd_scene load_steps=7 format=3 uid="uid://ullaw7ojc681"]
 
 [ext_resource type="Script" uid="uid://yhgaf5svr6nw" path="res://Scripts/GameMaster.gd" id="1_f4s1m"]
 [ext_resource type="PackedScene" uid="uid://b3iejitxon3ks" path="res://Escenas/piso.tscn" id="1_fw4w5"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="2_rxj15"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="3_fw4w5"]
+[ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="4_ly0wt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_aou4a"]
 vertices = PackedVector2Array(1025.95, 993.203, -1017.78, 993.203, -1017.78, -1404.56, 1025.95, -1404.56)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1585, -1419, 1674, -1420, 1674, 1325, -1582, 1326)])
 
-[node name="Mundo" type="Node2D"]
-script = ExtResource("1_f4s1m")
+[node name="Nodo" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [9632.0]
 
-[node name="Piso" parent="." instance=ExtResource("1_fw4w5")]
+[node name="Mundo" type="Node2D" parent="."]
+script = ExtResource("1_f4s1m")
+
+[node name="Piso" parent="Mundo" instance=ExtResource("1_fw4w5")]
 position = Vector2(-96, -1840)
 scale = Vector2(14.2133, 13.5956)
 offset = Vector2(120.028, 235.664)
 
-[node name="Navegacion+paredes" type="NavigationRegion2D" parent="."]
+[node name="Navegacion+paredes" type="NavigationRegion2D" parent="Mundo"]
 position = Vector2(1581, 1411)
 scale = Vector2(2.17563, 2.33795)
 navigation_polygon = SubResource("NavigationPolygon_aou4a")
 
-[node name="Pared2" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared2" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(1371, -43)
 scale = Vector2(3.60264, 5.97552)
 
-[node name="Pared3" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared3" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(30.7956, -1599.26)
 scale = Vector2(24.9701, 0.778225)
 
-[node name="Pared4" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared4" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(19.7644, 1186.08)
 scale = Vector2(24.9701, 0.778225)
 
-[node name="Pared5" parent="Navegacion+paredes" instance=ExtResource("3_fw4w5")]
+[node name="Pared5" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
 position = Vector2(-1362.82, -107.359)
 scale = Vector2(3.60264, 5.97552)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="Mundo"]
 process_callback = 0
 wait_time = 60.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Pause" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("4_ly0wt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Pause"]
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Pause/CanvasLayer"]
+position = Vector2(559, 260)
+texture = ExtResource("2_rxj15")
+
+[node name="Label" type="Label" parent="Pause/CanvasLayer"]
+offset_left = 477.0
+offset_top = 102.0
+offset_right = 654.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Juego pausado"
+
+[node name="Button" type="Button" parent="Pause/CanvasLayer"]
+offset_left = 475.0
+offset_top = 386.0
+offset_right = 483.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 25
+text = "Volver al juego"
+
+[node name="Button2" type="Button" parent="Pause/CanvasLayer"]
+offset_left = 470.0
+offset_top = 448.0
+offset_right = 659.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 25
+text = "Volver al menu
+"
+
+[connection signal="timeout" from="Mundo/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Pause/CanvasLayer/Button" to="Pause" method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/CanvasLayer/Button2" to="Pause" method="_on_button_2_pressed"]

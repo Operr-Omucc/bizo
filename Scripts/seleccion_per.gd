@@ -116,3 +116,7 @@ func _on_bloq_pj_2_pressed() -> void:
 			#return gamedata.all_characters_won
 		#_:
 			#return false
+
+
+func _on_button_5_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/main_menu.tscn")

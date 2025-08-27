@@ -16,7 +16,7 @@ func _physics_process(_delta: float) -> void:
 		gamedata.rep=0
 		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
-		
+	
 func _ready():
 	#Spawnea personaje y enemigos adentro del mundo
 	spawn_char()
