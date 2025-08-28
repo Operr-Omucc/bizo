@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://mia8l6mixeib"]
+[gd_scene load_steps=9 format=3 uid="uid://mia8l6mixeib"]
 
+[ext_resource type="Script" uid="uid://bqtggyc43ic5i" path="res://Scripts/martillothor.gd" id="1_fumo1"]
 [ext_resource type="Texture2D" uid="uid://dw1np1vfdm8hh" path="res://Sprites/Martillothor.png" id="1_scme6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1scq"]
@@ -62,7 +63,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.502376, 0.834055, 1),
+"times": PackedFloat32Array(-0.0333334, 0.0666666, 0.469043, 0.800722, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 0.0525561),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(20, 1), Vector2(49, -7), Vector2(17, 0), Vector2(0, 0)]
@@ -74,7 +75,7 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.305311, 0.54956, 0.74385, 0.884015, 1),
+"times": PackedFloat32Array(-0.0333334, 0.271978, 0.516227, 0.710517, 0.850682, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.619437, 1.44626, 0.677566, 0.26966, 0.0]
@@ -87,6 +88,7 @@ _data = {
 
 [node name="martillothor" type="CharacterBody2D"]
 position = Vector2(-156.24, 779.246)
+script = ExtResource("1_fumo1")
 
 [node name="Arma" type="Sprite2D" parent="."]
 scale = Vector2(0.223396, 0.284931)
@@ -106,3 +108,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_svb8t"),
 &"martillo": SubResource("AnimationLibrary_w1scq")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

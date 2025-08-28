@@ -16,7 +16,6 @@ func _ready():
 	
 #Movimiento basico
 func _physics_process(_delta):
-	
 	on_death()
 	var direccion = Input.get_vector("Izquierda","Derecha","Arriba","Abajo")
 	velocity = direccion * speed

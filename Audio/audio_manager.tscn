@@ -10,7 +10,6 @@ script = ExtResource("1_x7qoq")
 
 [node name="disparo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_43dpk")
-volume_db = -8.0
 
 [node name="derrota" type="AudioStreamPlayer" parent="."]
 

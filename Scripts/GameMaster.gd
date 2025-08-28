@@ -6,13 +6,12 @@ const ENEMIGOS = {
 	3: preload("res://Escenas/petizo.tscn"),
 	4: preload("res://Escenas/tirador.tscn")
 }
-
 var personaje
 var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
-
+@export var ene_cant = wave_dif * dif
 func _physics_process(_delta: float) -> void:
-	if gamedata.rep == wave_dif*dif: #revisa si todos los enemigos estan muertos
+	if gamedata.rep == ene_cant: #revisa si todos los enemigos estan muertos
 		gamedata.rep=0
 		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
@@ -25,6 +24,7 @@ func _ready():
 				
 func _on_timer_timeout() -> void:
 	if gamedata.currentWave<20:
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
 	elif gamedata.currentWave==20:
 		return
@@ -35,16 +35,17 @@ func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer es
 	return null
 
 func spawn_wave():
+	var n:int
 	if gamedata.currentWave < 20:
-		for n in wave_dif * dif:
+		while n < ene_cant:
 			var r = randi_range(1, ENEMIGOS.size())
 			var enemigo = ENEMIGOS[r].instantiate()
 			add_child(enemigo)
-
+			n+=1
 			var intentos = 0
 			var spawn_pos : Vector2
 
-			while intentos < 20:
+			while intentos < 99:
 				spawn_pos = Vector2(
 					randi_range(-600, 3712), # pos X
 					randi_range(-1832, 3648) # pos Y
@@ -59,10 +60,9 @@ func spawn_wave():
 
 			await get_tree().create_timer(1).timeout
 
-
 func spawn_char():
 	personaje = gamedata.chara_Scene.instantiate()
-	var arma =safe_instance(gamedata.gun_scene)
+	var arma = safe_instance(gamedata.gun_scene)
 	var brazo = safe_instance(gamedata.arm_scene)
 	
 	add_child(personaje)
