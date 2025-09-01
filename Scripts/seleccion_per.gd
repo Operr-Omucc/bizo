@@ -1,46 +1,6 @@
 extends Node2D
 var chosen_Character
-var characters = {
-	1: {
-		"character_name": "Bob",
-		"maxHealth": 100,
-		"scene": preload("res://Personajes/personaje.tscn"),
-		"arm": preload("res://Escenas/brazo.tscn"),
-		"gun": preload("res://Escenas/arma.tscn"),
-	},
-	2: {
-		"character_name": "Bob Enojado",
-		"maxHealth": 200,
-		"scene": preload("res://Personajes/personaje_enojado.tscn"),
-		"arm": preload("res://Escenas/brazo.tscn"),
-		"gun": preload("res://Escenas/arma.tscn"),
-	},
-	3: {
-		"character_name": "John Cowboy",
-		"maxHealth": 90,
-		"scene": preload("res://Personajes/john_cowboy.tscn"),
-		"gun": preload("res://Escenas/revolver.tscn"),
-	},
-	4: {
-		"character_name": "Bob Puñolimpio",
-		"maxHealth": 150,
-		"scene": preload("res://Personajes/bob_puñolimpio.tscn"),
-		"gun": preload("res://Escenas/brazo.tscn"),
-		"arm": preload ("res://Escenas/brazo.tscn"),
-		"cost": 20, 
-		"unlocked": false,
-		"conditions": []
-	},
-	5: {
-		"character_name": "thor knockoff",
-		"maxHealth": 350,
-		"scene": preload("res://Personajes/thor_knockoff.tscn"),
-		"gun": preload("res://Escenas/martillothor.tscn"),
-		"cost": 0,
-		"unlocked": false,
-		"conditions": ["wingame"]
-	}
-}
+
 
 
 #funcion que envia dificultad al mundo
@@ -72,8 +32,8 @@ func _on_button_6_pressed() -> void:
 	chosen_Character = 5
 	
 func _on_iniciar_juego_pressed() -> void:
-	if chosen_Character in characters:
-		var chara = characters[chosen_Character]
+	if chosen_Character in gamedata.characters:
+		var chara = gamedata.characters[chosen_Character]
 		gamedata.maxHealth = chara["maxHealth"]
 		gamedata.health = chara["maxHealth"]
 		gamedata.chara_Scene = chara["scene"]

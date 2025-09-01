@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bua4oag62b3c7"]
+
+[ext_resource type="Script" uid="uid://dhk5svlu25kkg" path="res://Scripts/rayo.gd" id="1_87c7s"]
+[ext_resource type="Script" uid="uid://c4kqxxxuc2ow1" path="res://Escenas/area_2d.gd" id="2_ncdqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncdqs"]
+size = Vector2(371, 20)
+
+[node name="Rayo" type="Node2D"]
+script = ExtResource("1_87c7s")
+
+[node name="rayinio" type="Line2D" parent="."]
+scale = Vector2(2.55273, 5.52105)
+points = PackedVector2Array(371, 0, 0, 0)
+default_color = Color(0, 0.913646, 0.913646, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.55273, 5.52105)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_ncdqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(185.5, 0)
+shape = SubResource("RectangleShape2D_ncdqs")

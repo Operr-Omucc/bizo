@@ -21,12 +21,18 @@ func _physics_process(_delta):
 #funcion de disparo :P
 func fire():
 	AudioManager.play_disparo()
-	var bullet=bullet_path.instantiate()
-	bullet.add_to_group("bala")
-	bullet.dir=rotation
-	bullet.pos=$Node2D.global_position
-	bullet.rota=global_rotation
-	get_parent().get_parent().add_child(bullet)
+	if not cooldown:
+		return
+	#instancia la bala y añade el marker2D para poder disparar
+	var bullet = bullet_path.instantiate()
+	var muzzle: Node2D = $Node2D
+	#establece la posicion, rotacion y direccion de la bala
+	bullet.pos = muzzle.global_position
+	bullet.rota = muzzle.global_rotation
+	bullet.dir = Vector2.RIGHT.rotated(muzzle.global_rotation) # opcional
+	#añade la bala al arbol actual
+	get_tree().current_scene.add_child(bullet)
+	#propiedades de cooldown
 	cooldown = false
 	await get_tree().create_timer(fire_rate).timeout
 	cooldown = true

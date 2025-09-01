@@ -3,7 +3,7 @@ extends Node2D
 func _input(event: InputEvent):
 	if event.is_action_pressed("Menu pausa"):
 		if get_tree().paused == true:
-			$CanvasLayer.visible = true
+			$CanvasLayer.visible = false
 			get_tree().paused = false
 		else:
 			get_tree().paused = true

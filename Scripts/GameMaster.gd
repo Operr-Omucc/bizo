@@ -35,14 +35,12 @@ func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer es
 	return null
 
 func spawn_wave():
-	var n:int
 	if gamedata.currentWave < 20:
 		for a in ene_cant:
-			if n <= ene_cant:
+			if a <= ene_cant:
 				var r = randi_range(1, ENEMIGOS.size())
 				var enemigo = ENEMIGOS[r].instantiate()
 				add_child(enemigo)
-				n+=1
 				var intentos = 0
 				var spawn_pos : Vector2
 
@@ -58,8 +56,8 @@ func spawn_wave():
 
 				enemigo.global_position = spawn_pos
 				enemigo.target = personaje
-
-				await get_tree().create_timer(1).timeout
+				if get_tree() != null:
+					await get_tree().create_timer(1).timeout
 
 func spawn_char():
 	personaje = gamedata.chara_Scene.instantiate()

@@ -26,3 +26,45 @@ func enemy_damage():
 	return base_damage * pow(scaling_factor, currentWave) * dif - armor
 	if base_damage < 0:
 		base_damage = 2
+
+var characters = {
+	1: {
+		"character_name": "Bob",
+		"maxHealth": 100,
+		"scene": preload("res://Personajes/personaje.tscn"),
+		"arm": preload("res://Escenas/brazo.tscn"),
+		"gun": preload("res://Escenas/arma.tscn"),
+	},
+	2: {
+		"character_name": "Bob Enojado",
+		"maxHealth": 200,
+		"scene": preload("res://Personajes/personaje_enojado.tscn"),
+		"arm": preload("res://Escenas/brazo.tscn"),
+		"gun": preload("res://Escenas/arma.tscn"),
+	},
+	3: {
+		"character_name": "John Cowboy",
+		"maxHealth": 90,
+		"scene": preload("res://Personajes/john_cowboy.tscn"),
+		"gun": preload("res://Escenas/revolver.tscn"),
+	},
+	4: {
+		"character_name": "Bob Puñolimpio",
+		"maxHealth": 150,
+		"scene": preload("res://Personajes/bob_puñolimpio.tscn"),
+		"gun": preload("res://Escenas/brazo.tscn"),
+		"arm": preload ("res://Escenas/brazo.tscn"),
+		"cost": 20, 
+		"unlocked": false,
+		"conditions": []
+	},
+	5: {
+		"character_name": "thor knockoff",
+		"maxHealth": 350,
+		"scene": preload("res://Personajes/thor_knockoff.tscn"),
+		"arm": preload("res://Escenas/martillothor.tscn"),
+		"cost": 0,
+		"unlocked": false,
+		"conditions": ["wingame"]
+	}
+}

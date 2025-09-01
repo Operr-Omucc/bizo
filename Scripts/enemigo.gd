@@ -82,11 +82,12 @@ func apply_knockback(knockback_direction: Vector2, knockback_force: float, knock
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("brazo"):
+	if area.is_in_group("brazo") || area.is_in_group("bala"):
 		if health > 0:
 			health = health - area.damage
 			
 		if health <= 1:
+			gamedata.rep+=1
 			var coin_instance = coin.instantiate()
 			coin_instance.add_to_group("coins")
 			coin_instance.position = global_position
