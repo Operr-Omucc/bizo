@@ -36,5 +36,3 @@ func _on_palanca_pressed() -> void:
 		$Label.text = ""
 		
 	$Palanca.disabled = false
-	
-	gamedata.money_amount -= reroll

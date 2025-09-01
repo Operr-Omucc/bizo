@@ -53,6 +53,7 @@ process_mode = 3
 script = ExtResource("4_ly0wt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Pause"]
+visible = false
 
 [node name="PantallaBlanca" type="Sprite2D" parent="Pause/CanvasLayer"]
 position = Vector2(559, 260)

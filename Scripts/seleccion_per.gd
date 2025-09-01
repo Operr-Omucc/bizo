@@ -35,7 +35,7 @@ var characters = {
 		"character_name": "thor knockoff",
 		"maxHealth": 350,
 		"scene": preload("res://Personajes/thor_knockoff.tscn"),
-		"gun": preload(),
+		"gun": preload("res://Escenas/martillothor.tscn"),
 		"cost": 0,
 		"unlocked": false,
 		"conditions": ["wingame"]
@@ -66,6 +66,10 @@ func _on_button_3_pressed() -> void:
 func _on_button_4_pressed() -> void:
 	$popup/Personaje4.visible = true
 	chosen_Character = 4
+	
+func _on_button_6_pressed() -> void:
+	$popup/Personaje4.visible = true
+	chosen_Character = 5
 	
 func _on_iniciar_juego_pressed() -> void:
 	if chosen_Character in characters:

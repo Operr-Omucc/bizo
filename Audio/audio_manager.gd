@@ -6,6 +6,10 @@ func _ready() -> void:
 	if not mute:
 		play_musica()
 
+func play_golpe():
+	if not mute:
+		$golpe.play()
+		
 func play_musica():
 	if not mute:
 		$musica.play()

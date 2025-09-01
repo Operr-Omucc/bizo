@@ -9,4 +9,5 @@ func _ready():
 func _on_body_entered(body: Node2D) -> void:
 	if brazo.puede_golpear and body.is_in_group("enemigo") :
 		var knockback_direction = (body.global_position - global_position).normalized()
+		AudioManager.play_golpe()
 		body.apply_knockback(knockback_direction, 250.0, 0.2)
