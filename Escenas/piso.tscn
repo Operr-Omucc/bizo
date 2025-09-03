@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3iejitxon3ks"]
 
-[ext_resource type="Texture2D" uid="uid://dssvcacfwivo5" path="res://Sprites/piso.png" id="1_ukljh"]
+[ext_resource type="Texture2D" uid="uid://c1pnrjugiuxun" path="res://Sprites/Piso/pasto2.jpg" id="1_ukljh"]
 
 [node name="Piso" type="Polygon2D"]
 texture_repeat = 2
 position = Vector2(-2, -1)
 texture = ExtResource("1_ukljh")
 polygon = PackedVector2Array(-247, -236, -247, 236, 247, 236, 247, -236)
-uv = PackedVector2Array(-4213.64, -4025.99, -4213.64, 4497.99, 4707.64, 4497.99, 4707.64, -4025.99)
+uv = PackedVector2Array(-238.454, -226.571, -238.454, 248.754, 259.025, 248.754, 259.025, -226.571)
 polygons = [PackedInt32Array(0, 1, 2, 3)]

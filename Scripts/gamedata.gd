@@ -62,6 +62,7 @@ var characters = {
 		"character_name": "thor knockoff",
 		"maxHealth": 350,
 		"scene": preload("res://Personajes/thor_knockoff.tscn"),
+		"gun": null,
 		"arm": preload("res://Escenas/martillothor.tscn"),
 		"cost": 0,
 		"unlocked": false,
