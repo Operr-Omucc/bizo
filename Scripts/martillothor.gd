@@ -4,7 +4,7 @@ var puede_golpear: bool
 var cooldown = true
 var CeroCooldown: bool = true
 
-var fire_rate: float
+var fire_rate: float = gamedata.fire_rate + 0.5
 var posicion_original: Vector2
 
 @onready var animacion_martillo: AnimationPlayer = $"Hombro/Sprite2D/Puño/AnimationPlayer"
@@ -45,7 +45,7 @@ func fire():
 	#establece la posicion, rotacion y direccion de la bala
 	ray.pos = muzzle.global_position
 	ray.rota = muzzle.global_rotation
-	ray.dir = Vector2.RIGHT.rotated(muzzle.sglobal_rotation) # opcional
+	ray.dir = Vector2.RIGHT.rotated(muzzle.global_rotation) # opcional
 	
 	#añade la bala al arbol actual
 	get_tree().current_scene.add_child(ray)

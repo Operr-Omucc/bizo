@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bua4oag62b3c7"]
 
 [ext_resource type="Script" uid="uid://dhk5svlu25kkg" path="res://Scripts/rayo.gd" id="1_87c7s"]
-[ext_resource type="Script" uid="uid://c4kqxxxuc2ow1" path="res://Escenas/area_2d.gd" id="2_ncdqs"]
+[ext_resource type="Script" uid="uid://c4kqxxxuc2ow1" path="res://Scripts/area_2d.gd" id="2_ncdqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncdqs"]
 size = Vector2(371, 20)
