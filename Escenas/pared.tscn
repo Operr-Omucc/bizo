@@ -11,7 +11,7 @@ collision_mask = 7
 
 [node name="Pared" type="Sprite2D" parent="."]
 position = Vector2(0, 0.75)
-scale = Vector2(1, 1.00318)
+scale = Vector2(0.386575, 1.8752)
 texture = ExtResource("1_56qo8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,24 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8luqybclkp04"]
 
 [ext_resource type="Script" uid="uid://fj3nuxhxq6x3" path="res://Scripts/personaje.gd" id="1_0a5x8"]
-[ext_resource type="Texture2D" uid="uid://d18t00yxsu617" path="res://Sprites/personaje.png" id="1_ly3pf"]
+[ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="2_0o1n1"]
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_0o1n1"]
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_i3p7x"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_y2j6e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a5x8"]
-size = Vector2(99.1894, 212.332)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0o1n1"]
 
 [node name="Personaje" type="CharacterBody2D"]
 script = ExtResource("1_0a5x8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ly3pf")
+texture = ExtResource("2_0o1n1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.500003)
-scale = Vector2(1.01623, 1.04627)
-shape = SubResource("RectangleShape2D_0a5x8")
+scale = Vector2(-2.9513, -6.92111)
+shape = SubResource("CapsuleShape2D_0o1n1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.00012207, -6.10352e-05)

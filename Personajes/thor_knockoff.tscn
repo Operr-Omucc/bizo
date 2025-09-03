@@ -1,24 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkdjl73140xf"]
 
-[ext_resource type="Texture2D" uid="uid://bryhxnck4xvoe" path="res://Sprites/thorknockoff.png" id="1_3pipb"]
 [ext_resource type="Script" uid="uid://b7rxeuv1fu4i8" path="res://Scripts/thor_knockoff.gd" id="1_mbdn2"]
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="2_mbdn2"]
+[ext_resource type="Texture2D" uid="uid://s06kih6b1v3i" path="res://Sprites/Thor.png" id="2_n6xo6"]
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="3_n6xo6"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="4_yvja7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_24r48"]
-size = Vector2(99.1894, 212.332)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbdn2"]
 
 [node name="Thor Knockoff" type="CharacterBody2D"]
 script = ExtResource("1_mbdn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3pipb")
+texture = ExtResource("2_n6xo6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.500003)
-scale = Vector2(1.02396, 1.04627)
-shape = SubResource("RectangleShape2D_24r48")
+scale = Vector2(3.4472, 7.5291)
+shape = SubResource("CapsuleShape2D_mbdn2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.00012207, -6.10352e-05)

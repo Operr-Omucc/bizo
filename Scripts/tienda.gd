@@ -29,11 +29,12 @@ func _on_palanca_pressed() -> void:
 	reroll *= gamedata.currentWave
 	if gamedata.money_amount >= reroll:
 		gamedata.money_amount -= reroll
+		$Palanca.icon 
 		for n in (3):
 			mejora= mejora_path.instantiate()
 			mejora.tipo_mejora = randi_range(1,100)
 			get_parent().add_child(mejora)
-			mejora.global_position= Vector2(230, 230)
+			mejora.global_position= Vector2(496, 112)
 			await get_tree().create_timer(1).timeout
 	elif gamedata.money_amount<reroll:
 		$Label.text = "No tenes dinero pa jaja salu2"

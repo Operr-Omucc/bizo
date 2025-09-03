@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3axl0oifrsab"]
+[gd_scene load_steps=12 format=3 uid="uid://b3axl0oifrsab"]
 
 [ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
-[ext_resource type="Texture2D" uid="uid://btoenq27aqipt" path="res://Sprites/dispenser.png" id="4_7flnv"]
+[ext_resource type="Texture2D" uid="uid://ce70jyd8tympv" path="res://Sprites/Dispenser.png" id="4_7flnv"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
-[ext_resource type="Texture2D" uid="uid://wh7ggjpoyose" path="res://Sprites/palanca.png" id="5_a2w3w"]
+[ext_resource type="Texture2D" uid="uid://d0f3stvj1i0ra" path="res://Sprites/Palanca-Arriba.png" id="5_a2w3w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7flnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2w3w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpnfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3u34"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvbfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r47"]
 
 [node name="Tienda" type="Node2D"]
 script = ExtResource("1_50q1o")
@@ -19,13 +31,17 @@ offset_left = 968.0
 offset_top = 584.0
 offset_right = 976.0
 offset_bottom = 592.0
-scale = Vector2(1.37316, 1.60099)
+scale = Vector2(1.38596, 1.60099)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7flnv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a2w3w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lpnfq")
 text = "Volver al juego"
 
 [node name="Pared" parent="." instance=ExtResource("5_7flnv")]
 position = Vector2(404, 620)
 rotation = -1.56429
-scale = Vector2(0.195258, 1.70631)
+scale = Vector2(-0.449663, 1.68418)
 
 [node name="Pared2" parent="." instance=ExtResource("5_7flnv")]
 position = Vector2(21, 464)
@@ -38,14 +54,18 @@ rotation = 0.00443184
 scale = Vector2(0.170616, 0.71297)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(236, 111)
+position = Vector2(496, 96)
 texture = ExtResource("4_7flnv")
 
 [node name="Palanca" type="Button" parent="."]
-offset_left = 484.0
-offset_top = -16.0
-offset_right = 590.0
-offset_bottom = 207.0
+offset_left = -8.0
+offset_top = 32.0
+offset_right = 215.0
+offset_bottom = 255.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v3u34")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gvbfd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_56r47")
 icon = ExtResource("5_a2w3w")
 
 [node name="Label" type="Label" parent="."]
