@@ -56,28 +56,30 @@ func fire():
 	
 func CeroMetralleta():
 	var rando = randi_range(10, 100)
-	
-	if CeroCooldown == true:
-		CeroCooldown = false
-		for i in rando:
-			
-			var ray = preload("res://Escenas/rayo.tscn").instantiate()
-			
-			# Copiamos la posición del muzzle y le agregamos un Y aleatorio
-			var pos = muzzle.global_position
-			
-			# Dirección hacia el mouse
-			ray.pos = muzzle.global_position
-			ray.pos.y += randi_range(-600, 600)
-			ray.rota = muzzle.global_rotation
-			ray.dir = Vector2.RIGHT.rotated(muzzle.global_rotation) # opcional
-			
-			# Añade la bala al árbol
-			get_tree().current_scene.add_child(ray)
+	if self != null:
+		if CeroCooldown == true:
+			CeroCooldown = false
+			for i in rando:
+					var ray = preload("res://Escenas/rayo.tscn").instantiate()
+					
+					# Copiamos la posición del muzzle y le agregamos un Y aleatorio
+					var pos = muzzle.global_position
+					
+					# Dirección hacia el mouse
+					ray.pos = muzzle.global_position
+					ray.pos.y += randi_range(-600, 600)
+					ray.rota = muzzle.global_rotation
+					ray.dir = Vector2.RIGHT.rotated(muzzle.global_rotation) # opcional
+					
+					# Añade la bala al árbol
+					if is_inside_tree():
+						get_tree().current_scene.add_child(ray)
 
-			# Añade Cooldown
-			cooldown = false
-			await get_tree().create_timer(0.1).timeout
-			cooldown = true
-		await get_tree().create_timer(10).timeout
-		CeroCooldown = true
+					# Añade Cooldown
+					if is_inside_tree():
+						cooldown = false
+						await get_tree().create_timer(0.1).timeout
+						cooldown = true
+			if is_inside_tree():
+				await get_tree().create_timer(10).timeout
+			CeroCooldown = true
