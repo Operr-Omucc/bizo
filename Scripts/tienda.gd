@@ -5,6 +5,11 @@ var reroll:int = 3
 var mejora = mejora_path
 @onready var mejora_path= preload("res://Escenas/mejora.tscn")
 
+func _ready() -> void:
+	$Label.add_theme_color_override("font_color", Color.BLACK)
+	$Label.text = "Tenes %s dinero, gastalo bien 
+	la tirada cuesta %s" % [gamedata.money_amount, reroll]	
+
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 
 	gamedata.rep = 0
@@ -33,6 +38,5 @@ func _on_palanca_pressed() -> void:
 	elif gamedata.money_amount<reroll:
 		$Label.text = "No tenes dinero pa jaja salu2"
 		await get_tree().create_timer(5).timeout
-		$Label.text = ""
-		
+		$Label.text = "Tenes %s dinero, gastalo bien, la tirada cuesta %s" % [gamedata.money_amount, reroll]	
 	$Palanca.disabled = false

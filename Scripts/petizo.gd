@@ -20,9 +20,13 @@ func _ready() -> void:
 	call_deferred("wait_for_physics")
 	
 func wait_for_physics():
-	if self!=null:
-		await get_tree().physics_frame
-		set_physics_process(true)
+	if not is_inside_tree():
+		return
+	await get_tree().physics_frame
+	if not is_inside_tree():
+		return
+	set_physics_process(true)
+
 
 #Funcion para eliminar personaje + deteccion de colision con bala de ser verdadero quita vida al enemigo/jugador
 func _on_area_2d_body_entered(body):

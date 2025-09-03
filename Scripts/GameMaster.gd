@@ -56,7 +56,9 @@ func spawn_wave():
 
 				enemigo.global_position = spawn_pos
 				enemigo.target = personaje
-				if get_tree() != null:
+				if gamedata.currentWave > 15:
+					enemigo.health += enemigo.health/2
+				if is_inside_tree():
 					await get_tree().create_timer(1).timeout
 
 func spawn_char():

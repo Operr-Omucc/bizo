@@ -56,7 +56,6 @@ func fire():
 	
 func CeroMetralleta():
 	var rando = randi_range(10, 100)
-	var muzzle: Marker2D = $"Hombro/Sprite2D/Puño/Marker2D"
 	
 	if CeroCooldown == true:
 		CeroCooldown = false
