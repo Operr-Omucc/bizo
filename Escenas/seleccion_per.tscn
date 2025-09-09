@@ -288,7 +288,6 @@ text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="Personaje5" type="CanvasLayer" parent="popup"]
-visible = false
 
 [node name="PantallaBlanca" type="Sprite2D" parent="popup/Personaje5"]
 position = Vector2(561, 324)
@@ -314,10 +313,10 @@ text = "Thor"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="popup/Personaje5"]
-offset_left = 462.0
-offset_top = 146.0
-offset_right = 834.0
-offset_bottom = 268.0
+offset_left = 491.0
+offset_top = 122.0
+offset_right = 863.0
+offset_bottom = 244.0
 scale = Vector2(0.923678, 1.03781)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
@@ -327,16 +326,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="popup/Personaje5"]
 anchors_preset = -1
 anchor_right = 0.0251736
-offset_left = 461.0
-offset_top = 273.0
-offset_right = 724.0
-offset_bottom = 478.0
+offset_left = 444.0
+offset_top = 308.0
+offset_right = 726.0
+offset_bottom = 513.0
 scale = Vector2(0.979584, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "350 de vida
 100 de daño
 el personaje mas roto
-presiona shift, confia en mi :)"
+presiona shift para su habilidad especial"
 metadata/_edit_use_anchors_ = true
 
 [node name="Iniciar Juego" type="Button" parent="popup/Personaje5"]

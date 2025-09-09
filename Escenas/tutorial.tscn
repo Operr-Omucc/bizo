@@ -13,15 +13,7 @@ offset_bottom = 189.0
 text = "WASD: Movimiento
 Click Izquierdo: Disparo
 Click Derecho: Golpe
-Shift: Habilidad especial (si es aplicable)
-
-
-
-
-
-ESTE MODO NORMAL FUE HECHO
-ESPECIFICAMENTE PARA LA FERIA
-LOS ENEMIGOS ONE SHOTEAN"
+Shift: Habilidad especial (si es aplicable)"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 504.0
