@@ -8,8 +8,6 @@ var dif = gamedata.dif
 
 func _ready():
 	
-	
-	
 	#Spawnea todo adentro del mundo
 	
 	add_child(personaje)

@@ -18,6 +18,8 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("Disparo") && cooldown:
 		fire()
 		
+### FUNCIONES 
+		
 #funcion de disparo :P
 func fire():
 	AudioManager.play_disparo()
