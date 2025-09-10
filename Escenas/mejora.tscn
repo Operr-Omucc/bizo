@@ -1,8 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://3qppmudgw3gt"]
+[gd_scene load_steps=14 format=3 uid="uid://3qppmudgw3gt"]
 
 [ext_resource type="Script" uid="uid://c4khlg0jhslyy" path="res://Scripts/mejora.gd" id="1_c4cyj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4cyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwla8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4cyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm41t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jexxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8v0v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j5vy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkhs2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjk3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgq5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5oeul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pga4d"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
 script = ExtResource("1_c4cyj")
@@ -20,5 +42,16 @@ offset_top = -33.0
 offset_right = 46.0
 offset_bottom = -2.0
 scale = Vector2(0.82732, 2.1607)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nwla8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_c4cyj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cm41t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jexxq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_r8v0v")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4j5vy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xkhs2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hjk3r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mgq5g")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5oeul")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pga4d")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

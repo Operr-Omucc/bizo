@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3axl0oifrsab"]
+[gd_scene load_steps=18 format=3 uid="uid://b3axl0oifrsab"]
 
 [ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
-[ext_resource type="Texture2D" uid="uid://ce70jyd8tympv" path="res://Sprites/Dispenser.png" id="4_7flnv"]
+[ext_resource type="Texture2D" uid="uid://ce70jyd8tympv" path="res://Sprites/dispenser.png" id="4_7flnv"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
 [ext_resource type="Texture2D" uid="uid://d0f3stvj1i0ra" path="res://Sprites/Palanca-Arriba.png" id="5_a2w3w"]
+[ext_resource type="Texture2D" uid="uid://c557d737lcbrd" path="res://Sprites/Palanca-Abajo.png" id="5_lpnfq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7flnv"]
 
@@ -12,11 +13,29 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpnfq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3u34"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3u34"]
+texture = ExtResource("5_a2w3w")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvbfd"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2w3w"]
+texture = ExtResource("5_lpnfq")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r47"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvbfd"]
+texture = ExtResource("5_a2w3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56r47"]
+texture = ExtResource("5_a2w3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvtqr"]
+texture = ExtResource("5_a2w3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hn03c"]
+texture = ExtResource("5_a2w3w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7flnv"]
+texture = ExtResource("5_lpnfq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpnfq"]
+texture = ExtResource("5_a2w3w")
 
 [node name="Tienda" type="Node2D"]
 script = ExtResource("1_50q1o")
@@ -63,10 +82,14 @@ offset_top = 32.0
 offset_right = 215.0
 offset_bottom = 255.0
 focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v3u34")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_gvbfd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_56r47")
-icon = ExtResource("5_a2w3w")
+theme_override_styles/focus = SubResource("StyleBoxTexture_v3u34")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_a2w3w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_gvbfd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_56r47")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_lvtqr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hn03c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7flnv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lpnfq")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 879.0
