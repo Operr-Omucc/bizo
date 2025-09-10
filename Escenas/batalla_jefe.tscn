@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpsp4tnuyb841"]
+[gd_scene load_steps=8 format=3 uid="uid://bpsp4tnuyb841"]
 
 [ext_resource type="Texture2D" uid="uid://dssvcacfwivo5" path="res://Sprites/piso.png" id="1_lm0so"]
 [ext_resource type="Script" uid="uid://do1dn5x0m2mrk" path="res://Scripts/batalla_jefe.gd" id="1_ymfig"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="2_lan6c"]
 [ext_resource type="PackedScene" uid="uid://b7j5glt2okrxa" path="res://Escenas/jefe.tscn" id="4_ymfig"]
+[ext_resource type="PackedScene" uid="uid://ciu1higha56lx" path="res://Escenas/pared_jefe.tscn" id="5_6roep"]
 [ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="5_fmxow"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="6_6roep"]
 
@@ -191,6 +192,10 @@ scale = Vector2(2.58101, 1.9265)
 position = Vector2(4824.15, -1056.54)
 rotation = 3.14159
 scale = Vector2(2.74109, -3.70186)
+
+[node name="Pared36" parent="Paredes" instance=ExtResource("5_6roep")]
+position = Vector2(-7255, -172)
+scale = Vector2(-4.40532, 15.1253)
 
 [node name="Pause" type="Node2D" parent="."]
 process_mode = 3

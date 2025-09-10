@@ -41,3 +41,6 @@ func _on_palanca_pressed() -> void:
 		await get_tree().create_timer(5).timeout
 		$Label.text = "Tenes %s dinero, gastalo bien, la tirada cuesta %s" % [gamedata.money_amount, reroll]	
 	$Palanca.disabled = false
+	
+	$Label.text = "Tenes %s dinero, gastalo bien 
+	la tirada cuesta %s" % [gamedata.money_amount, reroll]	
