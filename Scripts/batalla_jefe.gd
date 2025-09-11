@@ -6,6 +6,9 @@ var brazo = safe_instance(gamedata.arm_scene)
 var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
+func _physics_process(delta: float) -> void:
+	gamedata.debug()
+
 func _ready():
 	
 	#Spawnea todo adentro del mundo

@@ -69,3 +69,17 @@ var characters = {
 		"conditions": ["wingame"]
 	}
 }
+
+func debug():
+	if Input.is_action_just_pressed("Debug daño"):
+		gamedata.damage=999999
+	if Input.is_action_just_pressed("Debug vida"):
+		gamedata.health=999999
+		gamedata.maxHealth=999999
+	if Input.is_action_just_pressed("Debug dinero"):
+		gamedata.money_amount=999999
+		gamedata.game_money=999999
+	if Input.is_action_just_pressed("Debug jefe"):
+		get_tree().change_scene_to_file("res://Escenas/batalla_jefe.tscn")
+	else:
+		return

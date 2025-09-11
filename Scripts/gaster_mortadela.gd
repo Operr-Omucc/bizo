@@ -37,6 +37,7 @@ func disparo():
 			rayo_m.rotation = rotation
 			rotar = false
 			get_parent().get_parent().add_child(rayo_m)
-			await get_tree().create_timer(3).timeout
-			rotar = true
-			await get_tree().create_timer(1).timeout
+			if self.is_inside_tree():
+				await get_tree().create_timer(3).timeout
+				rotar = true
+				await get_tree().create_timer(1).timeout

@@ -11,11 +11,11 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="Pared" type="Sprite2D" parent="."]
-position = Vector2(-2, 1.50002)
+position = Vector2(-2.38419e-07, 1.19209e-07)
 scale = Vector2(0.748971, 1.20558)
 texture = ExtResource("1_vlxy7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.16645)
-scale = Vector2(9.34689, 23.7333)
+position = Vector2(0, 0.657895)
+scale = Vector2(6.29, 23.79)
 shape = SubResource("RectangleShape2D_5uq2f")

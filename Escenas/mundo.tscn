@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://yhgaf5svr6nw" path="res://Scripts/GameMaster.gd" id="1_f4s1m"]
 [ext_resource type="PackedScene" uid="uid://b3iejitxon3ks" path="res://Escenas/piso.tscn" id="1_fw4w5"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="2_rxj15"]
-[ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="3_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://ciu1higha56lx" path="res://Escenas/pared_jefe.tscn" id="3_rxj15"]
 [ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="4_ly0wt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_aou4a"]
-vertices = PackedVector2Array(1025.95, 993.203, -1017.78, 993.203, -1017.78, -1404.56, 1025.95, -1404.56)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(1003.51, 1315.2, -937.773, 1315.79, -937.773, 1288.07, 1003.51, 1288.07, -957.773, 1268.07, -1572.06, 1268.07, -1572.46, 905.633, -957.773, 905.633, 1664, 1268.07, 1023.51, 1268.07, 1023.51, 905.633, 1664, 905.633, 1003.51, 885.633, -937.773, 885.633, -937.773, -1159.38, 1003.51, -1159.38, -957.773, -1179.38, -1574.74, -1179.38, -1574.98, -1409, -957.773, -1409.19, 1664, -1179.38, 1023.51, -1179.38, 1023.51, -1409.8, 1664, -1409.99)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(20, 21, 22, 23)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1585, -1419, 1674, -1420, 1674, 1325, -1582, 1326)])
 
 [node name="Nodo" type="Node2D"]
@@ -27,21 +27,23 @@ position = Vector2(1581, 1411)
 scale = Vector2(2.17563, 2.33795)
 navigation_polygon = SubResource("NavigationPolygon_aou4a")
 
-[node name="Pared2" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(1371, -43)
-scale = Vector2(3.60264, 5.97552)
+[node name="Pared" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_rxj15")]
+position = Vector2(-1280.09, -97.0936)
+scale = Vector2(5.30982, 6.11262)
 
-[node name="Pared3" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(30.7956, -1599.26)
-scale = Vector2(24.9701, 0.778225)
+[node name="Pared5" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_rxj15")]
+position = Vector2(1345.82, -115.914)
+scale = Vector2(5.30982, 6.11262)
 
-[node name="Pared4" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(19.7644, 1186.08)
-scale = Vector2(24.9701, 0.778225)
+[node name="Pared2" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_rxj15")]
+position = Vector2(39.0692, 1086.85)
+rotation = 1.5708
+scale = Vector2(3.05534, -9.32799)
 
-[node name="Pared5" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_fw4w5")]
-position = Vector2(-1362.82, -107.359)
-scale = Vector2(3.60264, 5.97552)
+[node name="Pared4" parent="Mundo/Navegacion+paredes" instance=ExtResource("3_rxj15")]
+position = Vector2(203.619, -1360.59)
+rotation = 1.5708
+scale = Vector2(3.05534, -9.32799)
 
 [node name="Timer" type="Timer" parent="Mundo"]
 process_callback = 0
