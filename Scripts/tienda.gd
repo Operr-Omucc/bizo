@@ -35,7 +35,6 @@ func _on_palanca_pressed() -> void:
 	reroll *= gamedata.currentWave
 	if gamedata.money_amount >= reroll:
 		gamedata.money_amount -= reroll
-		$Palanca.icon 
 		for n in (3):
 			mejora= mejora_path.instantiate()
 			mejora.tipo_mejora = randi_range(1,100)

@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3iejitxon3ks"]
+[gd_scene load_steps=2 format=3 uid="uid://b3iejitxon3ks"]
 
 [ext_resource type="Texture2D" uid="uid://c1pnrjugiuxun" path="res://Sprites/Piso/pasto2.jpg" id="1_ukljh"]
-
-[sub_resource type="TileSet" id="TileSet_ukljh"]
-physics_layer_0/collision_layer = 1
 
 [node name="Piso" type="Polygon2D"]
 texture_repeat = 2
@@ -12,6 +9,3 @@ texture = ExtResource("1_ukljh")
 polygon = PackedVector2Array(-247, -236, -247, 236, 247, 236, 247, -236)
 uv = PackedVector2Array(-238.454, -226.571, -238.454, 248.754, 259.025, 248.754, 259.025, -226.571)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_ukljh")
