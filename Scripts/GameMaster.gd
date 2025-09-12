@@ -7,9 +7,10 @@ const ENEMIGOS = {
 	4: preload("res://Escenas/tirador.tscn")
 }
 var personaje
+
 var wave_dif = gamedata.currentWave+2
-var dif = gamedata.dif
-@export var ene_cant = wave_dif * dif
+@export var ene_cant = wave_dif * gamedata.dif
+
 func _physics_process(_delta: float) -> void:
 	if gamedata.rep == ene_cant: #revisa si todos los enemigos estan muertos
 		gamedata.rep=0
@@ -17,6 +18,7 @@ func _physics_process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
 	gamedata.debug()
 func _ready():
+	gamedata.en = ene_cant
 	#Spawnea personaje y enemigos adentro del mundo
 	spawn_char()
 	spawn_wave()

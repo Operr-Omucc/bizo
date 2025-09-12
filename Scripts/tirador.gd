@@ -16,7 +16,8 @@ func _ready() -> void:
 	health = 20
 	await get_tree().process_frame
 	set_physics_process(false)
-	await get_tree().create_timer(1.00).timeout
+	if self.is_inside_tree():
+		await get_tree().create_timer(1.00).timeout
 	call_deferred("wait_for_physics")
 	
 func wait_for_physics():

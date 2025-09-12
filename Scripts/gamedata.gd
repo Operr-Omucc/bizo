@@ -17,6 +17,8 @@ var armor : int
 var rep: int
 var dif: int
 
+var en
+
 func _ready():
 	currentWave = 1
 	
@@ -24,7 +26,7 @@ func enemy_damage():
 	var base_damage = 5
 	var scaling_factor = 1.15
 	return base_damage * pow(scaling_factor, currentWave) * dif - armor
-	if base_damage < 0:
+	if base_damage < 1:
 		base_damage = 2
 
 var characters = {

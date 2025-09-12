@@ -1,7 +1,8 @@
 extends Node2D
 var chosen_Character
 
-
+func _physics_process(delta: float) -> void:
+	gamedata.debug()
 
 #funcion que envia dificultad al mundo
 func dificultad():
@@ -9,6 +10,7 @@ func dificultad():
 
 func _ready() -> void:
 	$popup.visible = false
+	$Label2.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
 #de acá para abajo las funciones van a dedicarse a settear escena_personaje a un personaje
 
 func _on_button_pressed() -> void:

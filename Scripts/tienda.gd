@@ -6,10 +6,7 @@ var mejora = mejora_path
 @onready var mejora_path= preload("res://Escenas/mejora.tscn")
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("Debug jefe"):
-		get_tree().change_scene_to_file("res://Escenas/batalla_jefe.tscn")
-	else:
-		return
+	gamedata.debug()
 
 func _ready() -> void:
 	$Label.add_theme_color_override("font_color", Color.BLACK)

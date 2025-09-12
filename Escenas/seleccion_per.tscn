@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://djo1x7oxg0ruk"]
+[gd_scene load_steps=14 format=3 uid="uid://djo1x7oxg0ruk"]
 
 [ext_resource type="Script" uid="uid://dpjb573o3r3u6" path="res://Scripts/seleccion_per.gd" id="1_ohf22"]
 [ext_resource type="Texture2D" uid="uid://dmacpe23y6waf" path="res://Sprites/CaraP1.png" id="2_c5adk"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="3_716bp"]
 [ext_resource type="Texture2D" uid="uid://dyuevnp6hb6fp" path="res://Sprites/CaraP2.png" id="3_c5adk"]
-[ext_resource type="Texture2D" uid="uid://d18t00yxsu617" path="res://Sprites/personaje.png" id="4_cwdsv"]
+[ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="3_mfkj6"]
 [ext_resource type="Texture2D" uid="uid://bxbvxjeqw44vy" path="res://Sprites/CaraP3.png" id="4_xr4l4"]
-[ext_resource type="Texture2D" uid="uid://cs4u00w5ws12m" path="res://Sprites/personaje_enojado.png" id="6_tb6g4"]
+[ext_resource type="Texture2D" uid="uid://bddymvg2q7vua" path="res://Sprites/Bob Enojado.png" id="5_mfkj6"]
 [ext_resource type="Texture2D" uid="uid://c1663a3ip0mgi" path="res://Sprites/JohnCowboy.png" id="8_ug5up"]
 [ext_resource type="Texture2D" uid="uid://r0jbij6htyoe" path="res://Sprites/caraP4.png" id="9_tb6g4"]
 [ext_resource type="Texture2D" uid="uid://c4oc04qldqufq" path="res://Sprites/bob puñolimpio.png" id="10_ug5up"]
 [ext_resource type="Texture2D" uid="uid://s06kih6b1v3i" path="res://Sprites/Thor.png" id="11_08wed"]
 [ext_resource type="Texture2D" uid="uid://u2h1aq6t35l7" path="res://Sprites/moneda.png" id="11_ug5up"]
+[ext_resource type="Texture2D" uid="uid://bemmrmjts1l3e" path="res://Sprites/CaraP5.png" id="13_7kkqj"]
 
 [node name="seleccion_per" type="Node2D"]
 script = ExtResource("1_ohf22")
@@ -26,12 +27,12 @@ position = Vector2(561, 324)
 texture = ExtResource("3_716bp")
 
 [node name="Personaje" type="Sprite2D" parent="popup/Personaje1"]
-position = Vector2(442, 228)
-texture = ExtResource("4_cwdsv")
+position = Vector2(424, 224)
+texture = ExtResource("3_mfkj6")
 
 [node name="CaraP1" type="Sprite2D" parent="popup/Personaje1"]
-position = Vector2(542, 157)
-scale = Vector2(0.127222, 0.141464)
+position = Vector2(568, 152)
+scale = Vector2(1.11917, 2.09776)
 texture = ExtResource("2_c5adk")
 
 [node name="Label" type="Label" parent="popup/Personaje1"]
@@ -50,24 +51,23 @@ offset_right = 843.0
 offset_bottom = 260.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-text = "El primero, creacion de un ser 
-misterioso, blah blah blah, editar lore 
-despues pq me da pereza hacerlo ahora"
+text = "Un hombre promedio llamado Bob.
+Una tarde mientras tomaba té un 
+portal misterioso se abrio bajo sus 
+pies y lo trago a otro mundo, en vez de
+un té en mano tenia una pistola, el
+solo sabia que todos allí querian 
+matarlo"
 
 [node name="Label3" type="Label" parent="popup/Personaje1"]
 offset_left = 472.0
-offset_top = 261.0
-offset_right = 724.0
-offset_bottom = 466.0
+offset_top = 368.0
+offset_right = 728.0
+offset_bottom = 573.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "100 de vida
 20 de daño
-Sin habilidades ni caracteristicas
-De verdad el mas basico
-No tiene secretos ocultos
-No intentes buscar secretos acá
-De verdad creeme, fuentes:
-yo"
+El personaje mas basico de todos"
 
 [node name="Iniciar Juego" type="Button" parent="popup/Personaje1"]
 offset_left = 498.0
@@ -91,12 +91,12 @@ position = Vector2(561, 324)
 texture = ExtResource("3_716bp")
 
 [node name="Personaje_enojado" type="Sprite2D" parent="popup/Personaje2"]
-position = Vector2(442, 228)
-texture = ExtResource("6_tb6g4")
+position = Vector2(424, 224)
+texture = ExtResource("5_mfkj6")
 
 [node name="CaraP2" type="Sprite2D" parent="popup/Personaje2"]
-position = Vector2(542, 157)
-scale = Vector2(0.127222, 0.141464)
+position = Vector2(552, 152)
+scale = Vector2(1.19324, 1.98502)
 texture = ExtResource("3_c5adk")
 
 [node name="Label" type="Label" parent="popup/Personaje2"]
@@ -109,19 +109,24 @@ theme_override_font_sizes/font_size = 23
 text = "Bob enojado"
 
 [node name="Label2" type="Label" parent="popup/Personaje2"]
-offset_left = 475.0
-offset_top = 217.0
-offset_right = 847.0
-offset_bottom = 289.0
+offset_left = 472.0
+offset_top = 200.0
+offset_right = 844.0
+offset_bottom = 347.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-text = "bro se cree hulk :skull emoji:"
+text = "Un Bob de una realidad paralela
+confuso de porque lo dejaron en este
+universo tan extraño, sucumbio
+ante la ira y no puede pensar en 
+nada mas que en matar a sus 
+captores"
 
 [node name="Label3" type="Label" parent="popup/Personaje2"]
-offset_left = 476.0
-offset_top = 251.0
-offset_right = 728.0
-offset_bottom = 456.0
+offset_left = 472.0
+offset_top = 352.0
+offset_right = 724.0
+offset_bottom = 557.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "200 de vida
 20 de daño
@@ -174,18 +179,19 @@ offset_right = 834.0
 offset_bottom = 268.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-text = "John, el cowboy, John perdio un brazo
-en la guerra de 1945 contra los 
-alemanes por una explosion, que hacia
-un cowboy en la segunda guerra 
-mundial? no se bro, agujero negro."
+text = "Lo primero que escucho John luego de
+despertar fueron gritos, disparos de 
+armas que el no conocia y estallidos 
+altos, luego algo lo trago desde
+abajo y John se encontro en un coliseo
+contra criaturas alienigenas"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="popup/Personaje3"]
-offset_left = 461.0
-offset_top = 273.0
-offset_right = 724.0
-offset_bottom = 478.0
+offset_left = 464.0
+offset_top = 296.0
+offset_right = 727.0
+offset_bottom = 501.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "90 de vida
 40 de daño
@@ -249,22 +255,24 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "Bob enojado luego de calmar su ira
 aprendio a controlarla, ganando un
-golpe enorme en su fuerza pero
+aumento enorme en su fuerza pero
 perdiendo la resiliencia que lo marcaba
-ahora solo usa sus puños para su defensa"
+ahora solo usa sus puños para su defensa,
+su objetivo principal es volver a casa y
+volverse un campeon de la WWE"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="popup/Personaje4"]
 anchors_preset = -1
 anchor_right = 0.0251736
-offset_left = 461.0
-offset_top = 273.0
-offset_right = 724.0
-offset_bottom = 478.0
+offset_left = 464.0
+offset_top = 328.0
+offset_right = 727.0
+offset_bottom = 533.0
 scale = Vector2(0.979584, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "150 de vida
-?? de daño
+40 de daño
 Bob Puñolimpio no cree en nada mas
 que en sus puños, el no usara un
 arma, a cambio su puño hace el doble
@@ -301,7 +309,7 @@ texture = ExtResource("11_08wed")
 [node name="CaraP4" type="Sprite2D" parent="popup/Personaje5"]
 position = Vector2(694, 125)
 scale = Vector2(-0.972668, 0.997285)
-texture = ExtResource("9_tb6g4")
+texture = ExtResource("13_7kkqj")
 
 [node name="Label" type="Label" parent="popup/Personaje5"]
 offset_left = 484.0
@@ -314,29 +322,37 @@ text = "Thor"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="popup/Personaje5"]
-offset_left = 491.0
-offset_top = 122.0
-offset_right = 863.0
-offset_bottom = 244.0
+offset_left = 496.0
+offset_top = 152.0
+offset_right = 868.0
+offset_bottom = 274.0
 scale = Vector2(0.923678, 1.03781)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-text = "es literalmente thor xd"
+text = "El Thor de la mitologia nordica se
+encuentra barado en esta arena de
+gladiadores, con la mayoria de sus
+poderes deshabilitados Thor quiere
+encontrar una manera para volver a
+casa"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="popup/Personaje5"]
 anchors_preset = -1
 anchor_right = 0.0251736
-offset_left = 444.0
-offset_top = 308.0
-offset_right = 726.0
-offset_bottom = 513.0
+offset_left = 496.0
+offset_top = 312.0
+offset_right = 778.0
+offset_bottom = 517.0
 scale = Vector2(0.979584, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "350 de vida
 100 de daño
-el personaje mas roto
-presiona shift para su habilidad especial"
+Trueno Metralleta:
+Presionando SHIFT en el teclado
+Thor es capaz de lanzar una 
+rafaga de truenos en frente suyo
+que aniquila a todo a su paso"
 metadata/_edit_use_anchors_ = true
 
 [node name="Iniciar Juego" type="Button" parent="popup/Personaje5"]
@@ -369,7 +385,7 @@ offset_bottom = 248.0
 
 [node name="CaraP1" type="Sprite2D" parent="Button"]
 position = Vector2(32, 28)
-scale = Vector2(0.0992248, 0.104869)
+scale = Vector2(0.592593, 1.51351)
 texture = ExtResource("2_c5adk")
 
 [node name="Button2" type="Button" parent="."]
@@ -380,45 +396,69 @@ offset_bottom = 248.0
 
 [node name="CaraP2" type="Sprite2D" parent="Button2"]
 position = Vector2(32, 28)
-scale = Vector2(0.0992248, 0.104869)
+scale = Vector2(0.592592, 1.6)
 texture = ExtResource("3_c5adk")
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 361.0
-offset_top = 190.0
-offset_right = 1014.0
-offset_bottom = 732.0
-scale = Vector2(0.106513, 0.109542)
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 1037.0
+offset_bottom = 743.0
+scale = Vector2(0.0979517, 0.101676)
 icon = ExtResource("4_xr4l4")
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 466.0
-offset_top = 190.0
-offset_right = 525.0
-offset_bottom = 249.0
+offset_left = 513.0
+offset_top = 194.0
+offset_right = 572.0
+offset_bottom = 253.0
 icon = ExtResource("9_tb6g4")
 
 [node name="bloq_pj" type="Node2D" parent="."]
 
 [node name="bloq_pj1" type="Button" parent="bloq_pj"]
-offset_left = 465.0
-offset_top = 188.0
-offset_right = 1151.0
-offset_bottom = 730.0
-scale = Vector2(0.0874586, 0.113335)
+offset_left = 512.0
+offset_top = 192.0
+offset_right = 1305.0
+offset_bottom = 734.0
+scale = Vector2(0.0932552, 0.112864)
 theme_override_font_sizes/font_size = 77
-text = "X20"
+text = "
+"
 icon = ExtResource("11_ug5up")
+flat = true
+
+[node name="Label" type="Label" parent="bloq_pj/bloq_pj1"]
+layout_mode = 0
+offset_left = 171.572
+offset_top = 354.407
+offset_right = 445.572
+offset_bottom = 707.407
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "x20
+"
 
 [node name="bloq_pj2" type="Button" parent="bloq_pj"]
-offset_left = 362.0
-offset_top = 190.0
-offset_right = 1155.0
-offset_bottom = 732.0
-scale = Vector2(0.0874586, 0.113335)
+offset_left = 384.0
+offset_top = 184.0
+offset_right = 1271.0
+offset_bottom = 916.0
+scale = Vector2(0.0975267, 0.100185)
 theme_override_font_sizes/font_size = 77
-text = "X128"
 icon = ExtResource("11_ug5up")
+flat = true
+
+[node name="Label" type="Label" parent="bloq_pj/bloq_pj2"]
+layout_mode = 0
+offset_left = 164.058
+offset_top = 479.114
+offset_right = 1050.06
+offset_bottom = 687.114
+scale = Vector2(1.0019, 1.00414)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "x128"
 
 [node name="Button5" type="Button" parent="."]
 offset_left = 131.0
@@ -428,15 +468,21 @@ offset_bottom = 542.0
 text = "Volver"
 
 [node name="Button6" type="Button" parent="."]
-offset_left = 131.0
-offset_top = 272.0
-offset_right = 195.0
-offset_bottom = 328.0
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 256.0
+offset_bottom = 312.0
 
-[node name="CaraP1" type="Sprite2D" parent="Button6"]
+[node name="CaraP5" type="Sprite2D" parent="Button6"]
 position = Vector2(32, 28)
-scale = Vector2(0.0992248, 0.104869)
-texture = ExtResource("2_c5adk")
+scale = Vector2(0.592593, 1.64706)
+texture = ExtResource("13_7kkqj")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 496.0
+offset_right = 848.0
+offset_bottom = 519.0
 
 [connection signal="pressed" from="popup/Personaje1/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
 [connection signal="pressed" from="popup/Personaje1/X" to="." method="_on_x_pressed"]
