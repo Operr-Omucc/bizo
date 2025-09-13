@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	$Label.add_theme_color_override("font_color", Color.BLACK)
 	$Label.text = "Tenes %s dinero, gastalo bien 
-	la tirada cuesta %s" % [gamedata.money_amount, reroll]	
+	la tirada cuesta %s" % [gamedata.money_amount, reroll * gamedata.currentWave]	
 
 func _on_button_3_pressed() -> void:
 	gamedata.currentWave += 1 

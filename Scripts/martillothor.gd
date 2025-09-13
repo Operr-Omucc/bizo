@@ -13,6 +13,10 @@ var posicion_original: Vector2
 
 func _ready() -> void:
 	fire_rate =  gamedata.fire_rate + 0.5
+	if gamedata.currentWave == 1:
+		gamedata.damage = 100
+	else:
+		return
 
 #funcion para que el arma mire a la posicion del mouse + revisa si el jugador disparo
 func _physics_process(_delta):

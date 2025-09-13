@@ -8,6 +8,10 @@ func _ready():
 	if gamedata.damage <1:
 		gamedata.damage += bullet_damage
 	cooldown = true
+	if gamedata.currentWave==1:
+		gamedata.damage = bullet_damage
+	else: 
+		return
 	
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())

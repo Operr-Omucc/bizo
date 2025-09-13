@@ -5,3 +5,4 @@ func _ready():
 	health = gamedata.health
 	speed = gamedata.speed+350
 	self.add_to_group("personaje")
+	gamedata.speed = speed
