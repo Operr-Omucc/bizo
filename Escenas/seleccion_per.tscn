@@ -421,7 +421,7 @@ offset_left = 512.0
 offset_top = 192.0
 offset_right = 1305.0
 offset_bottom = 734.0
-scale = Vector2(0.0932552, 0.112864)
+scale = Vector2(0.0988273, 0.114044)
 theme_override_font_sizes/font_size = 77
 text = "
 "
@@ -444,7 +444,7 @@ offset_left = 384.0
 offset_top = 184.0
 offset_right = 1271.0
 offset_bottom = 916.0
-scale = Vector2(0.0975267, 0.100185)
+scale = Vector2(0.0954345, 0.0965498)
 theme_override_font_sizes/font_size = 77
 icon = ExtResource("11_ug5up")
 flat = true

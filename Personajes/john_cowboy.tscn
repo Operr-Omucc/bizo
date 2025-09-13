@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvefynxj68upu"]
+[gd_scene load_steps=9 format=3 uid="uid://cvefynxj68upu"]
 
 [ext_resource type="Script" uid="uid://sde4tsguaeur" path="res://Scripts/john_cowboy.gd" id="1_6wv4i"]
 [ext_resource type="Texture2D" uid="uid://c1663a3ip0mgi" path="res://Sprites/JohnCowboy.png" id="1_t6wu0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_ommdq"]
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_l4b42"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_m28bc"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_m28bc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3eb4"]
 size = Vector2(108, 228)
@@ -45,4 +46,18 @@ metadata/_edit_use_anchors_ = true
 offset_left = 512.0
 offset_right = 576.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(1080, 264)
+scale = Vector2(0.381291, 0.223874)
+texture = ExtResource("7_m28bc")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
+offset_left = -177.255
+offset_top = -240.137
+offset_right = -137.255
+offset_bottom = -217.137
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
 metadata/_edit_use_anchors_ = true

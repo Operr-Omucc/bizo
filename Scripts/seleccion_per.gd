@@ -2,35 +2,47 @@ extends Node2D
 var chosen_Character
 
 func _physics_process(delta: float) -> void:
+	$Label2.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
 	gamedata.debug()
 
 #funcion que envia dificultad al mundo
 func dificultad():
 	get_tree().change_scene_to_file("res://Escenas/dificultad.tscn")
 
+func cerrarPopup():
+	$popup/Personaje1.visible = false
+	$popup/Personaje2.visible = false
+	$popup/Personaje3.visible = false
+	$popup/Personaje4.visible = false
+	$popup/Personaje5.visible = false
+
 func _ready() -> void:
 	$popup.visible = false
-	$Label2.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
 #de acá para abajo las funciones van a dedicarse a settear escena_personaje a un personaje
 
 func _on_button_pressed() -> void:
+	cerrarPopup()
 	$popup/Personaje1.visible = true
 	chosen_Character = 1
 
 func _on_button_2_pressed() -> void:
+	cerrarPopup()
 	$popup/Personaje2.visible = true
 	chosen_Character = 2
 
 func _on_button_3_pressed() -> void:
+	cerrarPopup()
 	$popup/Personaje3.visible = true
 	chosen_Character = 3
 	
 func _on_button_4_pressed() -> void:
+	cerrarPopup()
 	$popup/Personaje4.visible = true
 	chosen_Character = 4
 	
 func _on_button_6_pressed() -> void:
-	$popup/Personaje4.visible = true
+	cerrarPopup()
+	$popup/Personaje5.visible = true
 	chosen_Character = 5
 	
 func _on_iniciar_juego_pressed() -> void:

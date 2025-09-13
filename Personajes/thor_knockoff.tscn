@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkdjl73140xf"]
+[gd_scene load_steps=9 format=3 uid="uid://dkdjl73140xf"]
 
 [ext_resource type="Script" uid="uid://b7rxeuv1fu4i8" path="res://Scripts/thor_knockoff.gd" id="1_mbdn2"]
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="2_mbdn2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="3_n6xo6"]
 [ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="3_yvja7"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="4_yvja7"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_yvja7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbdn2"]
 
@@ -44,4 +45,18 @@ metadata/_edit_use_anchors_ = true
 offset_left = 512.0
 offset_right = 576.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(1080, 264)
+scale = Vector2(0.381291, 0.223874)
+texture = ExtResource("7_yvja7")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PantallaBlanca"]
+offset_left = -177.255
+offset_top = -240.137
+offset_right = -137.255
+offset_bottom = -217.137
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
 metadata/_edit_use_anchors_ = true

@@ -13,6 +13,7 @@ func _ready():
 	health = gamedata.health
 	speed = gamedata.speed+500
 	self.add_to_group("personaje")
+	gamedata.speed = speed
 	
 #Movimiento basico
 func _physics_process(_delta):

@@ -12,6 +12,8 @@ var damage: int
 var speed: int
 var fire_rate: int = 1
 var armor : int
+var configStats : bool
+
 
 @export var currentWave: int
 var rep: int
@@ -21,6 +23,7 @@ var en
 
 func _ready():
 	currentWave = 1
+	configStats = true
 	
 func enemy_damage():
 	var base_damage = 5

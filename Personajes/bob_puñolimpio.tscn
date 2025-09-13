@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2no2mixldrkh"]
+[gd_scene load_steps=9 format=3 uid="uid://d2no2mixldrkh"]
 
 [ext_resource type="Script" uid="uid://dmmbndaqhjpap" path="res://Scripts/bob_puñolimpio.gd" id="1_caryh"]
 [ext_resource type="Texture2D" uid="uid://c4oc04qldqufq" path="res://Sprites/bob puñolimpio.png" id="2_iweiv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_b12we"]
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_rrg3u"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_tyny3"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_c8hmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x5k7"]
 size = Vector2(108, 229)
@@ -44,4 +45,18 @@ metadata/_edit_use_anchors_ = true
 offset_left = 512.0
 offset_right = 576.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(1080, 264)
+scale = Vector2(0.381291, 0.223874)
+texture = ExtResource("7_c8hmo")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
+offset_left = -177.255
+offset_top = -240.137
+offset_right = -137.255
+offset_bottom = -217.137
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
 metadata/_edit_use_anchors_ = true
