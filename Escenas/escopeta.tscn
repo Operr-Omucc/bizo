@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://choq3r63gtjmn"]
+
+[ext_resource type="Script" uid="uid://nw3ijxlkxpoc" path="res://Scripts/escopeta.gd" id="1_cxbg6"]
+[ext_resource type="Texture2D" uid="uid://r8vt44t3s6ck" path="res://Sprites/Escopeta.png" id="1_k6h5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxbg6"]
+size = Vector2(176, 144)
+
+[node name="Escopeta" type="CharacterBody2D"]
+scale = Vector2(0.257358, 0.443028)
+script = ExtResource("1_cxbg6")
+
+[node name="Escopeta" type="Sprite2D" parent="."]
+scale = Vector2(1.31786, 0.74666)
+texture = ExtResource("1_k6h5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.689848, 0.303971)
+shape = SubResource("RectangleShape2D_cxbg6")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(72, -8)
+scale = Vector2(0.0806709, 0.0905525)

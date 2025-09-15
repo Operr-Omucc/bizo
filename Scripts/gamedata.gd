@@ -29,8 +29,7 @@ func enemy_damage():
 	var base_damage = 5
 	var scaling_factor = 1.15
 	return base_damage * pow(scaling_factor, currentWave) * dif - armor
-	if base_damage < 1:
-		base_damage = 2
+
 
 var characters = {
 	1: {
@@ -45,7 +44,7 @@ var characters = {
 		"maxHealth": 200,
 		"scene": preload("res://Personajes/personaje_enojado.tscn"),
 		"arm": preload("res://Escenas/brazo.tscn"),
-		"gun": preload("res://Escenas/arma.tscn"),
+		"gun": preload("res://Escenas/escopeta.tscn"),
 	},
 	3: {
 		"character_name": "John Cowboy",

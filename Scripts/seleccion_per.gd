@@ -1,7 +1,7 @@
 extends Node2D
 var chosen_Character
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	$Label2.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
 	gamedata.debug()
 

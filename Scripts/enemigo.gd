@@ -7,6 +7,7 @@ var cooldown=true
 var speed=150
 var damage = gamedata.enemy_damage()
 
+var is_dead: bool = false
 var knockback: Vector2=Vector2.ZERO
 var knockback_timer: float=0.0
 
@@ -25,6 +26,18 @@ func wait_for_physics():
 	if not is_inside_tree():
 		return
 	set_physics_process(true)
+
+func death_check():
+	call_deferred("queue_free")
+	if is_dead:
+		return
+	is_dead = true
+	gamedata.rep += 1
+	var coin_instance = coin.instantiate()
+	coin_instance.add_to_group("coins")
+	coin_instance.position = global_position
+	get_parent().call_deferred("add_child", coin_instance)  
+	
 
 #Funcion para eliminar personaje + deteccion de colision con bala de ser verdadero quita vida al enemigo/jugador
 func _on_area_2d_body_entered(body):
@@ -45,14 +58,9 @@ func _on_area_2d_body_entered(body):
 			health = health - body.damage
 			body.call_deferred("queue_free") #call deferred añade/quita  de forma "segura"
 			
-		if health <= 1:
-			gamedata.rep += 1
-			var coin_instance = coin.instantiate()
-			coin_instance.add_to_group("coins")
-			coin_instance.position = global_position
-			get_parent().call_deferred("add_child", coin_instance)  
-			call_deferred("queue_free")  
+		if health <= 0:
 			body.call_deferred("queue_free")
+			death_check()
 		
 func _physics_process(_delta):
 	if knockback_timer > 0.0:
@@ -86,14 +94,11 @@ func apply_knockback(knockback_direction: Vector2, knockback_force: float, knock
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	if is_dead:
+		return
 	if area.is_in_group("brazo") || area.is_in_group("bala"):
 		if health > 0:
 			health = health - area.damage
 			
 		if health <= 1:
-			gamedata.rep+=1
-			var coin_instance = coin.instantiate()
-			coin_instance.add_to_group("coins")
-			coin_instance.position = global_position
-			get_parent().call_deferred("add_child", coin_instance)  
-			call_deferred("queue_free") 
+			death_check()

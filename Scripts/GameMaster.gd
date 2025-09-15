@@ -18,10 +18,10 @@ func _physics_process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://Escenas/tienda.tscn")
 	gamedata.debug()
 func _ready():
-	gamedata.en = ene_cant
 	#Spawnea personaje y enemigos adentro del mundo
 	spawn_char()
 	spawn_wave()
+	gamedata.en = ene_cant
 	#FIN DE READY
 				
 func _on_timer_timeout() -> void:
