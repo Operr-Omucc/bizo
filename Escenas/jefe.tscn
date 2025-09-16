@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7j5glt2okrxa"]
 
 [ext_resource type="Script" uid="uid://cf6bois0mjggm" path="res://Scripts/jefe.gd" id="1_oogxl"]
-[ext_resource type="Texture2D" uid="uid://koixclvl6o3o" path="res://Sprites/Enemigo.png" id="2_sbirq"]
+[ext_resource type="Texture2D" uid="uid://dtrsyqleemlv" path="res://Sprites/Jefe.png" id="2_c2t32"]
 [ext_resource type="Script" uid="uid://du3lqfbfukkyj" path="res://Scripts/gaster_mortadela.gd" id="3_c2t32"]
 [ext_resource type="Texture2D" uid="uid://df6iqnekxwnpp" path="res://Sprites/gaster_mortadela.png" id="3_sbirq"]
 
@@ -25,7 +25,8 @@ path_postprocessing = 1
 
 [node name="Enemigo" type="Sprite2D" parent="."]
 position = Vector2(2, 1)
-texture = ExtResource("2_sbirq")
+scale = Vector2(2.51256, 1.70294)
+texture = ExtResource("2_c2t32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 1)
@@ -48,6 +49,7 @@ position = Vector2(0, -690.121)
 script = ExtResource("3_c2t32")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gaster_Mortadela"]
+scale = Vector2(1.27889, 1.54421)
 texture = ExtResource("3_sbirq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gaster_Mortadela"]

@@ -48,8 +48,8 @@ func spawn_wave():
 
 				while intentos < 99:
 					spawn_pos = Vector2(
-						randi_range(-600, 3712), # pos X
-						randi_range(-1832, 3648) # pos Y
+						randi_range(-456, 3712), # pos X
+						randi_range(-1296, 3456) # pos Y
 					)
 					var dist = spawn_pos.distance_to(personaje.global_position)
 					if dist >= 500:

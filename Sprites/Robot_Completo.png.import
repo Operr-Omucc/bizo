@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce70jyd8tympv"
-path="res://.godot/imported/dispenser.png-1252cc7bddd6c1aa4cb3654ed8197204.ctex"
+uid="uid://sy1dgcj22p2b"
+path="res://.godot/imported/Robot_Completo.png-89e2671cdd3c9e8a713d5985f2f67edd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/dispenser.png"
-dest_files=["res://.godot/imported/dispenser.png-1252cc7bddd6c1aa4cb3654ed8197204.ctex"]
+source_file="res://Sprites/Robot_Completo.png"
+dest_files=["res://.godot/imported/Robot_Completo.png-89e2671cdd3c9e8a713d5985f2f67edd.ctex"]
 
 [params]
 

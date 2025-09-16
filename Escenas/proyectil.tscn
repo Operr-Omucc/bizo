@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bto5f5hemwmvj"]
 
-[ext_resource type="Script" uid="uid://c3rnqyjdavof3" path="res://Scripts/proyectil.gd" id="1_lm3un"]
+[ext_resource type="Script" path="res://Scripts/proyectil.gd" id="1_lm3un"]
 [ext_resource type="Texture2D" uid="uid://b3mlybqavjoyr" path="res://Sprites/bala(porro).png" id="2_hn6hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8vkm"]
 size = Vector2(587, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3un"]
-size = Vector2(579.231, 105.334)
+size = Vector2(590.63, 104.943)
 
 [node name="proyectil" type="CharacterBody2D"]
 scale = Vector2(-0.0265768, 0.153033)
@@ -16,16 +16,20 @@ collision_mask = 4
 script = ExtResource("1_lm3un")
 
 [node name="porro" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2.37802, -19.4537)
 texture = ExtResource("2_hn6hq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
+scale = Vector2(1.00881, 0.514839)
 shape = SubResource("RectangleShape2D_r8vkm")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2.28305e-06)
+position = Vector2(0, 1.49012e-08)
+scale = Vector2(1.02345, 0.532126)
 shape = SubResource("RectangleShape2D_lm3un")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

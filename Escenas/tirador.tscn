@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://6ih4ydtkbbhh"]
 
 [ext_resource type="Script" uid="uid://5mjiy8inceye" path="res://Scripts/tirador.gd" id="1_at6mr"]
-[ext_resource type="Texture2D" uid="uid://cqfqjp5tjtwny" path="res://Sprites/tirador.png" id="2_at6mr"]
-[ext_resource type="Script" uid="uid://b2l857rn6ixpl" path="res://Scripts/torreta.gd" id="3_v8jvs"]
+[ext_resource type="Texture2D" uid="uid://sy1dgcj22p2b" path="res://Sprites/Robot_Completo.png" id="2_v8jvs"]
+[ext_resource type="Script" path="res://Scripts/torreta.gd" id="3_v8jvs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc0jm"]
 size = Vector2(18.7757, 19.7045)
@@ -24,7 +24,8 @@ path_postprocessing = 1
 
 [node name="Enemigo" type="Sprite2D" parent="."]
 position = Vector2(2, 1)
-texture = ExtResource("2_at6mr")
+scale = Vector2(4.00825, 3.39627)
+texture = ExtResource("2_v8jvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 1)

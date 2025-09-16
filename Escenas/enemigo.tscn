@@ -20,6 +20,7 @@ path_postprocessing = 1
 
 [node name="Enemigo" type="Sprite2D" parent="."]
 position = Vector2(2, 1)
+scale = Vector2(4.57515, 3.35987)
 texture = ExtResource("2_1hbjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

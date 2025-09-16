@@ -1,6 +1,6 @@
 extends Node
 
-#Maneja cosas como el personaje seleccionado
+#Maneja cosas como el personaje seleccionado y sus stats
 var chara_Scene : PackedScene
 var arm_scene : PackedScene
 var gun_scene : PackedScene
@@ -13,7 +13,7 @@ var speed: int
 var fire_rate: int = 1
 var armor : int
 var configStats : bool
-
+var chara_name
 
 @export var currentWave: int
 var rep: int

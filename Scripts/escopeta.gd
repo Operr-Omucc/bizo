@@ -1,9 +1,9 @@
 extends "arma.gd"
 
 func _ready() -> void:
-	fire_rate = gamedata.fire_rate - 0.1
+	fire_rate = gamedata.fire_rate + 0.7
 	
-	bullet_damage = 10
+	bullet_damage = 3
 	if gamedata.damage < 1:
 		gamedata.damage += bullet_damage
 

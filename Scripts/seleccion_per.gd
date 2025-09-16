@@ -48,6 +48,7 @@ func _on_button_6_pressed() -> void:
 func _on_iniciar_juego_pressed() -> void:
 	if chosen_Character in gamedata.characters:
 		var chara = gamedata.characters[chosen_Character]
+		gamedata.chara_name = chara["character_name"]
 		gamedata.maxHealth = chara["maxHealth"]
 		gamedata.health = chara["maxHealth"]
 		gamedata.chara_Scene = chara["scene"]

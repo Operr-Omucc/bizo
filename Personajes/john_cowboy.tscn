@@ -61,3 +61,10 @@ offset_bottom = -217.137
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Camera2D/CanvasLayer2"]
+offset_left = 4.0
+offset_top = 613.0
+offset_right = 68.0
+offset_bottom = 636.0
+metadata/_edit_use_anchors_ = true

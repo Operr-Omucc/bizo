@@ -19,18 +19,18 @@ func _ready():
 
 func _on_button_pressed() -> void:
 		if (tipo_mejora >=1 && tipo_mejora<=30):
-			gamedata.maxHealth += 10
-			gamedata.health += 10
+			gamedata.maxHealth += 4
+			gamedata.health += 4
 			self.queue_free()
 		elif (tipo_mejora >30 && tipo_mejora<=60):
-			gamedata.damage += 10
+			gamedata.damage += 2
 			self.queue_free()
 		elif (tipo_mejora >60 && tipo_mejora<=90):
-			gamedata.speed += 10
+			gamedata.speed += 2
 			self.queue_free()
-		elif (tipo_mejora>90 && tipo_mejora<=95):
-			gamedata.fire_rate /= 1.2
+		elif (tipo_mejora>90 && tipo_mejora<=91):
+			gamedata.fire_rate /= 1.01
 			self.queue_free()
-		elif (tipo_mejora>95 && tipo_mejora<=100):
-			gamedata.armor += 10
+		elif (tipo_mejora>91 && tipo_mejora<=100):
+			gamedata.armor += 3
 			self.queue_free()

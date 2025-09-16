@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dextl5dww01ri"]
 
 [ext_resource type="Script" uid="uid://db44rvxu14r36" path="res://Scripts/petizo.gd" id="1_ogg2w"]
-[ext_resource type="Texture2D" uid="uid://2tdnium7m3gw" path="res://Sprites/Tanque.png" id="2_wqs1j"]
+[ext_resource type="Texture2D" uid="uid://cyfm0lfbd8rg1" path="res://Sprites/Alien.png" id="2_ogg2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc0jm"]
 size = Vector2(18.7757, 19.7045)
@@ -19,23 +19,23 @@ script = ExtResource("1_ogg2w")
 path_postprocessing = 1
 
 [node name="Enemigo" type="Sprite2D" parent="."]
-position = Vector2(2, 1)
-scale = Vector2(0.861977, 0.553862)
-texture = ExtResource("2_wqs1j")
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(2.27857, 1.86239)
+texture = ExtResource("2_ogg2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 1)
-scale = Vector2(22.6791, 21.5311)
+scale = Vector2(12.8364, 9.83444)
 shape = SubResource("RectangleShape2D_jc0jm")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.861977, 0.553862)
+scale = Vector2(0.284432, 0.153557)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1.77278)
-scale = Vector2(26.7602, 40.1758)
+scale = Vector2(45.9266, 66.8291)
 shape = SubResource("RectangleShape2D_24lda")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

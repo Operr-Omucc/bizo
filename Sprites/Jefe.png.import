@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce70jyd8tympv"
-path="res://.godot/imported/dispenser.png-1252cc7bddd6c1aa4cb3654ed8197204.ctex"
+uid="uid://dtrsyqleemlv"
+path="res://.godot/imported/Jefe.png-15bd70cc6402422565568b6daa2de312.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/dispenser.png"
-dest_files=["res://.godot/imported/dispenser.png-1252cc7bddd6c1aa4cb3654ed8197204.ctex"]
+source_file="res://Sprites/Jefe.png"
+dest_files=["res://.godot/imported/Jefe.png-15bd70cc6402422565568b6daa2de312.ctex"]
 
 [params]
 
