@@ -30,6 +30,18 @@ func enemy_damage():
 	var scaling_factor = 1.15
 	return base_damage * pow(scaling_factor, currentWave) * dif - armor
 
+func reset_stat():
+	fire_rate = 0
+	damage = 0 
+	speed = 0
+	armor = 0
+	chara_Scene = null
+	arm_scene = null
+	fire_rate = 1
+	rep = 0
+	currentWave=1
+	health = 0
+	maxHealth = 0
 
 var characters = {
 	1: {

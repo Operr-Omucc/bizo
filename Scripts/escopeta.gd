@@ -16,7 +16,7 @@ func fire():
 	var mouse_pos = get_global_mouse_position()
 	var base_dir = (mouse_pos - muzzle.global_position).normalized()
 	var base_angle = base_dir.angle()
-	var spread_deg := 10.0   # máximo en grados
+	var spread_deg := 20.0   # máximo en grados
 	
 	for i in range(8):
 		var bullet = bullet_path.instantiate()
