@@ -49,7 +49,6 @@ position = Vector2(0, -690.121)
 script = ExtResource("3_c2t32")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gaster_Mortadela"]
-rotation = -3.13704
 scale = Vector2(1.27889, 1.54421)
 texture = ExtResource("3_sbirq")
 

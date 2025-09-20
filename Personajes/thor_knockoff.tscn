@@ -26,11 +26,11 @@ position = Vector2(-0.00012207, -6.10352e-05)
 scale = Vector2(0.996948, 0.990783)
 zoom = Vector2(0.5, 0.5)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
 layer = 128
 script = ExtResource("3_yvja7")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer2"]
 offset_left = -1.52588e-05
 offset_top = 2.28882e-05
 offset_right = 532.0
@@ -41,18 +41,18 @@ texture_over = ExtResource("3_n6xo6")
 texture_progress = ExtResource("4_yvja7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2"]
 offset_left = 512.0
 offset_right = 576.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
 
-[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
 position = Vector2(1080, 264)
 scale = Vector2(0.381291, 0.223874)
 texture = ExtResource("7_yvja7")
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/PantallaBlanca"]
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
 offset_left = -177.255
 offset_top = -240.137
 offset_right = -137.255

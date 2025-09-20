@@ -16,8 +16,12 @@ func _physics_process(_delta: float) -> void:
 		$PantallaBlanca/Label.text = "Daño: %s
 		Velocidad: %s
 		Vida: %s" % [gamedata.damage, gamedata.speed, gamedata.maxHealth]
-	detect_shot()
-	fire_shots()
+	if gamedata.chara_name == "John Cowboy":
+		detect_shot()
+		fire_shots()
+	else:
+		return
+	
 
 func detect_shot():
 	

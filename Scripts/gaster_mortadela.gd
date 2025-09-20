@@ -1,52 +1,43 @@
 extends StaticBody2D
 
+@onready var target_nodes : Array
 @onready var r_m_path = preload("res://Escenas/rayo_mortadlea.tscn")
+
+var cont : bool = false
+var target : Node2D
 var lugar : Vector2
-var rotar : bool
+var rotar : bool = true
 
 func _ready() -> void:
+	# Buscar al personaje
 	lugar = global_position
-	start_shooting()
-	rotar = true
+	
+	print(">>> READY: lugar =", lugar, " target =", target)
+	
+	# Empezar el ciclo de disparo
+	
+
 
 func _physics_process(_delta: float) -> void:
-	var target = get_tree().get_nodes_in_group("personaje")[0]
-	await get_tree().create_timer(3).timeout
-	if target and target.is_inside_tree():
-		if rotar == true:
-			look_at(target.global_position)
-			rotation += deg_to_rad(-180)
-
-func start_shooting() -> void:
-	await get_tree().create_timer(2).timeout
-<<<<<<< Updated upstream
-	var target = get_tree().get_nodes_in_group("personaje")
-=======
->>>>>>> Stashed changes
 	if target == null:
-		pass
-	else:
-		disparo()
+		target_nodes = get_tree().get_nodes_in_group("personaje")
+		if target_nodes.size() > 0:
+			target = target_nodes[0]  # Tomamos el primero
+			$TimerDisparo.start()
+	
+	if target and target.is_inside_tree() and rotar:
+		look_at(target.global_position) 
 
-func disparo():
-	var t1 = get_tree().create_timer(3)
-	var target = get_tree().get_nodes_in_group("personaje")[0]
-	if target == null:
-		pass
-	else:
-		while target != null:
-			var rayo_m = r_m_path.instantiate()
-			rayo_m.add_to_group("rayo")
-			rayo_m.position = lugar
-			rayo_m.rotation = rotation
-			rotar = false
-			get_parent().get_parent().add_child(rayo_m)
-<<<<<<< Updated upstream
-			if self.is_inside_tree():
-				await get_tree().create_timer(3).timeout
-				rotar = true
-				await get_tree().create_timer(1).timeout
-=======
-			await t1.timeout
-			rotar = true
->>>>>>> Stashed changes
+
+func _on_timer_timeout() -> void:
+	if target == null or !target.is_inside_tree():
+		print(">>> No hay target, no disparo")
+		return
+	
+	print(">>> DISPARO!")
+	var rayo_m = r_m_path.instantiate()
+	rayo_m.add_to_group("rayo")
+	rayo_m.position = global_position   # OJO: usar posición actual, no `lugar`
+	rayo_m.rotation = rotation + deg_to_rad(180)
+	get_parent().get_parent().add_child(rayo_m)      # más seguro que subir 2 padres
+	
