@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bto5f5hemwmvj"]
 
-[ext_resource type="Script" path="res://Scripts/proyectil.gd" id="1_lm3un"]
+[ext_resource type="Script" uid="uid://c3rnqyjdavof3" path="res://Scripts/proyectil.gd" id="1_lm3un"]
 [ext_resource type="Texture2D" uid="uid://b3mlybqavjoyr" path="res://Sprites/bala(porro).png" id="2_hn6hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8vkm"]
@@ -10,7 +10,7 @@ size = Vector2(587, 104)
 size = Vector2(590.63, 104.943)
 
 [node name="proyectil" type="CharacterBody2D"]
-scale = Vector2(-0.0265768, 0.153033)
+scale = Vector2(-0.067, 0.433)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_lm3un")

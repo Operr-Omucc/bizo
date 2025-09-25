@@ -27,3 +27,7 @@ func play_derrota():
 	if not mute:
 		$musica.stop()
 		$derrota.play()
+		
+func play_rayo():
+	if not mute:
+		$rayo.play()

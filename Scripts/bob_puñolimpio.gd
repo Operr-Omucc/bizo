@@ -2,9 +2,10 @@ extends "res://Scripts/personaje.gd"
 var damage: int
 
 func _ready() -> void:
+	animation_player.play("Quieto")
 	health = 150
 	maxHealth = 150
-	speed = gamedata.speed+600
+	if gamedata.currentWave == 1:
+		gamedata.speed=+600
 	self.add_to_group("personaje")
-	await get_tree().create_timer(0.2).timeout
-	damage = 40
+	speed = gamedata.speed

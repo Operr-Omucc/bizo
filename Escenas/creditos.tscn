@@ -27,6 +27,9 @@ Musica: Franco marchiori
 Efectos de sonido: Juan bautista mascali
 
 Creditos a efectos de sonido importados:
-Disparo: Sound Effect by Moniker_Subriquet from Pixabay"
+Disparo: Sound Effect by Moniker_Subriquet from Pixabay
+Rayo: Sound Effect by DRAGON-STUDIO  from Pixabay
+Golpe / Victoria / Derrota: Sound Effects by freesound_community from Pixabay
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

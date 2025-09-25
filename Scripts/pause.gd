@@ -5,9 +5,11 @@ func _input(event: InputEvent):
 		if get_tree().paused == true:
 			$CanvasLayer.visible = false
 			get_tree().paused = false
+			gamedata.pause = false
 		else:
 			get_tree().paused = true
 			$CanvasLayer.visible = true
+			gamedata.pause = true
 			
 func _on_button_pressed() -> void:
 		$CanvasLayer.visible = false

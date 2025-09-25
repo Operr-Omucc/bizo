@@ -2,7 +2,7 @@ extends CharacterBody2D
 var pos:Vector2
 var rota:float
 var dir:float
-var speed=1000
+var speed=700
 var damage: int = gamedata.enemy_damage()/2
 
 #funcion que consigue la posicion y rotacion global + destruye bala si existio por 3 segundos

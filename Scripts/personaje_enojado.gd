@@ -1,8 +1,10 @@
 extends 'res://Scripts/personaje.gd'
 
 func _ready():
+	animation_player.play("Quieto")
 	maxHealth = gamedata.maxHealth
 	health = gamedata.health
-	speed = gamedata.speed+350
+	if gamedata.currentWave == 1:
+		gamedata.speed=+350
 	self.add_to_group("personaje")
-	gamedata.speed = speed
+	speed = gamedata.speed

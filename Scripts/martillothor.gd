@@ -41,7 +41,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 #funcion de disparo :P
 func fire():
-	AudioManager.play_disparo()
+	AudioManager.play_rayo()
 	if not cooldown:
 		return
 	var ray = preload("res://Escenas/rayo.tscn").instantiate()

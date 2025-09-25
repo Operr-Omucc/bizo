@@ -9,11 +9,12 @@ var money_amount : int # Dinero recolectado por el jugador, solo existe dentro d
 var maxHealth: int = 0
 var health: int = 0
 var damage: int
-var speed: int
+var speed: int = 0
 var fire_rate: int = 1
 var armor : int
 var configStats : bool
 var chara_name
+var pause : bool = true
 
 @export var currentWave: int
 var rep: int

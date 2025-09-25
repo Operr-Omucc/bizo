@@ -6,14 +6,16 @@ var health: int
 var maxHealth: int
 @onready var healthBar: TextureProgressBar = $Camera2D/CanvasLayer2/TextureProgressBar
 @onready var jefe: CharacterBody2D = $"."
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
+	animation_player.play("Quieto")
 	maxHealth = gamedata.maxHealth
 	health = gamedata.health
-	speed = gamedata.speed+500
+	if gamedata.currentWave == 1:
+		gamedata.speed=+500
 	self.add_to_group("personaje")
-	gamedata.speed = speed
+	speed = gamedata.speed
 	
 #Movimiento basico
 func _physics_process(_delta):
