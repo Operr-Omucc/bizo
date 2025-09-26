@@ -31,6 +31,6 @@ func _on_button_pressed() -> void:
 		elif (tipo_mejora>90 && tipo_mejora<=91):
 			gamedata.fire_rate /= 1.01
 			self.queue_free()
-		elif (tipo_mejora>91 && tipo_mejora<=100):
+		elif (tipo_mejora>91 && tipo_mejora<=92):
 			gamedata.armor += 3
 			self.queue_free()

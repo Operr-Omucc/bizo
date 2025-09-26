@@ -26,15 +26,13 @@ func _on_button_3_pressed() -> void:
 func _on_palanca_pressed() -> void:
 	$Palanca.disabled = true
 	var mejoras = get_tree().get_nodes_in_group("mejora")
-	for m in mejoras:
-		m.queue_free()
 	
 	reroll *= gamedata.currentWave
 	if gamedata.money_amount >= reroll:
 		gamedata.money_amount -= reroll
 		for n in (3):
 			mejora= mejora_path.instantiate()
-			mejora.tipo_mejora = randi_range(1,100)
+			mejora.tipo_mejora = randi_range(1,92)
 			get_parent().add_child(mejora)
 			mejora.global_position= Vector2(496, 112)
 			await get_tree().create_timer(1).timeout
