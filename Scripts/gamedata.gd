@@ -84,6 +84,15 @@ var characters = {
 		"cost": 0,
 		"unlocked": false,
 		"conditions": ["wingame"]
+	},
+	6: {
+		"character_name": "thor knockoff",
+		"maxHealth": 350,
+		"scene": preload("res://Personajes/reimu.tscn"),
+		"gun": preload("res://Escenas/varita_reimu.tscn"),
+		"arm":  preload ("res://Escenas/brazo.tscn"),
+		"cost": 0,
+		"unlocked": false
 	}
 }
 

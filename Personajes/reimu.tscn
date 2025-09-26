@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://dko2fiw1vtbm0"]
+
+[ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="1_5gan6"]
+[ext_resource type="Script" uid="uid://dc3k7c52am65e" path="res://Scripts/reimu.gd" id="1_y3wy0"]
+[ext_resource type="Texture2D" uid="uid://cyfm0lfbd8rg1" path="res://Sprites/Alien.png" id="2_y3wy0"]
+[ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="3_7njjb"]
+[ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="4_l2usq"]
+[ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="5_atmur"]
+[ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="6_xn23t"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_x1u84"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7isqy"]
+
+[sub_resource type="Animation" id="Animation_i6gju"]
+resource_name = "Caminar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pies:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 115)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pies2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 115)]
+}
+
+[sub_resource type="Animation" id="Animation_y2j6e"]
+resource_name = "Quieto"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.11, 0.999), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e1y6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pies:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pies2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6gju"]
+_data = {
+&"Caminar": SubResource("Animation_i6gju"),
+&"Quieto": SubResource("Animation_y2j6e"),
+&"RESET": SubResource("Animation_e1y6l")
+}
+
+[node name="Reimu" type="CharacterBody2D"]
+script = ExtResource("1_y3wy0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5gan6")
+
+[node name="Pies" type="Sprite2D" parent="."]
+position = Vector2(-24, 115)
+scale = Vector2(0.308182, 0.233585)
+texture = ExtResource("2_y3wy0")
+
+[node name="Pies2" type="Sprite2D" parent="."]
+position = Vector2(24, 115)
+scale = Vector2(0.308182, 0.233585)
+texture = ExtResource("2_y3wy0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.500003)
+scale = Vector2(-2.9513, -6.92111)
+shape = SubResource("CapsuleShape2D_7isqy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.00012207, -6.10352e-05)
+scale = Vector2(0.996948, 0.990783)
+zoom = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
+layer = 128
+script = ExtResource("3_7njjb")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer2"]
+offset_left = -1.52588e-05
+offset_top = 2.28882e-05
+offset_right = 532.0
+offset_bottom = 145.0
+scale = Vector2(0.604939, 0.467399)
+texture_under = ExtResource("4_l2usq")
+texture_over = ExtResource("5_atmur")
+texture_progress = ExtResource("6_xn23t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2"]
+offset_left = 512.0
+offset_right = 576.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(1080, 264)
+scale = Vector2(0.381291, 0.223874)
+texture = ExtResource("7_x1u84")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
+offset_left = -177.255
+offset_top = -240.137
+offset_right = -137.255
+offset_bottom = -217.137
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i6gju")
+}

@@ -19,5 +19,5 @@ scale = Vector2(0.223396, 0.284931)
 shape = SubResource("RectangleShape2D_yua7b")
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(8, -5)
+position = Vector2(4.76837e-07, -14)
 scale = Vector2(0.0806709, 0.0905525)

@@ -14,6 +14,7 @@ func _ready() -> void:
 
 #funcion para que el arma mire a la posicion del mouse + revisa si el jugador disparo
 func _physics_process(_delta):
+	rota()
 	bullet_damage = gamedata.damage
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("Disparo") && cooldown:
@@ -39,3 +40,10 @@ func fire():
 	cooldown = false
 	await get_tree().create_timer(fire_rate).timeout
 	cooldown = true
+
+
+func rota():
+	if $".".rotation <= -112:
+		$".".scale = Vector2(-1.0, 1.0)
+	elif $".".rotation >= 112:
+		$".".scale = Vector2(1.0, 1.0)

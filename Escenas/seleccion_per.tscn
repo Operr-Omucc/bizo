@@ -484,6 +484,17 @@ offset_top = 496.0
 offset_right = 848.0
 offset_bottom = 519.0
 
+[node name="Button7" type="Button" parent="."]
+offset_left = 321.0
+offset_top = 257.0
+offset_right = 385.0
+offset_bottom = 313.0
+
+[node name="CaraP5" type="Sprite2D" parent="Button7"]
+position = Vector2(32, 28)
+scale = Vector2(0.592593, 1.64706)
+texture = ExtResource("13_7kkqj")
+
 [connection signal="pressed" from="popup/Personaje1/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
 [connection signal="pressed" from="popup/Personaje1/X" to="." method="_on_x_pressed"]
 [connection signal="pressed" from="popup/Personaje2/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
@@ -502,3 +513,4 @@ offset_bottom = 519.0
 [connection signal="pressed" from="bloq_pj/bloq_pj2" to="." method="_on_bloq_pj_2_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]

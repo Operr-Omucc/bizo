@@ -45,6 +45,11 @@ func _on_button_6_pressed() -> void:
 	$popup/Personaje5.visible = true
 	chosen_Character = 5
 	
+func _on_button_7_pressed() -> void:
+	cerrarPopup()
+	$popup/Personaje5.visible = true
+	chosen_Character = 6
+	
 func _on_iniciar_juego_pressed() -> void:
 	if chosen_Character in gamedata.characters:
 		var chara = gamedata.characters[chosen_Character]

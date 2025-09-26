@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4t4wx38a8d1l"]
+
+[ext_resource type="Script" uid="uid://ba5hetqvpj6jn" path="res://Scripts/varita_reimu.gd" id="1_sadjd"]
+[ext_resource type="Texture2D" uid="uid://r8vt44t3s6ck" path="res://Sprites/Escopeta.png" id="2_icmfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lke8e"]
+size = Vector2(176, 144)
+
+[node name="VaritaReimu" type="CharacterBody2D"]
+scale = Vector2(0.0991052, 0.150156)
+script = ExtResource("1_sadjd")
+
+[node name="Escopeta" type="Sprite2D" parent="."]
+scale = Vector2(1.31786, 0.74666)
+texture = ExtResource("2_icmfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1e-05, 0.00042805)
+shape = SubResource("RectangleShape2D_lke8e")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(72, -8)
+scale = Vector2(0.0806709, 0.0905525)
