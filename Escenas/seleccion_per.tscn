@@ -374,6 +374,7 @@ text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="Personaje6" type="CanvasLayer" parent="popup"]
+visible = false
 
 [node name="PantallaBlanca" type="Sprite2D" parent="popup/Personaje6"]
 position = Vector2(561, 324)

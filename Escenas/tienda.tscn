@@ -60,9 +60,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7flnv")
 text = "Volver al juego"
 
 [node name="Pared" parent="." instance=ExtResource("5_7flnv")]
-position = Vector2(404, 620)
-rotation = -1.56429
-scale = Vector2(-0.449663, 1.68418)
+position = Vector2(472, 584)
+rotation = -1.4967957
+scale = Vector2(-0.3429069, 2.0058305)
 
 [node name="Pared2" parent="." instance=ExtResource("5_7flnv")]
 position = Vector2(21, 464)
@@ -70,12 +70,12 @@ rotation = 0.00443184
 scale = Vector2(0.170616, 0.71297)
 
 [node name="Pared3" parent="." instance=ExtResource("5_7flnv")]
-position = Vector2(792, 471)
+position = Vector2(951.99994, 471.99997)
 rotation = 0.00443184
 scale = Vector2(0.170616, 0.71297)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(496, 96)
+position = Vector2(472, 112)
 texture = ExtResource("4_7flnv")
 
 [node name="Palanca" type="Button" parent="."]
