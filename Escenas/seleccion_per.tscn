@@ -374,7 +374,6 @@ text = "X"
 metadata/_edit_use_anchors_ = true
 
 [node name="Personaje6" type="CanvasLayer" parent="popup"]
-visible = false
 
 [node name="PantallaBlanca" type="Sprite2D" parent="popup/Personaje6"]
 position = Vector2(561, 324)
@@ -400,9 +399,9 @@ text = "Bob Hakurei"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="popup/Personaje6"]
-offset_left = 496.0
+offset_left = 487.99997
 offset_top = 152.0
-offset_right = 868.0
+offset_right = 860.0
 offset_bottom = 274.0
 scale = Vector2(0.923678, 1.03781)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -417,9 +416,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="popup/Personaje6"]
 anchors_preset = -1
 anchor_right = 0.0251736
-offset_left = 496.0
+offset_left = 488.0
 offset_top = 288.0
-offset_right = 778.0
+offset_right = 770.0
 offset_bottom = 493.0
 scale = Vector2(0.979584, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
