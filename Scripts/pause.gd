@@ -19,5 +19,4 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	$CanvasLayer.visible = false
 	get_tree().paused = false
-	gamedata.reset_stat()
 	get_tree().change_scene_to_file("res://Escenas/main_menu.tscn")

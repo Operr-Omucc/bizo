@@ -21,6 +21,8 @@ func _ready():
 	#Spawnea personaje y enemigos adentro del mundo
 	spawn_char()
 	spawn_wave()
+	gamedata.zona = true
+	ContinuarPartida.save_game()
 	gamedata.en = ene_cant
 	#FIN DE READY
 				

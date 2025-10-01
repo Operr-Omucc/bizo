@@ -15,6 +15,7 @@ var armor : int
 var configStats : bool
 var chara_name
 var pause : bool = true
+var zona : bool
 
 @export var currentWave: int
 var rep: int
@@ -30,6 +31,7 @@ func enemy_damage():
 	var base_damage = 5
 	var scaling_factor = 1.15
 	return base_damage * pow(scaling_factor, currentWave) * dif - armor
+
 
 func reset_stat():
 	fire_rate = 0
