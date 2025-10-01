@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3axl0oifrsab"]
+[gd_scene load_steps=20 format=3 uid="uid://b3axl0oifrsab"]
 
 [ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
 [ext_resource type="Texture2D" uid="uid://d0f3stvj1i0ra" path="res://Sprites/Palanca-Arriba.png" id="5_a2w3w"]
 [ext_resource type="Texture2D" uid="uid://c557d737lcbrd" path="res://Sprites/Palanca-Abajo.png" id="5_lpnfq"]
+[ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="7_v3u34"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="8_gvbfd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpnfq"]
 
@@ -98,5 +100,44 @@ offset_right = 1112.0
 offset_bottom = 110.0
 visible_characters_behavior = 3
 
+[node name="Pause" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("7_v3u34")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Pause"]
+visible = false
+
+[node name="PantallaBlanca" type="Sprite2D" parent="Pause/CanvasLayer"]
+position = Vector2(559, 260)
+texture = ExtResource("8_gvbfd")
+
+[node name="Label" type="Label" parent="Pause/CanvasLayer"]
+offset_left = 477.0
+offset_top = 102.0
+offset_right = 654.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Juego pausado"
+
+[node name="Button" type="Button" parent="Pause/CanvasLayer"]
+offset_left = 475.0
+offset_top = 386.0
+offset_right = 483.0
+offset_bottom = 394.0
+theme_override_font_sizes/font_size = 25
+text = "Volver al juego"
+
+[node name="Button2" type="Button" parent="Pause/CanvasLayer"]
+offset_left = 470.0
+offset_top = 448.0
+offset_right = 659.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 25
+text = "Volver al menu
+"
+
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Palanca" to="." method="_on_palanca_pressed"]
+[connection signal="pressed" from="Pause/CanvasLayer/Button" to="Pause" method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/CanvasLayer/Button2" to="Pause" method="_on_button_2_pressed"]
