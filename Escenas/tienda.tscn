@@ -92,10 +92,11 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_a2w3w")
 theme_override_styles/focus = SubResource("StyleBoxTexture_v3u34")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 879.0
-offset_top = 62.0
-offset_right = 919.0
-offset_bottom = 85.0
+offset_left = 858.0
+offset_top = 61.0
+offset_right = 1112.0
+offset_bottom = 110.0
+visible_characters_behavior = 3
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Palanca" to="." method="_on_palanca_pressed"]

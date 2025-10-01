@@ -88,8 +88,8 @@ var characters = {
 		"conditions": ["wingame"]
 	},
 	6: {
-		"character_name": "thor knockoff",
-		"maxHealth": 350,
+		"character_name": "Reimu Hakurei",
+		"maxHealth": 50,
 		"scene": preload("res://Personajes/reimu.tscn"),
 		"gun": preload("res://Escenas/varita_reimu.tscn"),
 		"arm":  preload ("res://Escenas/brazo.tscn"),

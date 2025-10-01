@@ -47,7 +47,7 @@ func _on_button_6_pressed() -> void:
 	
 func _on_button_7_pressed() -> void:
 	cerrarPopup()
-	$popup/Personaje5.visible = true
+	$popup/Personaje6.visible = true
 	chosen_Character = 6
 	
 func _on_iniciar_juego_pressed() -> void:

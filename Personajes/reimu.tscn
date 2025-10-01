@@ -1,13 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://dko2fiw1vtbm0"]
+[gd_scene load_steps=16 format=3 uid="uid://dko2fiw1vtbm0"]
 
-[ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="1_5gan6"]
 [ext_resource type="Script" uid="uid://dc3k7c52am65e" path="res://Scripts/reimu.gd" id="1_y3wy0"]
+[ext_resource type="Texture2D" uid="uid://dwcafjruhohx5" path="res://Sprites/Bob Hakurei.png" id="2_l2usq"]
 [ext_resource type="Texture2D" uid="uid://cyfm0lfbd8rg1" path="res://Sprites/Alien.png" id="2_y3wy0"]
 [ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="3_7njjb"]
 [ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="4_l2usq"]
 [ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="5_atmur"]
 [ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="6_xn23t"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_x1u84"]
+[ext_resource type="Texture2D" uid="uid://br851oe002k6q" path="res://Sprites/disparo1.png" id="9_atmur"]
+[ext_resource type="Texture2D" uid="uid://bqxcs11cu4eeg" path="res://Sprites/disparo2.png" id="10_xn23t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7isqy"]
 
@@ -104,7 +106,7 @@ _data = {
 script = ExtResource("1_y3wy0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5gan6")
+texture = ExtResource("2_l2usq")
 
 [node name="Pies" type="Sprite2D" parent="."]
 position = Vector2(-24, 115)
@@ -160,6 +162,17 @@ offset_bottom = -217.137
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 metadata/_edit_use_anchors_ = true
+
+[node name="Disparo1" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(1095.9999, 606.99994)
+scale = Vector2(0.22430609, 0.2807792)
+texture = ExtResource("9_atmur")
+
+[node name="Disparo2" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+visible = false
+position = Vector2(1096, 607)
+scale = Vector2(0.22411308, 0.2807491)
+texture = ExtResource("10_xn23t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

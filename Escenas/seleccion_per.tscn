@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djo1x7oxg0ruk"]
+[gd_scene load_steps=16 format=3 uid="uid://djo1x7oxg0ruk"]
 
 [ext_resource type="Script" uid="uid://dpjb573o3r3u6" path="res://Scripts/seleccion_per.gd" id="1_ohf22"]
 [ext_resource type="Texture2D" uid="uid://dmacpe23y6waf" path="res://Sprites/CaraP1.png" id="2_c5adk"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://s06kih6b1v3i" path="res://Sprites/Thor.png" id="11_08wed"]
 [ext_resource type="Texture2D" uid="uid://u2h1aq6t35l7" path="res://Sprites/moneda.png" id="11_ug5up"]
 [ext_resource type="Texture2D" uid="uid://bemmrmjts1l3e" path="res://Sprites/CaraP5.png" id="13_7kkqj"]
+[ext_resource type="Texture2D" uid="uid://dwcafjruhohx5" path="res://Sprites/Bob Hakurei.png" id="13_soiqp"]
+[ext_resource type="Texture2D" uid="uid://71rwwynegtlj" path="res://Sprites/CaraP6.png" id="14_7kkqj"]
 
 [node name="seleccion_per" type="Node2D"]
 script = ExtResource("1_ohf22")
@@ -371,6 +373,81 @@ offset_bottom = 112.0
 text = "X"
 metadata/_edit_use_anchors_ = true
 
+[node name="Personaje6" type="CanvasLayer" parent="popup"]
+visible = false
+
+[node name="PantallaBlanca" type="Sprite2D" parent="popup/Personaje6"]
+position = Vector2(561, 324)
+texture = ExtResource("3_716bp")
+
+[node name="Personaje" type="Sprite2D" parent="popup/Personaje6"]
+position = Vector2(428, 198)
+texture = ExtResource("13_soiqp")
+
+[node name="CaraP4" type="Sprite2D" parent="popup/Personaje6"]
+position = Vector2(672, 104)
+scale = Vector2(1.0164493, 0.997285)
+texture = ExtResource("14_7kkqj")
+
+[node name="Label" type="Label" parent="popup/Personaje6"]
+offset_left = 484.0
+offset_top = 85.0
+offset_right = 599.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Bob Hakurei"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="popup/Personaje6"]
+offset_left = 496.0
+offset_top = 152.0
+offset_right = 868.0
+offset_bottom = 274.0
+scale = Vector2(0.923678, 1.03781)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Un Bob japones se encuentra varado
+en el coliseo donde muchos seres 
+vivos se cuestionan que tiene puesto
+de ropa, a Bob Hakurei no le importa 
+nada realmente"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="popup/Personaje6"]
+anchors_preset = -1
+anchor_right = 0.0251736
+offset_left = 496.0
+offset_top = 288.0
+offset_right = 778.0
+offset_bottom = 493.0
+scale = Vector2(0.979584, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "50 de vida
+1 de daño
+Cambio Disparo:
+Al presionar Shift Bob Hakurei
+cambia la forma en la que dispara
+su vara magica, teniendo este dos
+formas, un abanico y 360 grados"
+metadata/_edit_use_anchors_ = true
+
+[node name="Iniciar Juego" type="Button" parent="popup/Personaje6"]
+offset_left = 498.0
+offset_top = 507.0
+offset_right = 602.0
+offset_bottom = 538.0
+text = "Iniciar Juego"
+metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Button" parent="popup/Personaje6"]
+offset_left = 726.0
+offset_top = 81.0
+offset_right = 744.0
+offset_bottom = 112.0
+text = "X"
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -490,10 +567,10 @@ offset_top = 257.0
 offset_right = 385.0
 offset_bottom = 313.0
 
-[node name="CaraP5" type="Sprite2D" parent="Button7"]
+[node name="CaraP6" type="Sprite2D" parent="Button7"]
 position = Vector2(32, 28)
 scale = Vector2(0.592593, 1.64706)
-texture = ExtResource("13_7kkqj")
+texture = ExtResource("14_7kkqj")
 
 [connection signal="pressed" from="popup/Personaje1/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
 [connection signal="pressed" from="popup/Personaje1/X" to="." method="_on_x_pressed"]
@@ -505,6 +582,8 @@ texture = ExtResource("13_7kkqj")
 [connection signal="pressed" from="popup/Personaje4/X" to="." method="_on_x_pressed"]
 [connection signal="pressed" from="popup/Personaje5/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
 [connection signal="pressed" from="popup/Personaje5/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="popup/Personaje6/Iniciar Juego" to="." method="_on_iniciar_juego_pressed"]
+[connection signal="pressed" from="popup/Personaje6/X" to="." method="_on_x_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

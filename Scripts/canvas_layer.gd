@@ -7,6 +7,9 @@ func _ready():
 	if gamedata.chara_name == "John Cowboy":
 		# actualizar GUI
 		$Label2.text = "%s/6" % [shots_fired]
+	elif gamedata.chara_name == "Reimu Hakurei":
+		$Disparo1.visible=false
+		$Disparo2.visible=true
 	else:
 		return
 
@@ -19,9 +22,10 @@ func _physics_process(_delta: float) -> void:
 	if gamedata.chara_name == "John Cowboy":
 		detect_shot()
 		fire_shots()
+	elif gamedata.chara_name == "Reimu Hakurei":
+		detectSkill()
 	else:
 		return
-	
 
 func detect_shot():
 	
@@ -46,3 +50,14 @@ func fire_shots():
 		if is_inside_tree():
 			await get_tree().create_timer(0.3).timeout
 		cooldown = true
+
+func detectSkill():
+	if gamedata.chara_name == "Reimu Hakurei":
+		if Input.is_action_just_pressed("Dash") && $Disparo2.visible==true:
+			$Disparo1.visible = true
+			$Disparo2.visible = false
+		elif Input.is_action_just_pressed("Dash") && $Disparo2.visible==false:
+			$Disparo1.visible = false
+			$Disparo2.visible = true
+	else:
+		return

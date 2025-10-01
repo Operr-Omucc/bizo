@@ -31,3 +31,10 @@ func play_derrota():
 func play_rayo():
 	if not mute:
 		$rayo.play()
+		
+func play_hombreTienda():
+	if not mute:
+			if $hombreTienda.playing:
+				$hombreTienda.stop()
+			else:
+				$hombreTienda.play()
