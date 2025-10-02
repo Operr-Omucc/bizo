@@ -34,5 +34,13 @@ offset_right = 528.0
 offset_bottom = 215.0
 text = "configuracion establecida!"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 137.0
+offset_top = 245.0
+offset_right = 258.0
+offset_bottom = 276.0
+text = "Mutear sonido"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
