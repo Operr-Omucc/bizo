@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpsp4tnuyb841"]
+[gd_scene load_steps=9 format=3 uid="uid://bpsp4tnuyb841"]
 
 [ext_resource type="Texture2D" uid="uid://dssvcacfwivo5" path="res://Sprites/piso.png" id="1_lm0so"]
 [ext_resource type="Script" uid="uid://do1dn5x0m2mrk" path="res://Scripts/batalla_jefe.gd" id="1_ymfig"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ciu1higha56lx" path="res://Escenas/pared_jefe.tscn" id="5_6roep"]
 [ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="5_fmxow"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="6_6roep"]
+[ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="7_6roep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmxow"]
 
 [node name="Batalla Jefe" type="Node2D"]
 script = ExtResource("1_ymfig")
@@ -203,4 +206,25 @@ offset_bottom = 394.0
 theme_override_font_sizes/font_size = 25
 text = "Volver al juego"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2980, -920)
+scale = Vector2(13.748948, 13.460036)
+shape = SubResource("RectangleShape2D_fmxow")
+
+[node name="BobInicial" type="Sprite2D" parent="Area2D"]
+position = Vector2(-2980, -920)
+scale = Vector2(2.96, 1)
+texture = ExtResource("7_6roep")
+
+[node name="Label" type="Label" parent="Area2D"]
+offset_left = -3057.0
+offset_top = -1223.0
+offset_right = -2879.0
+offset_bottom = -1176.0
+theme_override_font_sizes/font_size = 34
+text = "No tocar !!!"
+
 [connection signal="pressed" from="Pause/CanvasLayer/Button" to="Pause" method="_on_button_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

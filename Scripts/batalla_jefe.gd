@@ -6,7 +6,7 @@ var brazo = safe_instance(gamedata.arm_scene)
 var wave_dif = gamedata.currentWave+2
 var dif = gamedata.dif
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	gamedata.debug()
 
 func _ready():
@@ -26,3 +26,8 @@ func safe_instance(scene: PackedScene) -> Node: #funcion que permite aparecer es
 	if scene != null:
 		return scene.instantiate()
 	return null
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("personaje"):
+		get_tree().call_deferred("change_scene_to_file", "res://Escenas/BOMBA.tscn")
