@@ -20,6 +20,8 @@ func _physics_process(_delta: float) -> void:
 func _ready():
 	#Spawnea personaje y enemigos adentro del mundo
 	spawn_char()
+	AudioManager.stop_tienda()
+	AudioManager.play_juego()
 	spawn_wave()
 	gamedata.zona = true
 	ContinuarPartida.save_game()

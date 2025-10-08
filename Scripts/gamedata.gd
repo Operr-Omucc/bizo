@@ -10,7 +10,7 @@ var maxHealth: int = 0
 var health: int = 0
 var damage: int
 var speed: int = 0
-var fire_rate: int = 1
+var fire_rate: float = 1
 var armor : int
 var configStats : bool
 var chara_name

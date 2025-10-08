@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qfdxbhl1f0dm"]
+[gd_scene load_steps=9 format=3 uid="uid://qfdxbhl1f0dm"]
 
 [ext_resource type="Script" uid="uid://be7h7pxfaiqem" path="res://Audio/audio_manager.gd" id="1_x7qoq"]
 [ext_resource type="AudioStream" uid="uid://bd7w0smfarlkq" path="res://Audio/efectos_sonido/gunshot_smg_shot_5-203475.mp3" id="2_43dpk"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bgmmna8xdob6x" path="res://Audio/efectos_sonido/golpe_sfx.wav" id="4_uukss"]
 [ext_resource type="AudioStream" uid="uid://btxnk3hw7h0nj" path="res://Audio/efectos_sonido/lightning-strike-386161.mp3" id="5_i84i0"]
 [ext_resource type="AudioStream" uid="uid://cs6p7x8x4b38s" path="res://Audio/hombreTienda.mp3" id="6_150o5"]
+[ext_resource type="AudioStream" uid="uid://c8k8nxmjhjl1m" path="res://Audio/musica/new_song2finalradiover.wav" id="7_dxlp5"]
+[ext_resource type="AudioStream" uid="uid://bone8wytig1ee" path="res://Audio/musica/new_songconfiltro.wav" id="8_acx60"]
 
 [node name="audio_manager" type="Node2D"]
 script = ExtResource("1_x7qoq")
@@ -30,4 +32,13 @@ volume_db = -6.0
 
 [node name="hombreTienda" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_150o5")
-volume_db = 6.0
+volume_db = -7.446
+
+[node name="tienda" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dxlp5")
+
+[node name="juego" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_acx60")
+
+[connection signal="finished" from="tienda" to="." method="_on_tienda_finished"]
+[connection signal="finished" from="juego" to="." method="_on_juego_finished"]

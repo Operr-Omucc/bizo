@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3axl0oifrsab"]
+[gd_scene load_steps=21 format=3 uid="uid://b3axl0oifrsab"]
 
 [ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
+[ext_resource type="Texture2D" uid="uid://bkmn3hbs3coqn" path="res://Sprites/tienda1.jpeg" id="3_gvbfd"]
 [ext_resource type="Texture2D" uid="uid://ce70jyd8tympv" path="res://Sprites/dispenser.png" id="4_7flnv"]
 [ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
 [ext_resource type="Texture2D" uid="uid://d0f3stvj1i0ra" path="res://Sprites/Palanca-Arriba.png" id="5_a2w3w"]
@@ -47,6 +48,11 @@ position = Vector2(576, 320)
 scale = Vector2(1.7866, 1.22759)
 texture = ExtResource("1_4xubq")
 
+[node name="Tienda1" type="Sprite2D" parent="."]
+position = Vector2(602, 151.00002)
+scale = Vector2(2.928033, 2.5914032)
+texture = ExtResource("3_gvbfd")
+
 [node name="Button3" type="Button" parent="."]
 offset_left = 968.0
 offset_top = 584.0
@@ -75,7 +81,7 @@ rotation = 0.00443184
 scale = Vector2(0.170616, 0.71297)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(472, 112)
+position = Vector2(289, 113)
 texture = ExtResource("4_7flnv")
 
 [node name="Palanca" type="Button" parent="."]
@@ -94,10 +100,10 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_a2w3w")
 theme_override_styles/focus = SubResource("StyleBoxTexture_v3u34")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 858.0
-offset_top = 61.0
-offset_right = 1112.0
-offset_bottom = 110.0
+offset_left = 837.0
+offset_top = 45.0
+offset_right = 1091.0
+offset_bottom = 94.0
 visible_characters_behavior = 3
 
 [node name="Pause" type="Node2D" parent="."]

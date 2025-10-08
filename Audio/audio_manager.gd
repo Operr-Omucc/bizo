@@ -38,3 +38,29 @@ func play_hombreTienda():
 				$hombreTienda.stop()
 			else:
 				$hombreTienda.play()
+				
+func play_tienda():
+	if not mute:
+		$tienda.play()
+	
+		
+func play_juego():
+	if not mute:
+		$juego.play()
+
+func stop_tienda():
+	if not mute:
+		$tienda.stop()
+
+func stop_juego():
+	if not mute:
+		$juego.stop()
+
+func _on_tienda_finished() -> void:
+	if not mute:
+		$tienda.play()
+
+
+func _on_juego_finished() -> void:
+	if not mute:
+		$juego.play()
