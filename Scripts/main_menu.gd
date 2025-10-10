@@ -21,8 +21,8 @@ func _on_button_4_pressed() -> void:
 
 
 func _on_button_5_pressed() -> void:
-	if ContinuarPartida.game_data["personaje"] != null:
-		ContinuarPartida.load_game()
+	ContinuarPartida.load_game()
+	if ContinuarPartida.game_data.has("personaje") and ContinuarPartida.game_data["personaje"] != null:
 		if gamedata.zona == true:
 			get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
 		else:

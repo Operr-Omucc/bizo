@@ -19,12 +19,12 @@ func _physics_process(_delta: float) -> void:
 	gamedata.debug()
 func _ready():
 	#Spawnea personaje y enemigos adentro del mundo
+	ContinuarPartida.save_game()
 	spawn_char()
 	AudioManager.stop_tienda()
 	AudioManager.play_juego()
 	spawn_wave()
 	gamedata.zona = true
-	ContinuarPartida.save_game()
 	gamedata.en = ene_cant
 	#FIN DE READY
 				
