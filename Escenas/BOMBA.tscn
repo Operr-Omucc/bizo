@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://jvm0l76jergg"]
 
-[ext_resource type="Script" uid="uid://b5p2kbrvwllve" path="res://Escenas/bomba.gd" id="1_4qjyf"]
+[ext_resource type="Script" uid="uid://b5p2kbrvwllve" path="res://Scripts/bomba.gd" id="1_4qjyf"]
 [ext_resource type="VideoStream" uid="uid://c8uqghyjddspa" path="res://Sprites/BOMBA-YUCATECA-_️_️❗❗.ogv" id="2_4qjyf"]
 
 [node name="BOMBA" type="Node2D"]

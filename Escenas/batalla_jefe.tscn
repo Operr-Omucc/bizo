@@ -93,7 +93,7 @@ position = Vector2(2993.53, 1237.03)
 scale = Vector2(2.81169, 3.56395)
 
 [node name="Pared52" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(4811.82, 1254.47)
+position = Vector2(4712, 1251)
 scale = Vector2(2.58101, 1.9265)
 
 [node name="Pared53" parent="Paredes" instance=ExtResource("5_6roep")]
@@ -124,14 +124,14 @@ rotation = 1.5708
 scale = Vector2(4.71494, 2.58355)
 
 [node name="Pared59" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(-4782.7, -1602.75)
+position = Vector2(-4829, -1603)
 rotation = 1.5708
 scale = Vector2(3.66355, 2.81451)
 
 [node name="Pared60" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(-2970, -474.086)
+position = Vector2(-3005.0002, -469.00003)
 rotation = 1.5708
-scale = Vector2(2.97812, 2.93967)
+scale = Vector2(2.8887715, 2.707637)
 
 [node name="Pared61" parent="Paredes" instance=ExtResource("5_6roep")]
 position = Vector2(-687.883, -1587.99)
@@ -139,9 +139,9 @@ rotation = 1.5708
 scale = Vector2(3.35592, 8.65378)
 
 [node name="Pared62" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(1158.42, 677.392)
+position = Vector2(1156.0001, 597.99994)
 rotation = 1.5708
-scale = Vector2(4.09027, -4.72125)
+scale = Vector2(3.8560245, -4.554496)
 
 [node name="Pared63" parent="Paredes" instance=ExtResource("5_6roep")]
 position = Vector2(2075, -3061)
@@ -164,12 +164,12 @@ rotation = 1.5708
 scale = Vector2(4.49441, 2.90686)
 
 [node name="Pared67" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(3447.26, -471.401)
+position = Vector2(3454.9998, -450)
 rotation = 1.5708
-scale = Vector2(4.49441, 6.63621)
+scale = Vector2(4.5027, 6.496783)
 
 [node name="Pared68" parent="Paredes" instance=ExtResource("5_6roep")]
-position = Vector2(3445.02, -1613.49)
+position = Vector2(3536.0002, -1596)
 rotation = 1.5708
 scale = Vector2(4.37387, 2.91952)
 
