@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5u8cots433u8" path="res://Sprites/MM.png" id="1_r8uxs"]
 
 [node name="MainMenu" type="Node2D"]
+position = Vector2(-7, 0)
 script = ExtResource("1_a3sw6")
 
 [node name="Button" type="Button" parent="."]
