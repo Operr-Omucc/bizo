@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqa2xiltio2lt"]
+
+[ext_resource type="Script" uid="uid://ukitjg5rxqjw" path="res://bizo3ed/bala.gd" id="1_npmfo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gys6y"]
+albedo_color = Color(0.6385065, 0.5768432, 0, 1)
+emission = Color(1.92523e-06, 0.68047905, 0.36328012, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gys6y"]
+material = SubResource("StandardMaterial3D_gys6y")
+size = Vector3(0.05, 0.05, 1)
+
+[node name="Bala" type="Node3D"]
+script = ExtResource("1_npmfo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gys6y")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -0.6)

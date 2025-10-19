@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://b583p4mn1081w"]
+
+[ext_resource type="Texture2D" uid="uid://deavi6aqwnca6" path="res://Sprites/Piso/pasto1.jpg" id="1_gpmbt"]
+[ext_resource type="PackedScene" uid="uid://cjvnx4qqqrgai" path="res://bizo3ed/jugador.tscn" id="2_silna"]
+[ext_resource type="PackedScene" uid="uid://dc73jnx756rdk" path="res://bizo3ed/pared.tscn" id="3_ar4x6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gpmbt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_silna"]
+sky_material = SubResource("ProceduralSkyMaterial_gpmbt")
+
+[sub_resource type="Environment" id="Environment_ar4x6"]
+background_mode = 2
+sky = SubResource("Sky_silna")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_silna"]
+albedo_texture = ExtResource("1_gpmbt")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar4x6"]
+albedo_color = Color(0.047058824, 0.13333334, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8toju"]
+albedo_color = Color(0.07058824, 1, 0.03529412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qetps"]
+albedo_color = Color(0.6156863, 0.13725491, 0.11764706, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 163.71722, 3810.6511, -642.91284)
+light_color = Color(0.52642083, 0.5746814, 0.5959953, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ar4x6")
+
+[node name="Piso" type="CSGBox3D" parent="."]
+transform = Transform3D(870.5509, 0, 0, 0, 290.0476, 0, 0, 0, 870.5509, 0, -1.0886078, 0)
+use_collision = true
+size = Vector3(1, 0.00579834, 1)
+material = SubResource("StandardMaterial3D_silna")
+
+[node name="jugador" parent="." instance=ExtResource("2_silna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0040955544, 1.1904922, -12.165907)
+
+[node name="Pared" parent="." instance=ExtResource("3_ar4x6")]
+transform = Transform3D(44.697426, 0, 0, 0, -1.9537868e-06, -44.697426, 0, 44.697426, -1.9537868e-06, -431.51837, 155.52371, 0.094073646)
+size = Vector3(0.17272949, 19.248028, 6.939209)
+
+[node name="Pared2" parent="." instance=ExtResource("3_ar4x6")]
+transform = Transform3D(44.697426, 0, 0, 0, -1.9537868e-06, -44.697426, 0, 44.697426, -1.9537868e-06, 435.75064, 155.52371, 0.094073646)
+size = Vector3(0.17272949, 19.248028, 6.939209)
+
+[node name="Pared3" parent="." instance=ExtResource("3_ar4x6")]
+transform = Transform3D(-1.9537863e-06, -44.697422, 1.9537863e-06, 0, -1.9537863e-06, -44.697422, 44.697422, -1.9537863e-06, 8.5402714e-14, 2.1728382, 155.52371, -433.3791)
+size = Vector3(0.17272949, 19.248028, 6.939209)
+
+[node name="Pared4" parent="." instance=ExtResource("3_ar4x6")]
+transform = Transform3D(-1.9537863e-06, -44.697422, 1.9537863e-06, 0, -1.9537863e-06, -44.697422, 44.697422, -1.9537863e-06, 8.5402714e-14, 0.7520733, 155.52371, 433.56726)
+size = Vector3(0.17272949, 19.248028, 6.939209)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.55773556, 0, 0, 0, 1, 0, 0, 0, 5.459198, -4.1459794, 0.5303955, 1.7329514)
+use_collision = true
+size = Vector3(15.8671875, 2.060791, 1)
+material = SubResource("StandardMaterial3D_ar4x6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.34600076, 0, 0, 0, 0.62036705, 0, 0, 0, 3.3867066, -4.1459794, 0.19074306, 5.869787)
+use_collision = true
+size = Vector3(15.8671875, 1.5125122, 1)
+material = SubResource("StandardMaterial3D_8toju")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.55773556, 0, 0, 0, 1, 0, 0, 0, 5.459198, -13.852366, 0.9537201, 5.2413955)
+use_collision = true
+size = Vector3(21.735474, 2.9074402, 2.4315186)
+material = SubResource("StandardMaterial3D_qetps")

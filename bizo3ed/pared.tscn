@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc73jnx756rdk"]
+
+[ext_resource type="Texture2D" uid="uid://c0dwwu1oeusus" path="res://Sprites/Pared.png" id="1_fablw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fablw"]
+albedo_texture = ExtResource("1_fablw")
+
+[node name="Pared" type="CSGBox3D"]
+transform = Transform3D(55, 0, 0, 0, -2.4041265e-06, -55, 0, 55, -2.4041265e-06, 0, -6.853452e-08, 1.5678864)
+use_collision = true
+size = Vector3(0.17272949, 5.052658, 3.6499023)
+material = SubResource("StandardMaterial3D_fablw")
