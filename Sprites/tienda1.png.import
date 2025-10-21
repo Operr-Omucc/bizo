@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtp5f0huoc8cw"
-path="res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"
+uid="uid://llp0djuacfbm"
+path="res://.godot/imported/tienda1.png-ad97e6d53b225038fd2cd4f43d21b5ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Piso.png"
-dest_files=["res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"]
+source_file="res://Sprites/tienda1.png"
+dest_files=["res://.godot/imported/tienda1.png-ad97e6d53b225038fd2cd4f43d21b5ae.ctex"]
 
 [params]
 

@@ -29,7 +29,7 @@ albedo_color = Color(0.07058824, 1, 0.03529412, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qetps"]
 albedo_color = Color(0.6156863, 0.13725491, 0.11764706, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Bizo3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 163.71722, 3810.6511, -642.91284)

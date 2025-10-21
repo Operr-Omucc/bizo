@@ -1,14 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqa2xiltio2lt"]
+[gd_scene load_steps=7 format=3 uid="uid://cqa2xiltio2lt"]
 
 [ext_resource type="Script" uid="uid://ukitjg5rxqjw" path="res://bizo3ed/bala.gd" id="1_npmfo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gys6y"]
 albedo_color = Color(0.6385065, 0.5768432, 0, 1)
-emission = Color(1.92523e-06, 0.68047905, 0.36328012, 1)
+emission_enabled = true
+emission = Color(0.8911086, 0.8858349, 0.2215757, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gys6y"]
 material = SubResource("StandardMaterial3D_gys6y")
 size = Vector3(0.05, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npmfo"]
+albedo_color = Color(0.7635088, 0.77957755, 0, 1)
+emission_enabled = true
+emission = Color(0, 0.43529412, 0, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cwky6"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2pr7n"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Bala" type="Node3D"]
 script = ExtResource("1_npmfo")
@@ -18,3 +33,19 @@ mesh = SubResource("BoxMesh_gys6y")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.6)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.597159)
+material_override = SubResource("StandardMaterial3D_npmfo")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_cwky6")
+draw_pass_1 = SubResource("BoxMesh_2pr7n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

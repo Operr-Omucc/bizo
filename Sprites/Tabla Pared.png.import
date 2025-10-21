@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmn3hbs3coqn"
-path="res://.godot/imported/tienda1.jpeg-933f960eca37b900f2c774ceb1b3bbaa.ctex"
+uid="uid://dqcrbb3kqfdmn"
+path="res://.godot/imported/Tabla Pared.png-ecd691761a59f704cf7dece2f14aa93b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tienda1.jpeg"
-dest_files=["res://.godot/imported/tienda1.jpeg-933f960eca37b900f2c774ceb1b3bbaa.ctex"]
+source_file="res://Sprites/Tabla Pared.png"
+dest_files=["res://.godot/imported/Tabla Pared.png-ecd691761a59f704cf7dece2f14aa93b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtp5f0huoc8cw"
-path="res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"
+uid="uid://2dos1d2w8yxe"
+path="res://.godot/imported/Barril.png-00ab23cb1ba420ccd2403edefd0ffb48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Piso.png"
-dest_files=["res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"]
+source_file="res://Sprites/Barril.png"
+dest_files=["res://.godot/imported/Barril.png-00ab23cb1ba420ccd2403edefd0ffb48.ctex"]
 
 [params]
 

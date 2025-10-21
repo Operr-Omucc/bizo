@@ -1,14 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3axl0oifrsab"]
+[gd_scene load_steps=24 format=3 uid="uid://b3axl0oifrsab"]
 
-[ext_resource type="Texture2D" uid="uid://crga4nivpgcjh" path="res://Sprites/tienda.png" id="1_4xubq"]
 [ext_resource type="Script" uid="uid://iiw5io5rx04q" path="res://Scripts/tienda.gd" id="1_50q1o"]
-[ext_resource type="Texture2D" uid="uid://bkmn3hbs3coqn" path="res://Sprites/tienda1.jpeg" id="3_gvbfd"]
-[ext_resource type="Texture2D" uid="uid://ce70jyd8tympv" path="res://Sprites/Dispenser.png" id="4_7flnv"]
-[ext_resource type="PackedScene" uid="uid://dqlkcii55a1ep" path="res://Escenas/pared.tscn" id="5_7flnv"]
+[ext_resource type="Texture2D" uid="uid://u33e54a4lq66" path="res://Sprites/Tienda.png" id="2_v3u34"]
+[ext_resource type="Texture2D" uid="uid://j0a3uqiasiwc" path="res://Sprites/tienda2.png" id="3_gvbfd"]
+[ext_resource type="Texture2D" uid="uid://2dos1d2w8yxe" path="res://Sprites/Barril.png" id="4_gvbfd"]
 [ext_resource type="Texture2D" uid="uid://d0f3stvj1i0ra" path="res://Sprites/Palanca-Arriba.png" id="5_a2w3w"]
 [ext_resource type="Texture2D" uid="uid://c557d737lcbrd" path="res://Sprites/Palanca-Abajo.png" id="5_lpnfq"]
 [ext_resource type="Script" uid="uid://dlw5iqr6nfo0i" path="res://Scripts/pause.gd" id="7_v3u34"]
 [ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="8_gvbfd"]
+[ext_resource type="Texture2D" uid="uid://sdfg1403wapn" path="res://Sprites/Carrito.png" id="9_hn03c"]
+[ext_resource type="PackedScene" uid="uid://b0k7oyomb0bwn" path="res://Escenas/piso_2_tienda.tscn" id="10_u0l4p"]
+[ext_resource type="PackedScene" uid="uid://bl2d1wb1eahbp" path="res://Escenas/piso_1_tienda.tscn" id="11_187il"]
+[ext_resource type="PackedScene" uid="uid://ih6xkuo05pw1" path="res://Escenas/pared_tienda.tscn" id="12_2dffd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpnfq"]
 
@@ -45,15 +48,10 @@ script = ExtResource("1_50q1o")
 
 [node name="Tienda" type="Sprite2D" parent="."]
 position = Vector2(576, 320)
-scale = Vector2(1.7866, 1.22759)
-texture = ExtResource("1_4xubq")
+scale = Vector2(0.8861477, 0.89862293)
+texture = ExtResource("2_v3u34")
 
-[node name="Tienda1" type="Sprite2D" parent="."]
-position = Vector2(602, 151.00002)
-scale = Vector2(2.928033, 2.5914032)
-texture = ExtResource("3_gvbfd")
-
-[node name="Button3" type="Button" parent="."]
+[node name="volverJuego" type="Button" parent="."]
 offset_left = 968.0
 offset_top = 584.0
 offset_right = 976.0
@@ -65,24 +63,9 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_a2w3w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7flnv")
 text = "Volver al juego"
 
-[node name="Pared" parent="." instance=ExtResource("5_7flnv")]
-position = Vector2(472, 584)
-rotation = -1.4967957
-scale = Vector2(-0.3429069, 2.0058305)
-
-[node name="Pared2" parent="." instance=ExtResource("5_7flnv")]
-position = Vector2(21, 464)
-rotation = 0.00443184
-scale = Vector2(0.170616, 0.71297)
-
-[node name="Pared3" parent="." instance=ExtResource("5_7flnv")]
-position = Vector2(951.99994, 471.99997)
-rotation = 0.00443184
-scale = Vector2(0.170616, 0.71297)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(289, 113)
-texture = ExtResource("4_7flnv")
+position = Vector2(318, 199)
+texture = ExtResource("4_gvbfd")
 
 [node name="Palanca" type="Button" parent="."]
 offset_left = -8.0
@@ -98,13 +81,6 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_56r47")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_gvbfd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_a2w3w")
 theme_override_styles/focus = SubResource("StyleBoxTexture_v3u34")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 837.0
-offset_top = 45.0
-offset_right = 1091.0
-offset_bottom = 94.0
-visible_characters_behavior = 3
 
 [node name="Pause" type="Node2D" parent="."]
 process_mode = 3
@@ -143,7 +119,39 @@ theme_override_font_sizes/font_size = 25
 text = "Volver al menu
 "
 
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[node name="carrito" type="Sprite2D" parent="."]
+position = Vector2(276, 518)
+texture = ExtResource("9_hn03c")
+
+[node name="piso2Tienda" parent="carrito" instance=ExtResource("10_u0l4p")]
+position = Vector2(101, 116)
+rotation = -0.012037201
+
+[node name="Piso1Tienda" parent="carrito" instance=ExtResource("11_187il")]
+position = Vector2(-130, 104)
+
+[node name="paredTienda" parent="carrito" instance=ExtResource("12_2dffd")]
+position = Vector2(-229, -29)
+rotation = 0.03786633
+
+[node name="paredTienda2" parent="carrito" instance=ExtResource("12_2dffd")]
+position = Vector2(203, 39)
+rotation = -0.009395578
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 633.0
+offset_top = 96.999985
+offset_right = 887.0
+offset_bottom = 145.99998
+visible_characters_behavior = 3
+
+[node name="Tienda1" type="Sprite2D" parent="."]
+position = Vector2(578, 253.00003)
+scale = Vector2(1.0791905, 1.1472237)
+texture = ExtResource("3_gvbfd")
+
+[connection signal="pressed" from="volverJuego" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Palanca" to="." method="_on_palanca_pressed"]
 [connection signal="pressed" from="Pause/CanvasLayer/Button" to="Pause" method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/CanvasLayer/Button2" to="Pause" method="_on_button_2_pressed"]

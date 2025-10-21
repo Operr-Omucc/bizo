@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv4uj87ncue30"
-path="res://.godot/imported/mejora_fire_rate.png-d58662fd46c357ad3dff9c7739f54724.ctex"
+uid="uid://djcy5up1nk6na"
+path="res://.godot/imported/image.png-ed6a75ea9515f8d0c2160b43f2faa6a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mejora_fire_rate.png"
-dest_files=["res://.godot/imported/mejora_fire_rate.png-d58662fd46c357ad3dff9c7739f54724.ctex"]
+source_file="res://Sprites/image.png"
+dest_files=["res://.godot/imported/image.png-ed6a75ea9515f8d0c2160b43f2faa6a9.ctex"]
 
 [params]
 

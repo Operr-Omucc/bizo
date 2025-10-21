@@ -4,7 +4,7 @@ var speed
 var cooldown:bool = true
 var health: int
 var maxHealth: int
-@onready var healthBar: TextureProgressBar = $Camera2D/CanvasLayer2/TextureProgressBar
+@onready var healthBar: TextureProgressBar = $GUI/GUI/TextureProgressBar
 @onready var jefe: CharacterBody2D = $"."
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

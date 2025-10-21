@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl2d1wb1eahbp"]
+
+[ext_resource type="Texture2D" uid="uid://d28fg3y0088em" path="res://Sprites/Tabla Piso.png" id="1_ygk1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t4vm"]
+size = Vector2(20.597488, 16.518608)
+
+[node name="piso1Tienda" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ygk1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.7019815, -42.54108)
+rotation = 0.15956134
+scale = Vector2(11.33918, -1.2146122)
+shape = SubResource("RectangleShape2D_3t4vm")

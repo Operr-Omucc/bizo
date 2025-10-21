@@ -23,7 +23,7 @@ var gravity = 9.8
 @onready var anim_arma = $cabeza/Camera3D/pistola/AnimationPlayer
 @onready var barril_arma = $cabeza/Camera3D/pistola/RayCast3D
 
-var bala = load("res://bizo3ed/bala.gd")
+var bala = load("res://bizo3ed/bala.tscn")
 var instance
 
 

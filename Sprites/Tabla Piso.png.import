@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtp5f0huoc8cw"
-path="res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"
+uid="uid://d28fg3y0088em"
+path="res://.godot/imported/Tabla Piso.png-d41609a6a0883d06e200b693b1216dc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Piso.png"
-dest_files=["res://.godot/imported/Piso.png-93706cfc01d1bf9da6369f9e865efd6e.ctex"]
+source_file="res://Sprites/Tabla Piso.png"
+dest_files=["res://.godot/imported/Tabla Piso.png-d41609a6a0883d06e200b693b1216dc1.ctex"]
 
 [params]
 

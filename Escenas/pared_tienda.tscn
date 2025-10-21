@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ih6xkuo05pw1"]
+
+[ext_resource type="Texture2D" uid="uid://dqcrbb3kqfdmn" path="res://Sprites/Tabla Pared.png" id="1_1tl6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e0q1"]
+size = Vector2(20, 173)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 6)
+texture = ExtResource("1_1tl6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5e0q1")

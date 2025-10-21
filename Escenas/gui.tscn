@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://dc8cm7prts1jv"]
+
+[ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="1_u8rov"]
+[ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="2_2j4er"]
+[ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="3_1clfd"]
+[ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="4_3do7n"]
+[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="5_1lo52"]
+[ext_resource type="Texture2D" uid="uid://br851oe002k6q" path="res://Sprites/disparo1.png" id="6_1clfd"]
+[ext_resource type="Texture2D" uid="uid://bqxcs11cu4eeg" path="res://Sprites/disparo2.png" id="7_3do7n"]
+
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource("1_u8rov")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GUI"]
+offset_left = -1.52588e-05
+offset_top = 2.28882e-05
+offset_right = 532.0
+offset_bottom = 145.0
+scale = Vector2(0.604939, 0.467399)
+texture_under = ExtResource("2_2j4er")
+texture_over = ExtResource("3_1clfd")
+texture_progress = ExtResource("4_3do7n")
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca" type="Sprite2D" parent="GUI"]
+position = Vector2(1080, 264)
+scale = Vector2(0.381291, 0.223874)
+texture = ExtResource("5_1lo52")
+
+[node name="Label" type="Label" parent="GUI/PantallaBlanca"]
+offset_left = -177.255
+offset_top = -240.137
+offset_right = -137.255
+offset_bottom = -217.137
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+metadata/_edit_use_anchors_ = true
+
+[node name="PantallaBlanca2" type="Sprite2D" parent="GUI"]
+position = Vector2(587.968, 12.015766)
+scale = Vector2(0.40228564, 0.04793694)
+texture = ExtResource("5_1lo52")
+
+[node name="Label" type="Label" parent="GUI/PantallaBlanca2"]
+anchors_preset = -1
+offset_left = -188.84099
+offset_top = -250.65776
+offset_right = 65.15901
+offset_bottom = -208.65776
+scale = Vector2(1.2697896, 6.1483326)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="Disparo1" type="Sprite2D" parent="GUI"]
+position = Vector2(1095.9999, 606.99994)
+scale = Vector2(0.22430609, 0.2807792)
+texture = ExtResource("6_1clfd")
+
+[node name="Disparo2" type="Sprite2D" parent="GUI"]
+visible = false
+position = Vector2(1096, 607)
+scale = Vector2(0.22411308, 0.2807491)
+texture = ExtResource("7_3do7n")
+
+[node name="PantallaBlanca3" type="Sprite2D" parent="GUI"]
+position = Vector2(56, 624.00006)
+scale = Vector2(0.28466484, 0.058996998)
+texture = ExtResource("5_1lo52")
+
+[node name="Label2" type="Label" parent="GUI/PantallaBlanca3"]
+offset_left = -140.51613
+offset_top = -135.60156
+offset_right = -76.51613
+offset_bottom = -112.60156
+metadata/_edit_use_anchors_ = true

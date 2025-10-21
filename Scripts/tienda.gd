@@ -50,7 +50,7 @@ func _on_palanca_pressed() -> void:
 	
 	
 func actualizarTextoTirada():
-	$Tienda1.texture = load("res://Sprites/tienda1.jpeg")
+	$Tienda1.texture = load("res://Sprites/tienda2.png")
 	$Label.visible_characters = 0
 	if dialogo_tienda < 50:
 		$Label.text = "Tenes %s dinero,
@@ -59,14 +59,16 @@ func actualizarTextoTirada():
 		$Label.text = "no quiero arreglar 
 		la madera que esta rota"
 	elif dialogo_tienda >= 80 && dialogo_tienda < 90:
-		$Label.text = "Podes ir aceptando que
-		tus esclavistas no te van a soltar y
-		darme todo tu oro"
-	elif dialogo_tienda >= 90:
+		$Label.text = "Podes ir 
+		dandome todo tu oro"
+	elif dialogo_tienda >= 90 && dialogo_tienda <= 99:
 		$Label.text = "Hace frio
 		y estas lejos de casaa
 		universos aparte sentado
 		en esta tienda"
+	elif dialogo_tienda == 100:
+		$Label.text = "estamos en todos los
+		universos, el imperio no, los judios"
 	$Palanca.disabled = true
 	for i in range($Label.text.length()):
 		var character = $Label.text[i]
@@ -92,7 +94,7 @@ func actualizarTextoPobre():
 			AudioManager.play_hombreTienda()
 			
 func actualizarTextoRico():
-	$Tienda1.texture = load("res://Sprites/tienda2.jpeg")
+	$Tienda1.texture = load("res://Sprites/tienda1.png")
 	$Palanca.disabled = true
 	$Label.visible_characters = 0
 	$Label.text = "Nice"

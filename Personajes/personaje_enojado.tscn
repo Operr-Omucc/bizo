@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfypdu7caiqno"]
+[gd_scene load_steps=8 format=3 uid="uid://cfypdu7caiqno"]
 
 [ext_resource type="Script" uid="uid://byw84c13jfuar" path="res://Scripts/personaje_enojado.gd" id="1_ufsi2"]
 [ext_resource type="Texture2D" uid="uid://bddymvg2q7vua" path="res://Sprites/Bob Enojado.png" id="2_ln7dn"]
-[ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_ln7dn"]
-[ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="3_vmlx1"]
-[ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_vmlx1"]
-[ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_m5lpv"]
-[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_m5lpv"]
+[ext_resource type="PackedScene" uid="uid://dc8cm7prts1jv" path="res://Escenas/gui.tscn" id="3_s1ebf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vmlx1"]
 
@@ -58,47 +54,9 @@ texture = ExtResource("2_ln7dn")
 scale = Vector2(5.47768, 11.4924)
 shape = SubResource("CircleShape2D_vmlx1")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-0.00012207, -6.10352e-05)
-scale = Vector2(0.996948, 0.990783)
-zoom = Vector2(0.5, 0.5)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
-layer = 128
-script = ExtResource("3_vmlx1")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer2"]
-offset_left = -1.52588e-05
-offset_top = 2.28882e-05
-offset_right = 532.0
-offset_bottom = 145.0
-scale = Vector2(0.604939, 0.467399)
-texture_under = ExtResource("3_ln7dn")
-texture_over = ExtResource("4_vmlx1")
-texture_progress = ExtResource("5_m5lpv")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer2"]
-offset_left = 512.0
-offset_right = 576.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
-position = Vector2(1080, 264)
-scale = Vector2(0.381291, 0.223874)
-texture = ExtResource("7_m5lpv")
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
-offset_left = -177.255
-offset_top = -240.137
-offset_right = -137.255
-offset_bottom = -217.137
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
-metadata/_edit_use_anchors_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_hbvkl")
 }
+
+[node name="GUI" parent="." instance=ExtResource("3_s1ebf")]

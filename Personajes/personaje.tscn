@@ -1,13 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8luqybclkp04"]
+[gd_scene load_steps=10 format=3 uid="uid://b8luqybclkp04"]
 
 [ext_resource type="Script" uid="uid://fj3nuxhxq6x3" path="res://Scripts/personaje.gd" id="1_0a5x8"]
 [ext_resource type="Texture2D" uid="uid://cfsrg5srnsxfk" path="res://Sprites/Bob Inicial.png" id="2_0o1n1"]
-[ext_resource type="Texture2D" uid="uid://b3n44dh5p1nni" path="res://Sprites/EmptyBar.png" id="3_0o1n1"]
 [ext_resource type="Texture2D" uid="uid://cyfm0lfbd8rg1" path="res://Sprites/Alien.png" id="3_e1y6l"]
-[ext_resource type="Script" uid="uid://ce0cx2uudxlst" path="res://Scripts/canvas_layer.gd" id="3_i3p7x"]
-[ext_resource type="Texture2D" uid="uid://v06be3g03hq4" path="res://Sprites/Bar.png" id="4_i3p7x"]
-[ext_resource type="Texture2D" uid="uid://bm724o6h87543" path="res://Sprites/HealthBar.png" id="5_y2j6e"]
-[ext_resource type="Texture2D" uid="uid://bsq3fny48shj1" path="res://Sprites/pantalla blanca.png" id="7_y2j6e"]
+[ext_resource type="PackedScene" uid="uid://dc8cm7prts1jv" path="res://Escenas/gui.tscn" id="4_kp3gr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0o1n1"]
 
@@ -121,47 +117,9 @@ position = Vector2(0, 0.500003)
 scale = Vector2(-2.9513, -6.92111)
 shape = SubResource("CapsuleShape2D_0o1n1")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-0.00012207, -6.10352e-05)
-scale = Vector2(0.996948, 0.990783)
-zoom = Vector2(0.5, 0.5)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
-layer = 128
-script = ExtResource("3_i3p7x")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer2"]
-offset_left = -1.52588e-05
-offset_top = 2.28882e-05
-offset_right = 532.0
-offset_bottom = 145.0
-scale = Vector2(0.604939, 0.467399)
-texture_under = ExtResource("3_0o1n1")
-texture_over = ExtResource("4_i3p7x")
-texture_progress = ExtResource("5_y2j6e")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer2"]
-offset_left = 512.0
-offset_right = 576.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="PantallaBlanca" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
-position = Vector2(1080, 264)
-scale = Vector2(0.381291, 0.223874)
-texture = ExtResource("7_y2j6e")
-
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PantallaBlanca"]
-offset_left = -177.255
-offset_top = -240.137
-offset_right = -137.255
-offset_bottom = -217.137
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 45
-metadata/_edit_use_anchors_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_i6gju")
 }
+
+[node name="GUI" parent="." instance=ExtResource("4_kp3gr")]

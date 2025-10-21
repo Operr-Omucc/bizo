@@ -7,14 +7,18 @@ func _ready():
 	if gamedata.chara_name == "John Cowboy":
 		# actualizar GUI
 		$Label2.text = "%s/6" % [shots_fired]
-	elif gamedata.chara_name == "Reimu Hakurei":
+	else:
+		$PantallaBlanca3.visible = false
+		
+	if gamedata.chara_name == "Reimu Hakurei":
 		$Disparo1.visible=false
 		$Disparo2.visible=true
 	else:
-		return
+		$Disparo1.visible=false
+		pass
 
 func _physics_process(_delta: float) -> void:
-	$Label.text = "Quedan %s Enemigos" % [gamedata.en-gamedata.rep]
+	$PantallaBlanca2/Label.text = "Quedan %s Enemigos" % [gamedata.en-gamedata.rep]
 	if gamedata.configStats==true:
 		$PantallaBlanca/Label.text = "Daño: %s
 		Velocidad: %s
@@ -46,7 +50,7 @@ func fire_shots():
 			return
 		cooldown = false
 		shots_fired -= 1
-		$Label2.text = "%s/6" %[shots_fired]
+		$PantallaBlanca3/Label2.text = "%s/6" %[shots_fired]
 		if is_inside_tree():
 			await get_tree().create_timer(0.3).timeout
 		cooldown = true

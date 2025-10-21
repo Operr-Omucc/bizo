@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uqy2cean0bk1"
-path="res://.godot/imported/tienda2.jpeg-657e5321b768460640e149441afdf6d9.ctex"
+uid="uid://638j1nv3ybff"
+path="res://.godot/imported/mejora_firerate.png-7b13d241e4b2539c17505507e11af92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tienda2.jpeg"
-dest_files=["res://.godot/imported/tienda2.jpeg-657e5321b768460640e149441afdf6d9.ctex"]
+source_file="res://Sprites/mejora_firerate.png"
+dest_files=["res://.godot/imported/mejora_firerate.png-7b13d241e4b2539c17505507e11af92a.ctex"]
 
 [params]
 

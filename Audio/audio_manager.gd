@@ -1,18 +1,15 @@
 extends Node2D
 
+# Variable booleana que revisa si el juego esta muteado/silenciado para silenciar otros sonidos
 @export var mute: bool = false
 
-func _ready() -> void:
-	if not mute:
-		play_musica()
+# En general las funciones a continuacion estan encargadas de sonidos simples como golpes, disparos o rayos
+# Hasta de controlar la musica e incluso reproducir la voz del tipo de la tienda, este script no
+# Tiene mucho mas proposito que sonidos/musica
 
 func play_golpe():
 	if not mute:
 		$golpe.play()
-		
-func play_musica():
-	if not mute:
-		$musica.play()
 
 func play_disparo():
 	if not mute:
@@ -20,12 +17,12 @@ func play_disparo():
 
 func play_victoria():
 	if not mute:
-		$musica.stop()
+		$juego.stop()
 		$victoria.play()
 
 func play_derrota():
 	if not mute:
-		$musica.stop()
+		$juego.stop()
 		$derrota.play()
 		
 func play_rayo():
@@ -38,12 +35,11 @@ func play_hombreTienda():
 				$hombreTienda.stop()
 			else:
 				$hombreTienda.play()
-				
+
 func play_tienda():
 	if not mute:
 		$tienda.play()
 	
-		
 func play_juego():
 	if not mute:
 		$juego.play()
