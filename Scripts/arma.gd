@@ -16,7 +16,6 @@ func _ready() -> void:
 func _physics_process(_delta):
 	rota()
 	bullet_damage = gamedata.damage
-	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("Disparo") && cooldown:
 		fire()
 

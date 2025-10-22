@@ -1,23 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4t4wx38a8d1l"]
+[gd_scene load_steps=5 format=3 uid="uid://c4t4wx38a8d1l"]
 
+[ext_resource type="Script" uid="uid://cu6bpd7fpf8fx" path="res://Scripts/hombro.gd" id="1_icmfd"]
 [ext_resource type="Script" uid="uid://ba5hetqvpj6jn" path="res://Scripts/varita_reimu.gd" id="1_sadjd"]
 [ext_resource type="Texture2D" uid="uid://cjvp50qc0d6ss" path="res://Sprites/VaritaReimu.png" id="2_sadjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lke8e"]
 size = Vector2(176, 144)
 
-[node name="VaritaReimu" type="CharacterBody2D"]
+[node name="Hombro" type="Node2D"]
+script = ExtResource("1_icmfd")
+
+[node name="VaritaReimu" type="CharacterBody2D" parent="."]
+position = Vector2(204, 0)
 scale = Vector2(0.0991052, 0.150156)
 script = ExtResource("1_sadjd")
 
-[node name="Varita" type="Sprite2D" parent="."]
+[node name="Varita" type="Sprite2D" parent="VaritaReimu"]
 scale = Vector2(7.14612, 5.9109964)
 texture = ExtResource("2_sadjd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VaritaReimu"]
+position = Vector2(11543.288, 0)
 scale = Vector2(1e-05, 0.00042805)
 shape = SubResource("RectangleShape2D_lke8e")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="VaritaReimu"]
 position = Vector2(72, -8)
 scale = Vector2(0.0806709, 0.0905525)

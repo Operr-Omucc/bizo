@@ -1,5 +1,14 @@
 extends CharacterBody2D
 
+# ATENCION: El codigo de este script y el resto de los enemigos es basicamente el mismo que
+# el codigo del enemigo default del juego, excepto el enemigo que dispara desde un rango
+# el resto de enemigos son literalmente un copia y pega del mismo codigo con distinta cantidad
+# de vida, solamente que si haciamos lo mismo que hicimos con los otros personajes, osea
+# extender el codigo desde el original por alguna razon los enemigos no detectaban un target
+# y no perseguian al jugador, por eso terminamos repitiendo el codigo varias veces, si queres
+# ver el codigo DE ESTE enemigo especifico miralo, pero no voy a poner comentarios en este
+# enemigo porque ya estan todos los comentarios explicando el codigo en enemigo.gd
+
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var target = get_tree().get_nodes_in_group("personaje")
 @onready var coin=preload("res://Escenas/moneda.tscn")
@@ -37,6 +46,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("personaje"):
 		
 		if body.health > 0 && cooldown:
+			AudioManager.play_golpe()
 			body.health -= damage
 			var direction = (body.global_position - global_position).normalized()
 			body.velocity += direction * 1000
@@ -50,7 +60,7 @@ func _on_area_2d_body_entered(body):
 			health = health - body.damage
 			body.call_deferred("queue_free") #call deferred añade/quita  de forma "segura"
 			
-		if health <= 1:
+		if health <= 0:
 			death_check()
 		
 func _physics_process(_delta):
@@ -61,7 +71,6 @@ func _physics_process(_delta):
 				knockback = Vector2.ZERO
 	else:
 		_navegacion(_delta)
-	move_and_slide()
 	
 #funcion que se ejecuta cada segundo, funciona tambien para detectar la posicion del jugador y perseguirlo
 func _navegacion(_delta):

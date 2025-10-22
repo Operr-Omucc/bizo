@@ -60,7 +60,6 @@ func reset_stat():
 	health = 0
 	maxHealth = 0
 
-
 # Una variable usada para almacenar los datos de los personajes, que armas usan, se usa en otros scripts
 # Para verificar al personaje seleccionado
 var characters = {

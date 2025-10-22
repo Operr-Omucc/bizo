@@ -2,7 +2,7 @@ extends Node2D
 var chosen_Character
 
 func _physics_process(_delta: float) -> void:
-	$Label2.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
+	$Cant_dinero.text = "Tu cantidad de dinero es %s" % [gamedata.game_money]
 	gamedata.debug()
 
 #funcion que envia dificultad al mundo
@@ -15,6 +15,7 @@ func cerrarPopup():
 	$popup/Personaje3.visible = false
 	$popup/Personaje4.visible = false
 	$popup/Personaje5.visible = false
+	$popup/Personaje6.visible = false
 
 func _ready() -> void:
 	$popup.visible = false
@@ -110,6 +111,9 @@ func _on_bloq_pj_2_pressed() -> void:
 		#_:
 			#return false
 
+# Todo el codigo arriba que esta comentado fue un intento de rehacer el sistema de personajes
+# como no salio bien decidi comentarlo y dejarlo ahí hasta el dia donde quiera descomentarlo e
+# intentar arreglarlo
 
 func _on_button_5_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/main_menu.tscn")

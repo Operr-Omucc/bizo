@@ -18,7 +18,6 @@ func _physics_process(_delta):
 			modo_varita = true
 	rota()
 	gamedata.damage = bullet_damage 
-	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("Disparo") && cooldown && modo_varita==true:
 		fire()
 	elif Input.is_action_just_pressed("Disparo") && cooldown2 && modo_varita==false:

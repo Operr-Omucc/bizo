@@ -1,17 +1,17 @@
 extends Node2D
 
+# Variables de la posicion, rotacion y direccion del rayo
 var pos: Vector2
 var rota: float   
 var dir: Vector2
 
+# Variables del daño y duracion del rayo
 @export var damage: int = gamedata.damage+100
 @export var duration: float = 1.5
-@export var width: float = 40.0
 
-@onready var col_shape: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var area: Area2D = $Area2D
-@onready var line: Line2D = $rayinio
-
+# Funcion para preparar al rayo cuando va a ser disparado, lo añade al grupo bala para que el
+# Enemigo lo detecte bien, establece la posicion global y rotacion dependiendo de las dos
+# Variables que estan ahí arriba
 func _ready():
 	# Timer de duración
 	add_to_group("bala")
@@ -28,20 +28,3 @@ func _ready():
 	
 	await get_tree().create_timer(duration).timeout
 	queue_free()
-#func fire(start_pos: Vector2, end_pos: Vector2):
-	#if gamedata.damage <1:
-		#gamedata.damage = damage
-	## Posicionar rayo
-	#global_position = start_pos
-	## Dibujar línea
-	#line.clear_points()
-	#line.width = width
-	#line.add_point(Vector2.ZERO)
-	#line.add_point(end_pos - start_pos)
-	#
-	## Ajustar colisión del área
-	#var shape := RectangleShape2D.new()
-	#$Area2D/CollisionShape2D.shape = shape
-	#$Area2D.position = (end_pos - start_pos) / 4
-	#rotation = (end_pos - start_pos).angle()
-	#shape.extents = Vector2((end_pos - start_pos).length()/2, width/2)

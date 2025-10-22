@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu6bpd7fpf8fx" path="res://Scripts/hombro.gd" id="1_lqmo8"]
 [ext_resource type="Script" uid="uid://dq2io2uw2yb07" path="res://Scripts/brazo.gd" id="1_s7n4n"]
-[ext_resource type="Texture2D" uid="uid://c0dwwu1oeusus" path="res://Sprites/Pared.png" id="2_s7n4n"]
+[ext_resource type="Texture2D" uid="uid://bthopccoqbous" path="res://Sprites/Puno2.png" id="4_np3ac"]
 [ext_resource type="Script" uid="uid://6k7u78yldc2" path="res://Scripts/puño.gd" id="4_svb8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svb8t"]
@@ -61,8 +61,10 @@ collision_mask = 3
 script = ExtResource("4_svb8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hombro/Sprite2D/Puño"]
-scale = Vector2(0.379162, 1.73553)
-texture = ExtResource("2_s7n4n")
+position = Vector2(-24.814466, -30.273155)
+rotation = 1.5707964
+scale = Vector2(4.3346615, 1.4703254)
+texture = ExtResource("4_np3ac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hombro/Sprite2D/Puño"]
 position = Vector2(0, 4.54523)

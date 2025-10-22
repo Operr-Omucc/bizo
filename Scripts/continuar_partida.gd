@@ -15,7 +15,8 @@ var game_data : Dictionary = {
 	"velocidad": gamedata.speed,
 	"fire_rate": gamedata.fire_rate,
 	"armadura": gamedata.armor,
-	"zona": gamedata.zona
+	"zona": gamedata.zona,
+	"tuto": gamedata.tuto
 }
 
 # Funcion para guardar la partida

@@ -1,23 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://s344qxt8ci67"]
+[gd_scene load_steps=5 format=3 uid="uid://s344qxt8ci67"]
 
+[ext_resource type="Script" uid="uid://cu6bpd7fpf8fx" path="res://Scripts/hombro.gd" id="1_00gnc"]
 [ext_resource type="Script" uid="uid://cul31yd00pbl8" path="res://Scripts/arma.gd" id="1_go1l7"]
 [ext_resource type="Texture2D" uid="uid://b30jd6r0h1uy7" path="res://Sprites/Arma.png" id="2_00gnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yua7b"]
 size = Vector2(181, 143)
 
-[node name="Arma" type="CharacterBody2D"]
+[node name="Hombro" type="Node2D"]
+script = ExtResource("1_00gnc")
+
+[node name="Arma" type="CharacterBody2D" parent="."]
+position = Vector2(204, 0)
 script = ExtResource("1_go1l7")
 
-[node name="Arma" type="Sprite2D" parent="."]
-scale = Vector2(0.223396, 0.284931)
+[node name="Arma" type="Sprite2D" parent="Arma"]
+scale = Vector2(0.46638733, 0.5191172)
 texture = ExtResource("2_00gnc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.98023e-08, 5.96046e-08)
-scale = Vector2(0.223396, 0.284931)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arma"]
+position = Vector2(187, 3.5527137e-15)
+scale = Vector2(1e-05, 0.00038774702)
 shape = SubResource("RectangleShape2D_yua7b")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(4.76837e-07, -14)
-scale = Vector2(0.0806709, 0.0905525)
+[node name="Node2D" type="Node2D" parent="Arma"]
+position = Vector2(27, -21)
+scale = Vector2(0.16841787, 0.16497806)

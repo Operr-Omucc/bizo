@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bpsp4tnuyb841"]
 
-[ext_resource type="Texture2D" uid="uid://dtp5f0huoc8cw" path="res://Sprites/piso.png" id="1_lm0so"]
+[ext_resource type="Texture2D" uid="uid://dtp5f0huoc8cw" path="res://Sprites/Piso.png" id="1_lm0so"]
 [ext_resource type="Script" uid="uid://do1dn5x0m2mrk" path="res://Scripts/batalla_jefe.gd" id="1_ymfig"]
 [ext_resource type="PackedScene" uid="uid://b7j5glt2okrxa" path="res://Escenas/jefe.tscn" id="4_ymfig"]
 [ext_resource type="PackedScene" uid="uid://ciu1higha56lx" path="res://Escenas/pared_jefe.tscn" id="5_6roep"]
