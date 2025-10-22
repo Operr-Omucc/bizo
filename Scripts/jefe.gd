@@ -1,7 +1,7 @@
 extends 'res://Scripts/enemigo.gd'
 
 func _ready():
-	health = 1000
+	health = 3000
 	speed = 90
 
 func _physics_process(_delta: float) -> void:

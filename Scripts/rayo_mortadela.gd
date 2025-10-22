@@ -25,7 +25,7 @@ func _on_generar_finished(anim_name: String) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var damage = 20
+	var damage = 100
 	if body.is_in_group("personaje"):
 	
 		if body.health > 0:
