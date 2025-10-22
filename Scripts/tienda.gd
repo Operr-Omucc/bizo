@@ -49,6 +49,19 @@ func _on_palanca_pressed() -> void:
 	dialogo_tienda = randi() % 100
 	if gamedata.money_amount >= precio:
 		actualizarTextoRico()
+		
+		# Acá quitamos el dinero y procesamos la compra
+		gamedata.money_amount -= precio
+		for n in (3):
+			# Se instancia la mejora y se le da un tipo, con un rango de 1 a 92, dependiendo del numero que
+			# salga se usa una mejora u otra, luego se añade como hijo de la escena y se establece una posicion
+			# se crea un timer de 1 segundo para que haya 1 segundo entre mejora y mejora
+			mejora = mejora_path.instantiate()
+			mejora.tipo_mejora = randi_range(1,92)
+			get_parent().add_child(mejora)
+			mejora.global_position= Vector2(262, 72)
+			await get_tree().create_timer(1).timeout
+			
 		actualizarTextoTirada()
 	elif gamedata.money_amount<precio:
 		actualizarTextoPobre()
@@ -59,6 +72,7 @@ func _on_palanca_pressed() -> void:
 # Actualiza el texto de las tiradas, mucho codigo porque hay muchos textos, la ultima probabilidad es
 # un chiste de nuestro grupo y puede ser eliminada a pedido de cualquier profesor de inmediato si se pide
 func actualizarTextoTirada():
+	$Palanca.disabled = true
 	$Tienda1.texture = load("res://Sprites/tienda2.png")
 	$Label.visible_characters = 0
 	if dialogo_tienda < 50:
@@ -78,12 +92,13 @@ func actualizarTextoTirada():
 	elif dialogo_tienda == 100:
 		$Label.text = "estamos en todos los
 		universos, el imperio no, los judios"
-	$Palanca.disabled = true
+	
 	
 	# Esta parte la explico aparte porque es medio complicada
 	actualizarLetra()
 	
 	# luego de todo eso la palanca se vuelve a poder presionar
+	await get_tree().create_timer(3).timeout
 	$Palanca.disabled = false
 	
 	
@@ -108,17 +123,6 @@ func actualizarTextoRico():
 	$Label.text = "Nice"
 	
 	actualizarLetra()
-	# Acá quitamos el dinero y procesamos la compra
-	gamedata.money_amount -= precio
-	for n in (3):
-		# Se instancia la mejora y se le da un tipo, con un rango de 1 a 92, dependiendo del numero que
-		# salga se usa una mejora u otra, luego se añade como hijo de la escena y se establece una posicion
-		# se crea un timer de 1 segundo para que haya 1 segundo entre mejora y mejora
-		mejora = mejora_path.instantiate()
-		mejora.tipo_mejora = randi_range(1,92)
-		get_parent().add_child(mejora)
-		mejora.global_position= Vector2(262, 72)
-		await get_tree().create_timer(1).timeout
 
 func actualizarLetra():
 	for i in range($Label.text.length()):
@@ -127,7 +131,7 @@ func actualizarLetra():
 		
 		# luego hace cada caracter visible 1 por 1
 		$Label.visible_characters += 1
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.046).timeout
 		
 		# luego de un milisegundo de volver al caracter actual visible se pregunta si es valido
 		# osea si no es un numero, espacio o caracter especial como las letras con tilde, si es valido

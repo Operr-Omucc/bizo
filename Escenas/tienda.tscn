@@ -81,6 +81,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_56r47")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_gvbfd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_a2w3w")
 theme_override_styles/focus = SubResource("StyleBoxTexture_v3u34")
+disabled = true
 
 [node name="Pause" type="Node2D" parent="."]
 process_mode = 3
