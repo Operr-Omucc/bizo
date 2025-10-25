@@ -28,9 +28,10 @@ func _on_button_4_pressed() -> void:
 # En la oleada que el jugador salio del juego, si estuvo en la tienda empieza desde la tienda y si
 # No empezo la partida entonces envia a la pantalla de seleccion de personaje
 func _on_button_5_pressed() -> void:
-	ContinuarPartida.load_game()
-	if ContinuarPartida.game_data.has("personaje") and ContinuarPartida.game_data["personaje"] != null:
-		if gamedata.zona == true:
+	ContinuarPartida.load_game()  # carga los datos en gamedata
+
+	if gamedata.chara_Scene != null:
+		if gamedata.zona:
 			get_tree().change_scene_to_file("res://Escenas/mundo.tscn")
 		else:
 			get_tree().change_scene_to_file("res://Escenas/tienda.tscn")

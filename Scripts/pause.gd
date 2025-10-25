@@ -23,6 +23,7 @@ func _on_button_pressed() -> void:
 # Al menu principal
 func _on_button_2_pressed() -> void:
 	ContinuarPartida.save_game()
+	AudioManager.stop_tienda()
 	$CanvasLayer.visible = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Escenas/main_menu.tscn")
