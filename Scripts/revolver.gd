@@ -3,7 +3,7 @@ var shots_fired = 0
 
 
 func _ready():
-	fire_rate = gamedata.fire_rate - 0.7
+	fire_rate = gamedata.fire_rate - 1
 	bullet_damage = 40
 	if gamedata.damage <1:
 		gamedata.damage += bullet_damage

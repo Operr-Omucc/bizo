@@ -91,3 +91,7 @@ func spawn_char():
 		personaje.add_child(arma)
 	if brazo!=null:
 		personaje.add_child(brazo)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("personaje"):
+		get_tree().change_scene_to_file("res://bizo3ed/node_3d.tscn")

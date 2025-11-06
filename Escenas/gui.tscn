@@ -46,7 +46,6 @@ scale = Vector2(0.40228564, 0.04793694)
 texture = ExtResource("5_1lo52")
 
 [node name="Label" type="Label" parent="GUI/PantallaBlanca2"]
-anchors_preset = -1
 offset_left = -188.84099
 offset_top = -250.65776
 offset_right = 65.15901
@@ -73,8 +72,10 @@ scale = Vector2(0.28466484, 0.058996998)
 texture = ExtResource("5_1lo52")
 
 [node name="Label2" type="Label" parent="GUI/PantallaBlanca3"]
-offset_left = -140.51613
+offset_left = -168.61937
 offset_top = -135.60156
-offset_right = -76.51613
+offset_right = -104.61937
 offset_bottom = -112.60156
+scale = Vector2(5.477519, 15.397002)
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 metadata/_edit_use_anchors_ = true

@@ -84,21 +84,21 @@ func actualizarTextoTirada():
 	elif dialogo_tienda >= 80 && dialogo_tienda < 90:
 		$Label.text = "Podes ir 
 		dandome todo tu oro"
-	elif dialogo_tienda >= 90 && dialogo_tienda <= 99:
+	elif dialogo_tienda >= 90 && dialogo_tienda <= 100:
 		$Label.text = "Hace frio
 		y estas lejos de casaa
 		universos aparte sentado
 		en esta tienda"
-	elif dialogo_tienda == 100:
-		$Label.text = "estamos en todos los
-		universos, el imperio no, los judios"
+	#elif dialogo_tienda == 100:
+	#	$Label.text = "estamos en todos los
+	#	universos, el imperio no, los judios"
 	
 	
 	# Esta parte la explico aparte porque es medio complicada
 	actualizarLetra()
 	
 	# luego de todo eso la palanca se vuelve a poder presionar
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	$Palanca.disabled = false
 	
 	

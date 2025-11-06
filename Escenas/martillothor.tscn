@@ -57,7 +57,7 @@ script = ExtResource("3_53ely")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hombro/Sprite2D/Puño"]
 position = Vector2(0.0003405764, 0)
-scale = Vector2(1.5417414, 2.9107919)
+scale = Vector2(1.2482073, 3.2739441)
 texture = ExtResource("1_scme6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hombro/Sprite2D/Puño"]

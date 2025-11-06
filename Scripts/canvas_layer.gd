@@ -1,12 +1,13 @@
 extends CanvasLayer
 
+var reloading = false
 var shots_fired: int = 6
 var cooldown: bool = true
 
 func _ready():
 	if gamedata.chara_name == "John Cowboy":
 		# actualizar GUI
-		$Label2.text = "%s/6" % [shots_fired]
+		$PantallaBlanca3/Label2.text = "%s/6" % [shots_fired]
 	else:
 		$PantallaBlanca3.visible = false
 		
@@ -25,35 +26,29 @@ func _physics_process(_delta: float) -> void:
 		Vida: %s" % [gamedata.damage, gamedata.speed, gamedata.maxHealth]
 	if gamedata.chara_name == "John Cowboy":
 		detect_shot()
-		fire_shots()
 	elif gamedata.chara_name == "Reimu Hakurei":
 		detectSkill()
 	else:
 		return
 
 func detect_shot():
-	
-	# si no es John Cowboy
 	if gamedata.chara_name != "John Cowboy":
 		return
-
-	# si no quedan balas
-	if shots_fired == 0:
+	
+	# si todavía hay balas y no estás recargando
+	if shots_fired > 0 && !reloading:
+		if Input.is_action_just_pressed("Disparo"):
+			shots_fired -= 1
+			$PantallaBlanca3/Label2.text = "%s/6" % [shots_fired]
+	
+	# si te quedaste sin balas y no estás recargando
+	elif shots_fired == 0 && !reloading:
+		reloading = true
 		if is_inside_tree():
 			await get_tree().create_timer(2).timeout
 		shots_fired = 6
-		
-func fire_shots():
-	# si quedan balas
-	if shots_fired > 0  && Input.is_action_just_pressed("Disparo"):
-		if not cooldown:
-			return
-		cooldown = false
-		shots_fired -= 1
-		$PantallaBlanca3/Label2.text = "%s/6" %[shots_fired]
-		if is_inside_tree():
-			await get_tree().create_timer(0.3).timeout
-		cooldown = true
+		reloading = false
+		$PantallaBlanca3/Label2.text = "%s/6" % [shots_fired]
 
 func detectSkill():
 	if gamedata.chara_name == "Reimu Hakurei":

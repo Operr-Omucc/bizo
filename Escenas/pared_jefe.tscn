@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d2jvl38qrfr1w" path="res://Sprites/Pared 2.png" id="1_vlxy7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uq2f"]
-size = Vector2(19.8997, 19.9017)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlxy7"]
+size = Vector2(20.125164, 8.445876)
 
 [node name="Pared" type="StaticBody2D"]
 scale = Vector2(0.92, 1.52)
@@ -16,6 +16,23 @@ scale = Vector2(0.748971, 1.20558)
 texture = ExtResource("1_vlxy7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.657895)
-scale = Vector2(6.29, 23.79)
-shape = SubResource("RectangleShape2D_5uq2f")
+rotation = -3.1415925
+scale = Vector2(3.8346977, 27.729189)
+shape = SubResource("RectangleShape2D_vlxy7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+rotation = -3.1415925
+scale = Vector2(6.2421107, 16.911339)
+shape = SubResource("RectangleShape2D_vlxy7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 171.71053)
+rotation = -3.1415925
+scale = Vector2(6.140621, 15.83976)
+shape = SubResource("RectangleShape2D_vlxy7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(3.8146973e-06, -171.05264)
+rotation = -3.1415925
+scale = Vector2(6.140621, 15.83976)
+shape = SubResource("RectangleShape2D_vlxy7")

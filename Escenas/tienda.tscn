@@ -153,6 +153,24 @@ position = Vector2(578, 253.00003)
 scale = Vector2(1.0791905, 1.1472237)
 texture = ExtResource("3_gvbfd")
 
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(402.00003, 364)
+scale = Vector2(16.612114, -2.6006305)
+points = PackedVector2Array(0, 0, 10, 0)
+default_color = Color(0.5568628, 0.4745098, 0.3764706, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(418.00003, 346)
+scale = Vector2(13.08887, 1.0909739)
+points = PackedVector2Array(0, 0, 10, 0)
+default_color = Color(0.75686276, 0.6039216, 0.41960785, 1)
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(427.00003, 382.00003)
+scale = Vector2(13.08887, 1.0909739)
+points = PackedVector2Array(0, 0, 10, 0)
+default_color = Color(0.75686276, 0.6039216, 0.41960785, 1)
+
 [connection signal="pressed" from="volverJuego" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Palanca" to="." method="_on_palanca_pressed"]
 [connection signal="pressed" from="Pause/CanvasLayer/Button" to="Pause" method="_on_button_pressed"]
